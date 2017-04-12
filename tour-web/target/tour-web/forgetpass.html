@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>找回密码 - 途悠游</title>
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/holder.min.js"></script>
+    <style>
+        body {
+            background-image: url(resources/img/42.jpeg);
+            background-size: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+
+        .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+            outline: none;
+        }
+
+        .regist-modal {
+            z-index: 9999;
+            position: fixed;
+            top: 23%;
+            left: 36%;
+            width: 350px;
+            height: 250px;
+            border-radius: 5px;
+            border: solid 1px #bbbbbb;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px #bbbbbb;
+        }
+
+        .regist-title {
+            height: 55px;
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        .err-tip {
+            height: 35px;
+            color:red;
+            font-size: 12px;
+            padding-top:10px;
+        }
+
+        .regist-form {
+            padding-top: 0px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .img-div {
+            width: 96px;
+            height: 33px;
+            float: left;
+            margin-right: 19px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            height: 42px;
+            background-color: #ffa800;
+            color: white;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .submit-btn:hover {
+            background-color: #ffb400;
+            color: white;
+        }
+
+    </style>
+    <script>
+
+        $(function() {
+
+            $('#verifyCodeImg').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/tour/verifyCode",
+                    async: false,
+                    success: function () {
+                        $('#verifyCodeImg').attr('src', '/tour/verifyCode?'+ new Date());
+                    }
+                });
+            });
+
+            $('#find').click(function () {
+                if (validate()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/tour/confirmVerifyCodeAndEmailNotExist",
+                        data: $('#form').serialize(),
+                        async: false,
+                        success: function (data) {
+                            if (data == "success") {
+                                $('#tip-content').html('');
+                                $('#form').submit();
+                                return;
+                            }
+                            if (data == "verifyCodeError") {
+                                $('#tip-content').html('验证码错误');
+                                $('#verifyCodeImg').click();
+                                return;
+                            }
+                            if (data == "emailNotExist") {
+                                $('#tip-content').html('该邮箱账号不存在');
+                                $('#verifyCodeImg').click();
+                                return;
+                            }
+                        }
+                    });
+                }
+            });
+
+        });
+
+
+        function validate() {
+            if ($('#email').val() == '') {
+                $('#tip-content').html('请输入邮箱账号');
+                return false;
+            }
+            if ($('#verifyCode').val() == '') {
+                $('#tip-content').html('请输入验证码');
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="panel panel-default regist-modal">
+        <div class="panel-heading regist-title">找回密码</div>
+
+        <div class="panel-body regist-form">
+
+            <div class="err-tip">
+                <span id="tip-content"></span>
+            </div>
+
+            <form id="form" action="/tour/findPassword" method="post">
+                <div class="form-group">
+                    <input class="form-control" type="text" id="email" placeholder="您的邮箱" name="email" />
+                </div>
+                <div class="form-group">
+                    <div class="form-inline">
+                        <div class="img-div">
+                            <img id="verifyCodeImg" src="verifyCode" alt="" name="verifyCodeImg" />
+                        </div>
+                        <input class="form-control" type="text" id="verifyCode" placeholder="验证码" name="verifyCode" />
+                    </div>
+                </div>
+                <div>
+                    <input type="button" id="find" class="btn submit-btn btn-warning" value="立即找回" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

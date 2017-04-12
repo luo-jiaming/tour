@@ -1,0 +1,244 @@
+package cn.edu.hlju.tour.core.impl;
+
+import cn.edu.hlju.tour.common.utils.RandomUtils;
+import cn.edu.hlju.tour.common.utils.UploadUtils;
+import cn.edu.hlju.tour.core.TravelService;
+import cn.edu.hlju.tour.dao.SpotMapper;
+import cn.edu.hlju.tour.dao.TravelCommentMapper;
+import cn.edu.hlju.tour.dao.TravelMapper;
+import cn.edu.hlju.tour.dao.UserMapper;
+import cn.edu.hlju.tour.entity.*;
+import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.*;
+
+/**
+ * Created by Sole on 2017/3/24.
+ */
+@Service
+public class TravelServiceImpl implements TravelService {
+
+    @Autowired
+    private TravelMapper travelMapper;
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @Autowired
+    private SpotMapper spotMapper;
+
+    @Autowired
+    private TravelCommentMapper travelCommentMapper;
+
+
+    //得到五个游记
+    @Override
+    public List<Map> limit5() {
+        Long total = travelMapper.total();
+        Set<Long> set = null;
+        if (total < 5) {
+            set = RandomUtils.randomSet(total, total);
+        } else {
+            set = RandomUtils.randomSet(total, 5L);
+        }
+        List<Map> list = new ArrayList<>();
+        Iterator<Long> iterator = set.iterator();
+        while (iterator.hasNext()) {
+            Travel travel = travelMapper.selectLimitOne(iterator.next());       //游记
+            Long spotid = travel.getSpotId();
+            Spot spot = spotMapper.selectByPrimaryKey(spotid);                  //游记的地点
+            Long userid = travel.getUserId();
+            User user = userMapper.selectByPrimaryKey(userid);                  //写游记的用户
+            Map<String, Object> map = new HashMap<>();
+            map.put("travel", travel);
+            map.put("user", user);
+            map.put("spot", spot);
+            list.add(map);
+        }
+        return list;
+    }
+
+    /**
+     * 保存并返回刚保存游记的ID
+     * @param travel
+     * @param request
+     * @return
+     */
+    @Override
+    public Long saveTravel(Travel travel, HttpServletRequest request) {
+        User user = (User)request.getSession().getAttribute("user");
+        travel.setUserId(user.getId());
+        travel.setTime(new Date());
+        travel.setStatus(0L);
+        travelMapper.insertSelective(travel);
+        return travel.getId();
+    }
+
+    @Override
+    public void delTravel(Long id) {
+        travelMapper.deleteByPrimaryKey(id);
+    }
+
+    /**
+     * 得到游记页面需要的东西
+     * @param id
+     * @param request
+     */
+    @Override
+    public JSONObject travelById(Long id) {
+        JSONObject json = new JSONObject();
+        Travel travel = travelMapper.selectByPrimaryKey(id);
+        User user = userMapper.selectByPrimaryKey(travel.getUserId());
+        Long spotid = travel.getSpotId();
+        List<Travel> list = this.limit3BySpotId(spotid);        //相关的三个游记
+        json.put("travel", travel);                              //游记
+        json.put("user", user);                                  //写该游记的用户
+        json.put("list", list);                                  //相关游记
+        return json;
+    }
+
+    //推荐的相同地点的三个游记
+    private List<Travel> limit3BySpotId(Long id) {
+        Long total = travelMapper.totalBySpotId(id);
+        Set<Long> set = null;
+        if (total < 3) {
+            set = RandomUtils.randomSet(total, total);
+        } else {
+            set = RandomUtils.randomSet(total, 3L);
+        }
+        List<Travel> list = new ArrayList<>();
+        Iterator<Long> iterator = set.iterator();
+        while (iterator.hasNext()) {
+            list.add(travelMapper.selectBySpotIdLimitOne(iterator.next(), id));
+        }
+        return list;
+    }
+
+    /**
+     * 上传游记头部图片
+     * @param file
+     * @param request
+     * @return
+     * @throws IOException
+     */
+    @Override
+    public Map uploadIndexImg(MultipartFile file, HttpServletRequest request) throws IOException {
+        String contextPath = UploadUtils.uploadFile(file, request, "travel/indeximg/");
+        Map<String, String> map = new HashMap<>();
+        map.put("src", contextPath);
+        return map;
+    }
+
+    /**
+     * 上传游记图片
+     * @param file
+     * @param request
+     * @return
+     * @throws IOException
+     */
+    @Override
+    public Map uploadTravelImg(MultipartFile file, HttpServletRequest request) throws IOException {
+        User user = (User)request.getSession().getAttribute("user");
+        String nick = user.getNick();
+        String contextPath = UploadUtils.uploadFile(file, request, "travel/" + nick + "/");
+        Map<String, String> map = new HashMap<>();
+        map.put("src", contextPath);
+        return map;
+    }
+
+
+    /**
+     * 分页查询
+     * @param spotName 景点名字
+     */
+    @Override
+    public JSONObject queryByPage(String spotName, int pageNum, int size) {
+        JSONObject json = new JSONObject();
+        Travel travel = new Travel();
+        if (spotName == null || "".equals(spotName)) {              //无条件查询
+        } else {
+            Spot spot = spotMapper.selectBySpotName(spotName);      //条件查询
+            if (spot == null) {
+                json.put("status", "spotNotExist");
+                return json;
+            }
+            travel.setSpotId(spot.getId());
+        }
+        PageHelper.startPage(pageNum, size);
+        List<Travel> list =  travelMapper.query(travel);
+        if (list == null || list.size() == 0) {
+            json.put("status", "travelNotExist");
+            return json;
+        }
+        PageInfo<Travel> pageInfo = new PageInfo(list);
+        List<Map> mapList = new ArrayList<>();
+        for (Travel temp : list) {
+            Long spotid = temp.getSpotId();
+            Spot spot = spotMapper.selectByPrimaryKey(spotid);                  //游记的地点
+            Long userid = temp.getUserId();
+            User user = userMapper.selectByPrimaryKey(userid);                  //写游记的用户
+            Map<String, Object> map = new HashMap<>();
+            map.put("travel", temp);
+            map.put("user", user);
+            map.put("spot", spot);
+            mapList.add(map);
+        }
+        json.put("status", "success");
+        json.put("pageinfor", pageInfo);
+        json.put("maplist", mapList);
+        return json;
+    }
+
+    /**
+     *
+     * @param id 用户ID
+     * @return
+     */
+    @Override
+    public List queryByUserId(Long id) {
+        Travel travel = new Travel();
+        travel.setUserId(id);
+        return travelMapper.query(travel);
+    }
+
+    @Override
+    public JSONObject getTravelComment(Long id, int pageNum, int size) {
+        PageHelper.startPage(pageNum, size);                                                //分页
+        List<TravelComment> list =  travelCommentMapper.selectCommentByTravelId(id);        //得到分页之后的评论
+        PageInfo<TravelComment> pageInfo = new PageInfo(list);                              //分页参数
+        List<Map> mapList = new ArrayList<>();
+        for (TravelComment comment : list) {                                                //评论用户
+            Map map = new HashMap();
+            Long userId = comment.getFromUid();
+            User user = userMapper.selectByPrimaryKey(userId);
+            map.put("comment", comment);
+            map.put("user", user);
+            mapList.add(map);
+        }
+        JSONObject json = new JSONObject();
+        json.put("pageinfor", pageInfo);
+        json.put("maplist", mapList);
+        return json;
+    }
+
+    @Override
+    public void saveComment(TravelComment comment, HttpServletRequest request) {
+        User user = (User)request.getSession().getAttribute("user");
+        comment.setFromUid(user.getId());
+        comment.setTime(new Date());
+        travelCommentMapper.insertSelective(comment);
+    }
+
+    @Override
+    public void delComment(Long id) {
+        travelCommentMapper.deleteByPrimaryKey(id);
+    }
+
+}

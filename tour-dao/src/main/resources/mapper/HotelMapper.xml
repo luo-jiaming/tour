@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.hlju.tour.dao.HotelMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.hlju.tour.entity.Hotel">
+        <constructor>
+            <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="hotel_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="hotel_introduce" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="hotel_level" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="location" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="coordinate" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="index_img" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="wifi" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="bath" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="park" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="restaurant" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="price" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="spot_id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, hotel_name, hotel_introduce, hotel_level, location, coordinate, phone, index_img,
+        wifi, bath, park, restaurant, price, spot_id
+    </sql>
+
+
+    <select id="query" resultMap="BaseResultMap" parameterType="cn.edu.hlju.tour.entity.Hotel">
+        select
+        <include refid="Base_Column_List"/>
+        from hotel
+        <where>
+            1 = 1
+            <if test="id != null">
+                and id = #{id,jdbcType=BIGINT}
+            </if>
+            <if test="hotelName != null">
+                and hotel_name = #{hotelName,jdbcType=VARCHAR}
+            </if>
+            <if test="hotelIntroduce != null">
+                and hotel_introduce = #{hotelIntroduce,jdbcType=VARCHAR}
+            </if>
+            <if test="hotelLevel != null">
+                and hotel_level = #{hotelLevel,jdbcType=VARCHAR}
+            </if>
+            <if test="location != null">
+                and location = #{location,jdbcType=VARCHAR}
+            </if>
+            <if test="coordinate != null">
+                and coordinate = #{coordinate,jdbcType=VARCHAR}
+            </if>
+            <if test="phone != null">
+                and phone = #{phone,jdbcType=VARCHAR}
+            </if>
+            <if test="indexImg != null">
+                and index_img = #{indexImg,jdbcType=VARCHAR}
+            </if>
+            <if test="wifi != null">
+                and wifi =  #{wifi,jdbcType=VARCHAR}
+            </if>
+            <if test="bath != null">
+                and bath = #{bath,jdbcType=VARCHAR}
+            </if>
+            <if test="park != null">
+                and park = #{park,jdbcType=VARCHAR}
+            </if>
+            <if test="restaurant != null">
+                and restaurant = #{restaurant,jdbcType=VARCHAR}
+            </if>
+            <if test="price != null">
+                and price = #{price,jdbcType=VARCHAR}
+            </if>
+            <if test="spotId != null">
+                and spot_id = #{spotId,jdbcType=BIGINT}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from hotel
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from hotel
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="cn.edu.hlju.tour.entity.Hotel">
+        insert into hotel (id, hotel_name, hotel_introduce,
+        hotel_level, location, coordinate,
+        phone, index_img, wifi,
+        bath, park, restaurant,
+        price, spot_id)
+        values (#{id,jdbcType=BIGINT}, #{hotelName,jdbcType=VARCHAR}, #{hotelIntroduce,jdbcType=VARCHAR},
+        #{hotelLevel,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{coordinate,jdbcType=VARCHAR},
+        #{phone,jdbcType=VARCHAR}, #{indexImg,jdbcType=VARCHAR}, #{wifi,jdbcType=VARCHAR},
+        #{bath,jdbcType=VARCHAR}, #{park,jdbcType=VARCHAR}, #{restaurant,jdbcType=VARCHAR},
+        #{price,jdbcType=VARCHAR}, #{spotId,jdbcType=BIGINT})
+    </insert>
+    <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.Hotel">
+        insert into hotel
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="hotelName != null">
+                hotel_name,
+            </if>
+            <if test="hotelIntroduce != null">
+                hotel_introduce,
+            </if>
+            <if test="hotelLevel != null">
+                hotel_level,
+            </if>
+            <if test="location != null">
+                location,
+            </if>
+            <if test="coordinate != null">
+                coordinate,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="indexImg != null">
+                index_img,
+            </if>
+            <if test="wifi != null">
+                wifi,
+            </if>
+            <if test="bath != null">
+                bath,
+            </if>
+            <if test="park != null">
+                park,
+            </if>
+            <if test="restaurant != null">
+                restaurant,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="spotId != null">
+                spot_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="hotelName != null">
+                #{hotelName,jdbcType=VARCHAR},
+            </if>
+            <if test="hotelIntroduce != null">
+                #{hotelIntroduce,jdbcType=VARCHAR},
+            </if>
+            <if test="hotelLevel != null">
+                #{hotelLevel,jdbcType=VARCHAR},
+            </if>
+            <if test="location != null">
+                #{location,jdbcType=VARCHAR},
+            </if>
+            <if test="coordinate != null">
+                #{coordinate,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="indexImg != null">
+                #{indexImg,jdbcType=VARCHAR},
+            </if>
+            <if test="wifi != null">
+                #{wifi,jdbcType=VARCHAR},
+            </if>
+            <if test="bath != null">
+                #{bath,jdbcType=VARCHAR},
+            </if>
+            <if test="park != null">
+                #{park,jdbcType=VARCHAR},
+            </if>
+            <if test="restaurant != null">
+                #{restaurant,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=VARCHAR},
+            </if>
+            <if test="spotId != null">
+                #{spotId,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hlju.tour.entity.Hotel">
+        update hotel
+        <set>
+            <if test="hotelName != null">
+                hotel_name = #{hotelName,jdbcType=VARCHAR},
+            </if>
+            <if test="hotelIntroduce != null">
+                hotel_introduce = #{hotelIntroduce,jdbcType=VARCHAR},
+            </if>
+            <if test="hotelLevel != null">
+                hotel_level = #{hotelLevel,jdbcType=VARCHAR},
+            </if>
+            <if test="location != null">
+                location = #{location,jdbcType=VARCHAR},
+            </if>
+            <if test="coordinate != null">
+                coordinate = #{coordinate,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                phone = #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="indexImg != null">
+                index_img = #{indexImg,jdbcType=VARCHAR},
+            </if>
+            <if test="wifi != null">
+                wifi = #{wifi,jdbcType=VARCHAR},
+            </if>
+            <if test="bath != null">
+                bath = #{bath,jdbcType=VARCHAR},
+            </if>
+            <if test="park != null">
+                park = #{park,jdbcType=VARCHAR},
+            </if>
+            <if test="restaurant != null">
+                restaurant = #{restaurant,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=VARCHAR},
+            </if>
+            <if test="spotId != null">
+                spot_id = #{spotId,jdbcType=BIGINT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="cn.edu.hlju.tour.entity.Hotel">
+    update hotel
+    set hotel_name = #{hotelName,jdbcType=VARCHAR},
+      hotel_introduce = #{hotelIntroduce,jdbcType=VARCHAR},
+      hotel_level = #{hotelLevel,jdbcType=VARCHAR},
+      location = #{location,jdbcType=VARCHAR},
+      coordinate = #{coordinate,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      index_img = #{indexImg,jdbcType=VARCHAR},
+      wifi = #{wifi,jdbcType=VARCHAR},
+      bath = #{bath,jdbcType=VARCHAR},
+      park = #{park,jdbcType=VARCHAR},
+      restaurant = #{restaurant,jdbcType=VARCHAR},
+      price = #{price,jdbcType=VARCHAR},
+      spot_id = #{spotId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

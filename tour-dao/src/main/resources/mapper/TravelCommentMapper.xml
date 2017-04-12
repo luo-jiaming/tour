@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.hlju.tour.dao.TravelCommentMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.hlju.tour.entity.TravelComment">
+        <constructor>
+            <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="travel_id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="content" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="from_uid" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="to_uid" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, travel_id, content, from_uid, to_uid, time
+  </sql>
+
+    <select id="selectCommentByTravelId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from travel_comment
+        where travel_id = #{id,jdbcType=BIGINT} order by time DESC
+    </select>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from travel_comment
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from travel_comment
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="cn.edu.hlju.tour.entity.TravelComment">
+    insert into travel_comment (id, travel_id, content, 
+      from_uid, to_uid, time
+      )
+    values (#{id,jdbcType=BIGINT}, #{travelId,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, 
+      #{fromUid,jdbcType=BIGINT}, #{toUid,jdbcType=BIGINT}, #{time,jdbcType=TIMESTAMP}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.TravelComment">
+        insert into travel_comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="travelId != null">
+                travel_id,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="fromUid != null">
+                from_uid,
+            </if>
+            <if test="toUid != null">
+                to_uid,
+            </if>
+            <if test="time != null">
+                time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="travelId != null">
+                #{travelId,jdbcType=BIGINT},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="fromUid != null">
+                #{fromUid,jdbcType=BIGINT},
+            </if>
+            <if test="toUid != null">
+                #{toUid,jdbcType=BIGINT},
+            </if>
+            <if test="time != null">
+                #{time,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hlju.tour.entity.TravelComment">
+        update travel_comment
+        <set>
+            <if test="travelId != null">
+                travel_id = #{travelId,jdbcType=BIGINT},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="fromUid != null">
+                from_uid = #{fromUid,jdbcType=BIGINT},
+            </if>
+            <if test="toUid != null">
+                to_uid = #{toUid,jdbcType=BIGINT},
+            </if>
+            <if test="time != null">
+                time = #{time,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="cn.edu.hlju.tour.entity.TravelComment">
+    update travel_comment
+    set travel_id = #{travelId,jdbcType=BIGINT},
+      content = #{content,jdbcType=VARCHAR},
+      from_uid = #{fromUid,jdbcType=BIGINT},
+      to_uid = #{toUid,jdbcType=BIGINT},
+      time = #{time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

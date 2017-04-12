@@ -1,0 +1,107 @@
+.comment-title {
+    font-size: 20px;
+    color: #333;
+    margin-top: 20px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.comment-active {
+    border-bottom: 3px solid #ff9d00;
+    color: #ff9d00;
+}
+
+.comment-body {
+    width: 100%;
+    height: auto;
+}
+
+.comment-page {
+    width: 100%;
+    height: 100px;
+}
+
+.comment-page a {
+    cursor: pointer;
+}
+
+.comment-page .page-total {
+    margin-top: 3%;
+    float: right;
+    margin-left: 1%;
+}
+
+.comment-page .page-current {
+    margin-top: 3%;
+    float: right;
+    margin-left: 1%;
+}
+
+.comment-page .page-content {
+    float: right;
+    margin-left: 3%;
+}
+
+.comment-add {
+    width: 100%;
+    height: 59px;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.comment-add-title {
+    text-align: center;
+    width: 100px;
+    height: 58px;
+    padding-top: 18px;
+    cursor: pointer;
+}
+
+.comment-add-avatar {
+    float: left;
+    margin-top: 30px;
+}
+
+.comment-add-content {
+    float: left;
+    margin: 30px;
+    width: 60%;
+}
+
+.comment-add-content input {
+    margin-top: 10px;
+    float: right;
+}
+
+.media {
+    padding: 10px 0 20px 70px;
+    border-bottom: 1px dashed #dedede;
+}
+
+.media-left img {
+    width: 64px;
+    height: 64px;
+}
+
+.media-body {
+    color: #999;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 23px;
+    width: 100%;
+}
+
+.media-heading {
+    color: #ff9d00;
+    margin-bottom: 10px;
+}
+
+.comment-operate {
+    padding-left: 95%;
+}
+
+.comment-operate span:hover {
+    color:  #ff9d00;
+    cursor: pointer;
+}

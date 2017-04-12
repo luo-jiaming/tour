@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tour-web:war">
+    <output-path>$PROJECT_DIR$/tour-web/target</output-path>
+    <root id="archive" name="tour-web.war">
+      <element id="artifact" artifact-name="tour-web:war exploded" />
+    </root>
+  </artifact>
+</component>

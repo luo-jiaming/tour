@@ -1,0 +1,88 @@
+
+.login-modal {
+    z-index: 9999;
+    position: fixed;
+    top: 28%;
+    left: 35%;
+    width: 430px;
+    height: 250px;
+    border-radius: 5px;
+    border: solid 1px #bbbbbb;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #bbbbbb;
+    display: none;
+}
+
+.login-close {
+    width: 10px;
+    height: 10px;
+    margin-top: 15px;
+    margin-right: 20px;
+    float: right;
+    font-size: 15px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.login-close:hover {
+    opacity: 0.7;
+}
+
+.login-form {
+    float: left;
+    width: 250px;
+    height: 230px;
+    margin: 10px 0 0 15px;
+}
+
+.login-img {
+    float: right;
+    width: 130px;
+    height: 180px;
+    margin: 20px 20px 0 0;
+}
+
+.login-form .login-title {
+    height: 40px;
+    padding: 10px 20px 0px 10px;
+    color: #ff9d00;
+}
+
+.login-form .login-input-email {
+    height: 40px;
+    padding: 10px 20px 0px 10px;
+}
+
+.login-form .login-input-password {
+    height: 40px;
+    padding: 25px 20px 0px 10px;
+}
+
+.login-form .login-btn {
+    margin-top: 20px;
+}
+
+.login-form .login-btn .forget-password {
+    float: left;
+    padding-top: 10px;
+    margin-left: 20px;
+}
+
+.login-form .login-btn .forget-password a {
+    color: #ff9d00;
+    font-size: small;
+}
+
+.login-form .login-btn .sign-in {
+    float: right;
+    margin-right: 20px;
+    background-color: #ff9d00;
+}
+
+.err-tip {
+    height: 15px;
+    color: red;
+    font-size: 13px;
+    text-align: center;
+    padding-top: 3px;
+}

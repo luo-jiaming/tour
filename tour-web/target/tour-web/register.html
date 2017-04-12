@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/holder.min.js"></script>
+    <style>
+        body {
+            background-image: url(resources/img/regist-img.jpeg);
+            background-size: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+
+        .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+            outline: none;
+        }
+
+        .regist-modal {
+            z-index: 9999;
+            position: fixed;
+            top: 20%;
+            left: 36%;
+            width: 350px;
+            height: 445px;
+            border-radius: 5px;
+            border: solid 1px #bbbbbb;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px #bbbbbb;
+        }
+
+        .regist-title {
+            height: 55px;
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        .err-tip {
+            height: 35px;
+            color: red;
+            font-size: 12px;
+            padding-top: 10px;
+        }
+
+        .regist-form {
+            padding-top: 0px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .img-div {
+            width: 96px;
+            height: 33px;
+            float: left;
+            margin-right: 19px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            height: 42px;
+            background-color: #ffa800;
+            color: white;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .submit-btn:hover {
+            background-color: #ffb400;
+            color: white;
+        }
+
+        .btn-default {
+            background-color: #eee;
+        }
+
+    </style>
+    <script>
+
+        $(function () {
+
+            $('#verifyCodeImg').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/tour/verifyCode",
+                    async: false,
+                    success: function () {
+                        $('#verifyCodeImg').attr('src', '/tour/verifyCode?'+ new Date());
+                    }
+                });
+            });
+
+            $('#email-btn').click(function () {
+                if (sendMailValidate()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/tour/confirmVerifyCodeAndEmailExist",
+                        data: $('#form').serialize(),
+                        async: false,
+                        success: function (data) {
+                            if (data == "success") {
+                                $('#tip-content').html('');
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/tour/sendMail",
+                                    data: $('#form').serialize(),
+                                    async: true
+                                });
+                                setTime($('#email-btn'));
+                                return;
+                            }
+                            if (data == "verifyCodeError") {
+                                $('#tip-content').html('验证码错误');
+                                $('#verifyCodeImg').click();
+                                return;
+                            }
+                            if (data == "emailExist") {
+                                $('#tip-content').html('该邮箱已被注册');
+                                $('#verifyCodeImg').click();
+                                return;
+                            }
+                        }
+                    });
+
+                }
+            });
+
+            $('#regist').click(function () {
+                if (validate()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/tour/confirmEmailCode",
+                        data: $('#form').serialize(),
+                        async: false,
+                        success: function (data) {
+                            if (data == "success") {
+                                $('#tip-content').html('');
+                                $('#form').submit();
+                            } else if (data == "emailCodeError") {
+                                $('#tip-content').html('邮箱验证码错误');
+                            }
+                        }
+                    });
+                }
+            });
+
+        });
+
+        var countdown = 60;
+        function setTime(obj) {
+            if (countdown == 0) {
+                obj.attr("disabled", false);
+                obj.val("获取验证码");
+                countdown = 60;
+                return;
+            } else {
+                obj.attr("disabled", true);
+                obj.val("重新发送(" + countdown + ")");
+                countdown--;
+            }
+            setTimeout(function() {
+                        setTime(obj) }
+                    ,1000)
+        }
+
+        function sendMailValidate() {
+            if ($('#email').val() == '') {
+                $('#tip-content').html('请输入邮箱账号');
+                return false;
+            }
+            if ($('#nick').val() == '') {
+                $('#tip-content').html('请输入昵称');
+                return false;
+            }
+            if ($('#password').val() == '') {
+                $('#tip-content').html('请输入密码');
+                return false;
+            }
+            if ($('#password').val() != $('#repassword').val()) {
+                $('#tip-content').html('密码不一致');
+                return false;
+            }
+            if ($('#verifyCode').val() == '') {
+                $('#tip-content').html('请输入验证码');
+                return false;
+            }
+            return true;
+        }
+
+        function validate() {
+            if (!sendMailValidate()) {
+                return false;
+            }
+            if ($('#emailCode').val() == '') {
+                $('#tip-content').html('请输入邮箱验证码');
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="panel panel-default regist-modal">
+        <div class="panel-heading regist-title">账号注册</div>
+
+        <div class="panel-body regist-form">
+
+            <div class="err-tip">
+                <span id="tip-content"></span>
+            </div>
+
+            <form id="form" action="/tour/regist" method="post">
+
+                <input type="hidden" id="avatar" name="avatar" value="/tour/resources/img/default.gif" />
+
+                <div class="form-group">
+                    <input class="form-control" type="text" id="email" placeholder="您的邮箱" name="email"/>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" id="nick" placeholder="您的名号" name="nick"/>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" placeholder="您的密码" name="password">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" id="repassword" placeholder="确认密码" name="repassword">
+                </div>
+
+                <div class="form-group">
+                    <div class="form-inline">
+                        <div class="img-div">
+                            <img id="verifyCodeImg" src="verifyCode" alt="" name="verifyCodeImg" />
+                        </div>
+                        <input class="form-control" type="text" id="verifyCode" placeholder="验证码" name="verifyCode"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-inline">
+                        <div class="img-div">
+                            <input type="button" class="btn btn-default" id="email-btn" value="获取验证码" />
+                        </div>
+                        <input class="form-control" type="text" id="emailCode" placeholder="邮箱验证码" name="emailCode"/>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="button" id="regist" class="btn submit-btn btn-warning" value="完成注册" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

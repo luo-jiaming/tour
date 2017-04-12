@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.hlju.tour.dao.RoomTypeMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.hlju.tour.entity.RoomType">
+        <constructor>
+            <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="type_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="remark" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="index_img" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="price" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="hotel_id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, type_name, remark, index_img, price, hotel_id
+    </sql>
+
+    <select id="selectByHotelId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from room_type
+        where hotel_id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from room_type
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from room_type
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="cn.edu.hlju.tour.entity.RoomType">
+        insert into room_type (id, type_name, remark,
+        index_img, price, hotel_id
+        )
+        values (#{id,jdbcType=BIGINT}, #{typeName,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+        #{indexImg,jdbcType=VARCHAR}, #{price,jdbcType=VARCHAR}, #{hotelId,jdbcType=BIGINT}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.RoomType">
+        insert into room_type
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="typeName != null">
+                type_name,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="indexImg != null">
+                index_img,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="hotelId != null">
+                hotel_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="typeName != null">
+                #{typeName,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="indexImg != null">
+                #{indexImg,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=VARCHAR},
+            </if>
+            <if test="hotelId != null">
+                #{hotelId,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hlju.tour.entity.RoomType">
+        update room_type
+        <set>
+            <if test="typeName != null">
+                type_name = #{typeName,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="indexImg != null">
+                index_img = #{indexImg,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=VARCHAR},
+            </if>
+            <if test="hotelId != null">
+                hotel_id = #{hotelId,jdbcType=BIGINT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="cn.edu.hlju.tour.entity.RoomType">
+    update room_type
+    set type_name = #{typeName,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      index_img = #{indexImg,jdbcType=VARCHAR},
+      price = #{price,jdbcType=VARCHAR},
+      hotel_id = #{hotelId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

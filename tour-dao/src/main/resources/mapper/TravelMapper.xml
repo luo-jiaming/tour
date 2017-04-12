@@ -1,0 +1,260 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.hlju.tour.dao.TravelMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.hlju.tour.entity.Travel" >
+        <constructor >
+            <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+            <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="spot_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+            <arg column="time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <arg column="img" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="user_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+            <arg column="status" jdbcType="BIGINT" javaType="java.lang.Long" />
+        </constructor>
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="cn.edu.hlju.tour.entity.Travel" >
+        <constructor >
+            <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+            <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="spot_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+            <arg column="time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <arg column="img" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="user_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+            <arg column="status" jdbcType="BIGINT" javaType="java.lang.Long" />
+            <arg column="content" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
+        </constructor>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+      id, title, spot_id, time, img, user_id, status
+    </sql>
+    <sql id="Blob_Column_List">
+      content
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from travel
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectLimitOne" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from travel
+        where status = 1 limit #{num, jdbcType=BIGINT}, 1
+    </select>
+
+    <select id="selectBySpotIdLimitOne" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from travel
+        where spot_id = #{id,jdbcType=BIGINT} and status = 1 limit #{num, jdbcType=BIGINT}, 1
+    </select>
+
+    <select id="total" resultType="java.lang.Long">
+        select
+        count(*)
+        from travel
+        where status = 1
+    </select>
+
+    <select id="totalBySpotId" resultType="java.lang.Long">
+        select
+        count(*)
+        from travel
+        where spot_id = #{id,jdbcType=BIGINT} and status = 1
+    </select>
+
+    <select id="query" resultMap="ResultMapWithBLOBs" parameterType="cn.edu.hlju.tour.entity.Travel">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from travel
+        <where>
+            status = 1
+            <if test="id != null" >
+                and id = #{id,jdbcType=BIGINT}
+            </if>
+            <if test="title != null">
+                and title = #{title,jdbcType=VARCHAR}
+            </if>
+            <if test="spotId != null">
+                and spot_id = #{spotId,jdbcType=BIGINT}
+            </if>
+            <if test="time != null">
+                and time = #{time,jdbcType=TIMESTAMP}
+            </if>
+            <if test="img != null">
+                and img = #{img,jdbcType=VARCHAR}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId,jdbcType=BIGINT}
+            </if>
+            <if test="status != null" >
+                and status = #{status,jdbcType=BIGINT}
+            </if>
+            <if test="content != null">
+                and content = #{content,jdbcType=LONGVARCHAR}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryTotal" resultType="java.lang.Long" parameterType="cn.edu.hlju.tour.entity.Travel">
+        select count(1)
+        from travel
+        <where>
+            status = 1
+            <if test="id != null" >
+                and id = #{id,jdbcType=BIGINT}
+            </if>
+            <if test="title != null">
+                and title = #{title,jdbcType=VARCHAR}
+            </if>
+            <if test="spotId != null">
+                and spot_id = #{spotId,jdbcType=BIGINT}
+            </if>
+            <if test="time != null">
+                and time = #{time,jdbcType=TIMESTAMP}
+            </if>
+            <if test="img != null">
+                and img = #{img,jdbcType=VARCHAR}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId,jdbcType=BIGINT}
+            </if>
+            <if test="status != null" >
+                and status = #{status,jdbcType=BIGINT}
+            </if>
+            <if test="content != null">
+                and content = #{content,jdbcType=LONGVARCHAR}
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+      delete from travel
+      where id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" parameterType="cn.edu.hlju.tour.entity.Travel" >
+        insert into travel (id, title, spot_id,
+        time, img, user_id,
+        status, content)
+        values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{spotId,jdbcType=BIGINT},
+        #{time,jdbcType=TIMESTAMP}, #{img,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT},
+        #{status,jdbcType=BIGINT}, #{content,jdbcType=LONGVARCHAR})
+    </insert>
+
+    <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.Travel" useGeneratedKeys="true" keyProperty="id">
+        insert into travel
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="title != null" >
+                title,
+            </if>
+            <if test="spotId != null" >
+                spot_id,
+            </if>
+            <if test="time != null" >
+                time,
+            </if>
+            <if test="img != null" >
+                img,
+            </if>
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="status != null" >
+                status,
+            </if>
+            <if test="content != null" >
+                content,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="title != null" >
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="spotId != null" >
+                #{spotId,jdbcType=BIGINT},
+            </if>
+            <if test="time != null" >
+                #{time,jdbcType=TIMESTAMP},
+            </if>
+            <if test="img != null" >
+                #{img,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null" >
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="status != null" >
+                #{status,jdbcType=BIGINT},
+            </if>
+            <if test="content != null" >
+                #{content,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hlju.tour.entity.Travel">
+        update travel
+        <set>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="spotId != null">
+                spot_id = #{spotId,jdbcType=BIGINT},
+            </if>
+            <if test="time != null">
+                time = #{time,jdbcType=TIMESTAMP},
+            </if>
+            <if test="img != null">
+                img = #{img,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=BIGINT},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.edu.hlju.tour.entity.Travel">
+        update travel
+        set title = #{title,jdbcType=VARCHAR},
+        spot_id = #{spotId,jdbcType=BIGINT},
+        time = #{time,jdbcType=TIMESTAMP},
+        img = #{img,jdbcType=VARCHAR},
+        user_id = #{userId,jdbcType=BIGINT},
+        status = #{status,jdbcType=BIGINT},
+        content = #{content,jdbcType=LONGVARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="cn.edu.hlju.tour.entity.Travel">
+        update travel
+        set title = #{title,jdbcType=VARCHAR},
+          spot_id = #{spotId,jdbcType=BIGINT},
+          time = #{time,jdbcType=TIMESTAMP},
+          img = #{img,jdbcType=VARCHAR},
+          user_id = #{userId,jdbcType=BIGINT},
+          status = #{status,jdbcType=BIGINT}
+        where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

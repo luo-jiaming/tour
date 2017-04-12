@@ -1,0 +1,160 @@
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+    outline: none;
+}
+
+.btn-style {
+    background-color: #ff9d00;
+    color: white;
+}
+
+.btn-style:hover {
+    background-color: #ff8d00;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    out-line: none;
+}
+
+a:link {
+    text-decoration: none;
+    out-line: none;
+}
+
+/* 未访问的链接 */
+
+a:visited {
+    text-decoration: none;
+    out-line: none;
+}
+
+/* 已访问的链接 */
+
+a:hover {
+    text-decoration: none;
+    out-line: none;
+}
+
+/* 当有鼠标悬停在链接上 */
+
+a:active {
+    text-decoration: none;
+    out-line: none;
+}
+
+.header-content {
+    background: #ffffff;
+    width: 100%;
+    height: 58px;
+    box-shadow: 0 0 10px #aaaaaa;
+}
+
+.header-wrap {
+    width: 1000px;
+    height: 58px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+}
+
+.head-logo {
+    float: left;
+    padding: 13px 0px;
+    width: 136px;
+    height: 58px;
+}
+
+.head-nav {
+    float: left;
+    width: 600px;
+    height: 58px;
+    background-color: #ffffff;
+    margin-left: 40px;
+}
+
+.head-nav a {
+    color: #0f0f0f;
+    text-decoration: none;
+}
+
+.head-nav-index {
+    text-align: center;
+    width: 60px;
+    height: 58px;
+    float: left;
+    padding-top: 18px;
+    cursor: pointer;
+}
+
+.head-nav-travel {
+    text-align: center;
+    width: 88px;
+    height: 58px;
+    float: left;
+    padding-top: 18px;
+    cursor: pointer;
+}
+
+.head-nav-hotel {
+    text-align: center;
+    width: 60px;
+    height: 58px;
+    float: left;
+    padding-top: 18px;
+    cursor: pointer;
+}
+
+.head-nav-addr {
+    text-align: center;
+    width: 60px;
+    height: 58px;
+    float: left;
+    padding-top: 18px;
+    cursor: pointer;
+}
+
+.head-nav-active, .head-nav-active a {
+    background-color: #ff9d00;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.head-nav-hover {
+    text-decoration: none;
+    color: #ff9d00;
+    border-bottom: 3px solid #ff9d00;
+}
+
+.head-nav-hover a {
+    text-decoration: none;
+    color: #ff9d00;
+}
+
+.login-out {
+    float: right;
+    color: #c9c9c9;
+    text-align: right;
+    width: 150px;
+    height: 58px;
+    padding-top: 18px;
+}
+
+.login-out a {
+    font-weight: bolder;
+    color: #ff9d00;
+    text-decoration: none;
+}
+
+.login-out .split {
+    display: inline-block;
+    margin: 0 10px;
+    width: 1px;
+    height: 14px;
+    background-color: #c9c9c9;
+    overflow: hidden;
+    vertical-align: -2px;
+    cursor: default;
+}
