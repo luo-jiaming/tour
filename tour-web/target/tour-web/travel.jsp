@@ -95,6 +95,10 @@
             font-size: 13px;
         }
 
+        .content-div {
+            margin-bottom: 50px;
+        }
+
         .travel-content {
             width: 70%;
             height: auto;
@@ -117,7 +121,7 @@
             float: right;
             height: 520px;
             width: 24%;
-            margin-top: 50px;
+            /*margin-top: 50px;*/
         }
 
         .travel-recommend p {
@@ -355,7 +359,7 @@
                     $.ajax({
                         type: "POST",
                         url: "/tour/addTravelComment",
-                        data: {"travelId": $('#travelid').val(), "content": content},
+                        data: {"travelId": $('#travelid').val(), "content": content, "toUid":$('#touid').val()},
                         async: true,
                         success: function (data) {
                             $('.tip').html("感谢您的评论");
@@ -402,7 +406,7 @@
 
 <div class="split"></div>
 
-<div class="container">
+<div class="container content-div">
 
     <div class="travel-content">
         ${json.travel.content}

@@ -185,7 +185,8 @@
             color: #ff9d00;
         }
 
-        .travel-operate {
+        .travel-operate:hover {
+            color:  #ff9d00;
             cursor: pointer;
         }
 
