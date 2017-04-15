@@ -33,7 +33,12 @@
             <span>评价</span>
         </div>
         <div class='media-left comment-add-avatar'>
-            <img src='${user.avatar}' class='img-circle'>
+            <c:if test="${user != null}">
+                <img src='${user.avatar}' class='img-circle'>
+            </c:if>
+            <c:if test="${user == null}">
+                <img src='resources/img/default.gif' class='img-circle'>
+            </c:if>
         </div>
         <div class="comment-add-content">
             <textarea id="content" class="form-control" rows="10" placeholder="说点什么吧"></textarea>

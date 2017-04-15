@@ -327,6 +327,13 @@
          */
         function addCommentBtnClick() {
             $('#addCommentBtn').click(function () {
+                var userId = '${user.id}';
+                if (userId == '') {
+                    $('.tip').html("您还没有登录哦");
+                    $('#modal').modal('show');
+                    $('#content').val("");
+                    return;
+                }
                 var content = $.trim($('#content').val());
                 if (validateContent()) {
                     $.ajax({
