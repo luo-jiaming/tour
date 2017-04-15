@@ -249,12 +249,14 @@
             var comment = "";
             var maplist = data.maplist;
             for (var i = 0; i < maplist.length; i++) {
+                var newDate = new Date(maplist[i].comment.time);
                 comment += "<div class='media'>" +
                         "<div class='media-left'>" +
                         "<img src='" + maplist[i].user.avatar + "' class='img-circle'>" +
                         "</div>" +
                         "<div class='media-body'>" +
                         "<h5 class='media-heading'>" + maplist[i].user.nick + "</h5>" + maplist[i].comment.content +
+                        "<div class='comment-time'>" + newDate.toLocaleString() + "</div>" +
                         "</div>" +
                         "</div>";
             }

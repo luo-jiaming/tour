@@ -14,10 +14,8 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
 
 /**
  * Created by Sole on 2017/3/31.
@@ -100,6 +98,14 @@ public class SpotServiceImpl implements SpotService {
     @Override
     public List<Spot> getAllSpot() {
         return spotMapper.selectAll();
+    }
+
+    @Override
+    public void saveComment(SpotComment comment, HttpServletRequest request) {
+        User user = (User)request.getSession().getAttribute("user");
+        comment.setUserId(user.getId());
+        comment.setTime(new Date());
+        spotCommentMapper.insertSelective(comment);
     }
 
 }

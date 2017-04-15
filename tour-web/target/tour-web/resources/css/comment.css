@@ -75,7 +75,7 @@
 }
 
 .media {
-    padding: 10px 0 20px 70px;
+    padding: 10px 0px 10px 50px;
     border-bottom: 1px dashed #dedede;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .media-body {
-    color: #999;
+    color: #666;
     font-size: 13px;
     letter-spacing: 1px;
     line-height: 23px;
@@ -104,4 +104,11 @@
 .comment-operate span:hover {
     color:  #ff9d00;
     cursor: pointer;
+}
+
+.comment-time {
+    margin-top: 5px;
+    font-size: 5px;
+    color: #999;
+    font-weight: 300;
 }

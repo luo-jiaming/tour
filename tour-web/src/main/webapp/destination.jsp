@@ -159,7 +159,24 @@
         $(function () {
 
             initHeadAddr();
+            spotBtnClick();
+            ajaxFirstComment();
+            addCommentBtnClick();
 
+        });
+
+        /**
+         * 更新顶部导航栏
+         */
+        function initHeadAddr() {
+            $('.head-nav').find('div').removeClass('head-nav-active');
+            $('.head-nav').find('.head-nav-addr').addClass('head-nav-active');
+        }
+
+        /**
+         * 景点查询按钮
+         */
+        function spotBtnClick() {
             $('#spotbtn').click(function() {
                 var spotname = $.trim($('#spotname').val());
                 if (validateSpot()) {
@@ -181,18 +198,6 @@
                     });
                 }
             });
-
-            //评论
-            ajaxFirstComment();
-
-        });
-
-        /**
-         * 更新顶部导航栏
-         */
-        function initHeadAddr() {
-            $('.head-nav').find('div').removeClass('head-nav-active');
-            $('.head-nav').find('.head-nav-addr').addClass('head-nav-active');
         }
 
         /**
@@ -232,12 +237,14 @@
             var comment = "";
             var maplist = data.maplist;
             for (var i = 0; i < maplist.length; i++) {
+                var newDate = new Date(maplist[i].comment.time);
                 comment += "<div class='media'>" +
                         "<div class='media-left'>" +
                         "<img src='" + maplist[i].user.avatar + "' class='img-circle'>" +
                         "</div>" +
                         "<div class='media-body'>" +
                         "<h5 class='media-heading'>" + maplist[i].user.nick + "</h5>" + maplist[i].comment.content +
+                        "<div class='comment-time'>" + newDate.toLocaleString() + "</div>" +
                         "</div>" +
                         "</div>";
             }
@@ -303,6 +310,51 @@
                     });
                 }
             });
+        }
+
+        /**
+         * 添加评论
+         */
+        function addCommentBtnClick() {
+            $('#addCommentBtn').click(function () {
+                var userId = '${user.id}';
+                if (userId == '') {
+                    $('.tip').html("您还没有登录哦");
+                    $('#modal').modal('show');
+                    $('#content').val("");
+                    return;
+                }
+                var content = $.trim($('#content').val());
+                if (validateContent()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/tour/addSpotComment",
+                        data: {"spotId": $('#spotid').val(), "content": content},
+                        async: true,
+                        success: function (data) {
+                            $('.tip').html("感谢您的评论");
+                            $('#modal').modal('show');
+                            $('#content').val("");
+                            ajaxFirstComment();
+                        }
+                    });
+                }
+            });
+        }
+
+        /**
+         * 验证评论输入
+         * private
+         */
+        function validateContent() {
+            var content = $.trim($('#content').val());
+            if (content == null || content == '') {
+                $('.tip').html("客官，请输入评论内容");
+                $('#modal').modal('show');
+                $('#content').val("");
+                return false;
+            }
+            return true;
         }
 
     </script>

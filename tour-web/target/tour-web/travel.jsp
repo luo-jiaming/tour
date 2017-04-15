@@ -96,7 +96,8 @@
         }
 
         .content-div {
-            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #e5e5e5;
         }
 
         .travel-content {
@@ -121,7 +122,7 @@
             float: right;
             height: 520px;
             width: 24%;
-            /*margin-top: 50px;*/
+            margin-top: 50px;
         }
 
         .travel-recommend p {
@@ -234,19 +235,21 @@
             var userId = "${user.id}";            //登录用户
             var authorId = "${json.user.id}";     //游记作者
             for (var i = 0; i < maplist.length; i++) {
-                var trash = "";
+                var trashDiv = "";
+                var newDate = new Date(maplist[i].comment.time);
                 if (userId == authorId) {
-                    trash += "<div class='comment-operate'><span class='glyphicon glyphicon-trash'><input type='hidden' value='" + maplist[i].comment.id + "' /></span></div>";
+                    trashDiv += "<div class='comment-operate'><span class='glyphicon glyphicon-trash'><input type='hidden' value='" + maplist[i].comment.id + "' /></span></div>";
                 }
                 comment += "<div class='media'>" +
-                        "<div class='media-left '>" +
-                        "<img src='" + maplist[i].user.avatar + "' class='img-circle'>" +
-                        "</div>" +
-                        "<div class='media-body'>" +
-                        "<h5 class='media-heading'>" + maplist[i].user.nick + "</h5>" + maplist[i].comment.content +
-                        trash +
-                        "</div>" +
-                        "</div>";
+                                "<div class='media-left '>" +
+                                    "<img src='" + maplist[i].user.avatar + "' class='img-circle'>" +
+                                "</div>" +
+                                "<div class='media-body'>" +
+                                    "<h5 class='media-heading'>" + maplist[i].user.nick + "</h5>" + maplist[i].comment.content +
+                                    trashDiv +
+                                    "<div class='comment-time'>" + newDate.toLocaleString() + "</div>" +
+                                "</div>" +
+                            "</div>";
             }
             $('.comment-body').empty();
             $('.comment-body').append(comment);
@@ -354,6 +357,13 @@
          */
         function addCommentBtnClick() {
             $('#addCommentBtn').click(function () {
+                var userId = '${user.id}';
+                if (userId == '') {
+                    $('.tip').html("您还没有登录哦");
+                    $('#modal').modal('show');
+                    $('#content').val("");
+                    return;
+                }
                 var content = $.trim($('#content').val());
                 if (validateContent()) {
                     $.ajax({

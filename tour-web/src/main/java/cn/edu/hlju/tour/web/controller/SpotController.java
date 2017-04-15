@@ -2,6 +2,7 @@ package cn.edu.hlju.tour.web.controller;
 
 import cn.edu.hlju.tour.core.SpotService;
 import cn.edu.hlju.tour.entity.Spot;
+import cn.edu.hlju.tour.entity.SpotComment;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,6 +57,12 @@ public class SpotController {
         List<Spot> list = spotService.getAllSpot();
         request.setAttribute("spotlist", list);
         return "forward:spots.jsp";
+    }
+
+    @RequestMapping(value = "addSpotComment")
+    @ResponseBody
+    public void saveComment(SpotComment comment, HttpServletRequest request) {
+        spotService.saveComment(comment, request);
     }
 
 }
