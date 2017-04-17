@@ -196,14 +196,14 @@
 
         /**
          * 验证评论输入
-         * private
+         * private  obj=$('')
          */
-        function validateContent() {
-            var content = $.trim($('#content').val());
+        function validateContent(obj) {
+            var content = $.trim(obj.val());
             if (content == null || content == '') {
                 $('.tip').html("客官，请输入评论内容");
                 $('#modal').modal('show');
-                $('#content').val("");
+                obj.val("");
                 return false;
             }
             return true;
@@ -237,23 +237,99 @@
             for (var i = 0; i < maplist.length; i++) {
                 var trashDiv = "";
                 var newDate = new Date(maplist[i].comment.time);
-                if (userId == authorId) {
+                var applyContent = "";
+                if (maplist[i].applyComment != undefined) {     //判断是否是回复的评论
+                    var applyDate = new Date(maplist[i].applyComment.time);
+                    applyContent = "<div class='comment-reference'>引用 " + maplist[i].applyUser.nick + " 发表于 " + applyDate.toLocaleString() + " 的回复:</div>";
+                }
+                if (userId == authorId) {                      //判断该游记是否是该用户写的
                     trashDiv += "<div class='comment-operate'><span class='glyphicon glyphicon-trash'><input type='hidden' value='" + maplist[i].comment.id + "' /></span></div>";
                 }
                 comment += "<div class='media'>" +
-                                "<div class='media-left '>" +
+                                "<div class='media-left'>" +
                                     "<img src='" + maplist[i].user.avatar + "' class='img-circle'>" +
                                 "</div>" +
                                 "<div class='media-body'>" +
-                                    "<h5 class='media-heading'>" + maplist[i].user.nick + "</h5>" + maplist[i].comment.content +
-                                    trashDiv +
-                                    "<div class='comment-time'>" + newDate.toLocaleString() + "</div>" +
+                                    "<h5 class='media-heading'>" + maplist[i].user.nick + "</h5>" +
+                                    applyContent +
+                                    maplist[i].comment.content +
+                                    "<div class='comment-time-div'>" +
+                                        "<div class='comment-time'>" + newDate.toLocaleString() + "</div>" +
+                                        trashDiv +
+                                        "<div class='comment-reply'>回复</div>" +
+                                    "</div>" +
+                                    "<div class='comment-reply-div'>" +
+                                        "<input class='touid' type='hidden' value='" + maplist[i].user.id + "' />" +
+                                        "<input class='applycid' type='hidden' value='" + maplist[i].comment.id + "' />" +
+                                        "<textarea class='form-control reply-content' rows='5' placeholder='回复 " + maplist[i].user.nick + " :'></textarea>" +
+                                        "<input type='button' class='btn btn-style btn-warning btn-sm reply' value='回复'>" +
+                                        "<input type='button' class='btn btn-default btn-sm cancel' value='收起'>" +
+                                    "</div>" +
                                 "</div>" +
-                            "</div>";
+                           "</div>";
             }
             $('.comment-body').empty();
             $('.comment-body').append(comment);
             trashClick();
+            reply();
+            cancelBtnClick();
+            replyBtnClick();
+        }
+
+        /**
+         * 点击回复，出现回复输入框
+         */
+        function reply() {
+            $('.comment-reply').each(function() {
+                $(this).click(function() {
+                    $('.cancel').click();
+                    $(this).parent().next().slideDown();
+                    $(this).hide();
+                });
+            });
+        }
+
+        /**
+         * 点击取消按钮时间，恢复之前的样子
+         */
+        function cancelBtnClick() {
+            $(".cancel").each(function() {
+                $(this).click(function() {
+                    $(this).parent().slideUp();
+                    $(this).parent().prev().find('.comment-reply').show();
+                });
+            });
+        }
+
+        /**
+         * 点击回复按钮事件
+         */
+        function replyBtnClick() {
+            $('.reply').each(function() {
+                $(this).click(function() {
+                    if (validateUser()) {
+                        var textarea = $(this).parent().find('textarea');
+                        var content = $.trim(textarea.val());
+                        var touid = $(this).parent().find('.touid');
+                        var applycid = $(this).parent().find('.applycid');
+                        if (validateContent(textarea)) {
+                            $.ajax({
+                                type: "POST",
+                                url: "/tour/addTravelComment",
+                                data: {"travelId": $('#travelid').val(), "content": content, "applyCid": applycid.val()},
+                                async: true,
+                                success: function (data) {
+                                    $('.tip').html("感谢您的评论");
+                                    $('#modal').modal('show');
+                                    $('#content').val("");
+                                    ajaxFirstComment();
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+
         }
 
         /**
@@ -272,6 +348,7 @@
 
         /**
          * 确认删除按钮点击事件
+         * private
          */
         function confirmBtnClick(id) {
             $('#confirm').click(function() {
@@ -288,7 +365,6 @@
                 });
             });
         }
-
 
         /**
          * 设置分页属性
@@ -357,29 +433,39 @@
          */
         function addCommentBtnClick() {
             $('#addCommentBtn').click(function () {
-                var userId = '${user.id}';
-                if (userId == '') {
-                    $('.tip').html("您还没有登录哦");
-                    $('#modal').modal('show');
-                    $('#content').val("");
-                    return;
-                }
-                var content = $.trim($('#content').val());
-                if (validateContent()) {
-                    $.ajax({
-                        type: "POST",
-                        url: "/tour/addTravelComment",
-                        data: {"travelId": $('#travelid').val(), "content": content, "toUid":$('#touid').val()},
-                        async: true,
-                        success: function (data) {
-                            $('.tip').html("感谢您的评论");
-                            $('#modal').modal('show');
-                            $('#content').val("");
-                            ajaxFirstComment();
-                        }
-                    });
+                if (validateUser()) {
+                    var content = $.trim($('#content').val());
+                    if (validateContent($('#content'))) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/tour/addTravelComment",
+                            data: {"travelId": $('#travelid').val(), "content": content},
+                            async: true,
+                            success: function (data) {
+                                $('.tip').html("感谢您的评论");
+                                $('#modal').modal('show');
+                                $('#content').val("");
+                                ajaxFirstComment();
+                            }
+                        });
+                    }
                 }
             });
+        }
+
+        /**
+         * 验证是否用户登录
+         * private
+         */
+        function validateUser() {
+            var userId = '${user.id}';
+            if (userId == '') {
+                $('.tip').html("您还没有登录哦");
+                $('#modal').modal('show');
+                $('#content').val("");
+                return false;
+            }
+            return true;
         }
 
     </script>
@@ -391,7 +477,6 @@
 <%@ include file="/tip.jsp" %>
 
 <input id="travelid" type="hidden" value="${json.travel.id}"/>
-<input id="touid" type="hidden" value="${json.user.id}"/>
 
 <div class="travel-head">
     <img src="${json.travel.img}" />

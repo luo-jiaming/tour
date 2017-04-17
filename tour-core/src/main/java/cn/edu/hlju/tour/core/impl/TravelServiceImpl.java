@@ -216,8 +216,16 @@ public class TravelServiceImpl implements TravelService {
         List<Map> mapList = new ArrayList<>();
         for (TravelComment comment : list) {                                                //评论用户
             Map map = new HashMap();
-            Long userId = comment.getFromUid();
+            Long userId = comment.getUserId();
+            Long applyCid = comment.getApplyCid();
             User user = userMapper.selectByPrimaryKey(userId);
+            if (applyCid != null) {
+                TravelComment applyComment = travelCommentMapper.selectByPrimaryKey(applyCid);
+                Long applyUserId = applyComment.getUserId();
+                User applyUser = userMapper.selectByPrimaryKey(applyUserId);
+                map.put("applyUser", applyUser);
+                map.put("applyComment", applyComment);
+            }
             map.put("comment", comment);
             map.put("user", user);
             mapList.add(map);
@@ -231,7 +239,7 @@ public class TravelServiceImpl implements TravelService {
     @Override
     public void saveComment(TravelComment comment, HttpServletRequest request) {
         User user = (User)request.getSession().getAttribute("user");
-        comment.setFromUid(user.getId());
+        comment.setUserId(user.getId());
         comment.setTime(new Date());
         travelCommentMapper.insertSelective(comment);
     }
