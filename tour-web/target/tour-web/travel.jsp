@@ -209,7 +209,6 @@
             return true;
         }
 
-
         /**
          * 获取第一页comment
          */
@@ -239,11 +238,11 @@
                 var trashDiv = "";
                 var newDate = new Date(maplist[i].comment.time);
                 var applyContent = "";
-                if (maplist[i].applyComment != undefined) {
+                if (maplist[i].applyComment != undefined) {     //判断是否是回复的评论
                     var applyDate = new Date(maplist[i].applyComment.time);
                     applyContent = "<div class='comment-reference'>引用 " + maplist[i].applyUser.nick + " 发表于 " + applyDate.toLocaleString() + " 的回复:</div>";
                 }
-                if (userId == authorId) {
+                if (userId == authorId) {                      //判断该游记是否是该用户写的
                     trashDiv += "<div class='comment-operate'><span class='glyphicon glyphicon-trash'><input type='hidden' value='" + maplist[i].comment.id + "' /></span></div>";
                 }
                 comment += "<div class='media'>" +
@@ -272,8 +271,8 @@
             $('.comment-body').empty();
             $('.comment-body').append(comment);
             trashClick();
-            reply();
             cancelBtnClick();
+            reply();
             replyBtnClick();
         }
 

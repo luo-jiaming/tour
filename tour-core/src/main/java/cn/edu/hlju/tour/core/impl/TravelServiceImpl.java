@@ -3,10 +3,7 @@ package cn.edu.hlju.tour.core.impl;
 import cn.edu.hlju.tour.common.utils.RandomUtils;
 import cn.edu.hlju.tour.common.utils.UploadUtils;
 import cn.edu.hlju.tour.core.TravelService;
-import cn.edu.hlju.tour.dao.SpotMapper;
-import cn.edu.hlju.tour.dao.TravelCommentMapper;
-import cn.edu.hlju.tour.dao.TravelMapper;
-import cn.edu.hlju.tour.dao.UserMapper;
+import cn.edu.hlju.tour.dao.*;
 import cn.edu.hlju.tour.entity.*;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
@@ -36,6 +33,9 @@ public class TravelServiceImpl implements TravelService {
 
     @Autowired
     private TravelCommentMapper travelCommentMapper;
+
+    @Autowired
+    private MessageMapper messageMapper;
 
 
     //得到五个游记
@@ -236,11 +236,33 @@ public class TravelServiceImpl implements TravelService {
         return json;
     }
 
+    /**
+     * 发表评论还有消息
+     * @param comment
+     * @param request
+     */
     @Override
     public void saveComment(TravelComment comment, HttpServletRequest request) {
-        User user = (User)request.getSession().getAttribute("user");
+        Date date = new Date();
+        User user = (User)request.getSession().getAttribute("user");        //获取当前用户
         comment.setUserId(user.getId());
-        comment.setTime(new Date());
+        comment.setTime(date);
+        Message message = new Message();                                    //建立message对象
+        message.setFromUid(user.getId());
+        message.setStatus("0");
+        message.setTime(date);
+        Travel travel = travelMapper.selectByPrimaryKey(comment.getTravelId()); //获得游记实体
+        String content = "";
+        if (comment.getApplyCid() == null) {                                //判断该评论是回复还是直接评论
+            message.setToUid(travel.getUserId());
+            content = "评论了你的游记 <a href='/tour/travel?id=" + travel.getId() + "'>" + travel.getTitle() + "</a><br/>";
+        } else {
+            message.setToUid(travelCommentMapper.selectByPrimaryKey(comment.getApplyCid()).getUserId());
+            content = "回复了你在游记 <a href='/tour/travel?id=" + travel.getId() + "'>" + travel.getTitle() + "</a> 中的评论<br/>";
+        }
+        content += comment.getContent();
+        message.setContent(content);
+        messageMapper.insertSelective(message);
         travelCommentMapper.insertSelective(comment);
     }
 

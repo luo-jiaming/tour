@@ -17,9 +17,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Sole on 2017/3/24.
- */
+
 @Controller
 public class TravelController {
 
@@ -139,5 +137,6 @@ public class TravelController {
     public void delComment(Long id) {
         travelService.delComment(id);
     }
+
 
 }

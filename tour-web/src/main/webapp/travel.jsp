@@ -271,8 +271,8 @@
             $('.comment-body').empty();
             $('.comment-body').append(comment);
             trashClick();
-            reply();
             cancelBtnClick();
+            reply();
             replyBtnClick();
         }
 

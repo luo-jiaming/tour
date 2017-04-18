@@ -2,6 +2,8 @@ package cn.edu.hlju.tour.dao;
 
 import cn.edu.hlju.tour.entity.Message;
 
+import java.util.List;
+
 public interface MessageMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,6 @@ public interface MessageMapper {
     int updateByPrimaryKeySelective(Message record);
 
     int updateByPrimaryKey(Message record);
+
+    List<Message> selectByUserId(Long id);
 }

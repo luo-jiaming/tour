@@ -20,6 +20,10 @@
 
     <style>
 
+        textarea {
+            resize: none;
+        }
+
         .container {
             width: 80%;
         }
@@ -190,6 +194,93 @@
             cursor: pointer;
         }
 
+        .msg-div {
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        .media {
+            padding: 20px;
+            padding-bottom: 15px;
+            height: auto;
+        }
+
+        .media-left img {
+            width: 64px;
+            height: 64px;
+        }
+
+        .media-body {
+            color: #666;
+            font-size: 13px;
+            letter-spacing: 1px;
+            line-height: 23px;
+            width: 100%;
+            padding-lefts: 10px;
+        }
+
+        .personal-msg a {
+            color: #ff9d00;
+        }
+
+        .msg-div:hover {
+            background-color: #eee;
+        }
+
+        .msg-title {
+            width: 100%;
+            height: 28px;
+        }
+
+        .msg-from {
+            float: left;
+            color: #ff9d00;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .msg-time {
+            float: right;
+            color: #999;
+        }
+
+        .msg-close {
+            float: right;
+            font-size: 20px;
+            margin-left: 20px;
+            margin-top: -3px;
+        }
+
+        .msg-close:hover {
+            cursor: pointer;
+        }
+
+        .msg-content {
+            min-height: 40px;
+            max-height: auto;
+        }
+
+        .msg-reply {
+            font-size: 5px;
+            float: right;
+            color:  #ff9d00;
+            cursor: pointer;
+            margin-top: 5px;
+            height: 20px;
+        }
+
+        .msg-reply-div {
+            display: none;
+            width: 100%;
+        }
+
+        .msg-reply-div input {
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
         .btn-style {
             background-color: #ff9d00;
             color: white;
@@ -219,6 +310,7 @@
             initHeadAddr();
             setPersonalNav();
             loadTravel();
+            loadMsg();
             fileInput($('#uploadnick'));
             saveBtnClick();
             trashClick();
@@ -293,6 +385,135 @@
                     confirmBtnClick(travelid);
                 });
             });
+        }
+
+        /**
+         * ajax请求消息列表
+         */
+        function loadMsg() {
+            $.ajax({
+                type: "POST",
+                url: "/tour/messages",
+                async: true,
+                success: function(data) {
+                    addMsgAsync(data);
+                }
+            });
+        }
+
+        /**
+         * 添加消息列表
+         */
+        function addMsgAsync(data) {
+            $('.personal-msg').empty();
+            var inner = "";
+            if (data.length == 0) {
+                inner += "<div class='empty-travel'>您还没有任何新消息哦<div>";
+            } else {
+                for (var i = 0; i<data.length; i++) {
+                    var newDate = new Date(data[i].message.time);
+                    inner += "<div class='msg-div'>" +
+                                    "<div class='media'>" +
+                                        "<div class='media-left'>" +
+                                            "<img src='" + data[i].user.avatar + "' class='img-circle'>" +
+                                        "</div>" +
+                                        "<div class='media-body'>" +
+                                            "<div class='msg-title'>" +
+                                                "<div class='msg-from'>" + data[i].user.nick + "</div>" +
+                                                "<div class='msg-close'>&times;</div>" +
+                                                "<input type='hidden' class='messageid' value='" + data[i].message.id + "' />" +
+                                                "<div class='msg-time'>" + newDate.toLocaleString() + "</div>" +
+                                            "</div>" +
+                                            "<div class='msg-content'>" + data[i].message.content + "</div>" +
+                                            "<div class='msg-reply'>回复</div>" +
+                                        "</div>" +
+                                        "<div class='msg-reply-div'>" +
+                                            "<input class='touid' type='hidden' value='' />" +
+                                            "<textarea class='form-control reply-content' rows='5' placeholder='回复 :'></textarea>" +
+                                            "<input type='button' class='btn btn-style btn-warning btn-sm reply' value='回复'>" +
+                                            "<input type='button' class='btn btn-default btn-sm cancel' value='收起'>" +
+                                        "</div>" +
+                                    "</div>" +
+                            "</div>";
+                }
+            }
+            $('.personal-msg').append(inner);
+            closeClick();
+            cancelBtnClick();
+            reply();
+        }
+
+        /**
+         * 点击消息关闭按钮
+         */
+        function closeClick() {
+            $('.msg-close').each(function(i) {
+                $(this).click(function() {
+                    var messageid = $(this).parent().find('.messageid').val();
+                    $(this).parents('.msg-div').slideUp();
+                    $.ajax({
+                        url: "/tour/updateMsg",
+                        type: "POST",
+                        data: {"id":messageid}
+                    });
+                });
+            });
+        }
+
+        /**
+         * 点击回复，出现回复输入框
+         */
+        function reply() {
+            $('.msg-reply').each(function() {
+                $(this).click(function() {
+                    $('.cancel').click();
+                    $(this).parent().next().slideDown("fast");
+                    $(this).html("");
+                });
+            });
+        }
+
+        /**
+         * 点击取消按钮时间，恢复之前的样子
+         */
+        function cancelBtnClick() {
+            $(".cancel").each(function() {
+                $(this).click(function() {
+                    $(this).parent().slideUp("fast");
+                    $(this).parent().prev().find('.msg-reply').html("回复");
+                });
+            });
+        }
+
+        /**
+         * 点击回复按钮事件
+         */
+        function replyBtnClick() {
+            $('.reply').each(function() {
+                $(this).click(function() {
+                    if (validateUser()) {
+                        var textarea = $(this).parent().find('textarea');
+                        var content = $.trim(textarea.val());
+                        var touid = $(this).parent().find('.touid');
+                        var applycid = $(this).parent().find('.applycid');
+                        if (validateContent(textarea)) {
+                            $.ajax({
+                                type: "POST",
+                                url: "/tour/addTravelComment",
+                                data: {"travelId": $('#travelid').val(), "content": content, "applyCid": applycid.val()},
+                                async: true,
+                                success: function (data) {
+                                    $('.tip').html("感谢您的评论");
+                                    $('#modal').modal('show');
+                                    $('#content').val("");
+                                    ajaxFirstComment();
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+
         }
 
         /**
@@ -378,7 +599,6 @@
 <body>
 
 <%@ include file="/nav.jsp" %>
-<%@ include file="/login.jsp" %>
 <%@ include file="/tip.jsp" %>
 
 <div class="personal-head">
@@ -399,7 +619,7 @@
                 </c:choose>
             </div>
             <div class="avatar-nick">
-                <span>Sole</span>
+                <span>${user.nick}</span>
             </div>
         </div>
 
@@ -479,9 +699,7 @@
 
         <div class="col-md-8 personal-travel" style="display: none"></div>
 
-        <div class="col-md-8 personal-msg" style="display: none">
-            <div>dsad</div>
-        </div>
+        <div class="col-md-8 personal-msg" style="display: none"></div>
 
     </div>
 </div>

@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.edu.hlju.tour.dao.MessageMapper" >
-  <resultMap id="BaseResultMap" type="cn.edu.hlju.tour.entity.Message" >
-    <constructor >
-      <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
-      <arg column="content" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="from_uid" jdbcType="BIGINT" javaType="java.lang.Long" />
-      <arg column="to_uid" jdbcType="BIGINT" javaType="java.lang.Long" />
-      <arg column="time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="status" jdbcType="VARCHAR" javaType="java.lang.String" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List" >
+<mapper namespace="cn.edu.hlju.tour.dao.MessageMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.hlju.tour.entity.Message">
+        <constructor>
+            <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="content" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="from_uid" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="to_uid" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="status" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
     id, content, from_uid, to_uid, time, status
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
-    <include refid="Base_Column_List" />
-    from message
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+
+    <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from message
+        where to_uid = #{id,jdbcType=BIGINT} and status = 0;
+    </select>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from message
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from message
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="cn.edu.hlju.tour.entity.Message" >
+    <insert id="insert" parameterType="cn.edu.hlju.tour.entity.Message">
     insert into message (id, content, from_uid, 
       to_uid, time, status
       )
@@ -32,71 +41,71 @@
       #{toUid,jdbcType=BIGINT}, #{time,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.Message" >
-    insert into message
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="content != null" >
-        content,
-      </if>
-      <if test="fromUid != null" >
-        from_uid,
-      </if>
-      <if test="toUid != null" >
-        to_uid,
-      </if>
-      <if test="time != null" >
-        time,
-      </if>
-      <if test="status != null" >
-        status,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="content != null" >
-        #{content,jdbcType=VARCHAR},
-      </if>
-      <if test="fromUid != null" >
-        #{fromUid,jdbcType=BIGINT},
-      </if>
-      <if test="toUid != null" >
-        #{toUid,jdbcType=BIGINT},
-      </if>
-      <if test="time != null" >
-        #{time,jdbcType=TIMESTAMP},
-      </if>
-      <if test="status != null" >
-        #{status,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hlju.tour.entity.Message" >
-    update message
-    <set >
-      <if test="content != null" >
-        content = #{content,jdbcType=VARCHAR},
-      </if>
-      <if test="fromUid != null" >
-        from_uid = #{fromUid,jdbcType=BIGINT},
-      </if>
-      <if test="toUid != null" >
-        to_uid = #{toUid,jdbcType=BIGINT},
-      </if>
-      <if test="time != null" >
-        time = #{time,jdbcType=TIMESTAMP},
-      </if>
-      <if test="status != null" >
-        status = #{status,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.edu.hlju.tour.entity.Message" >
+    <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.Message">
+        insert into message
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="fromUid != null">
+                from_uid,
+            </if>
+            <if test="toUid != null">
+                to_uid,
+            </if>
+            <if test="time != null">
+                time,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="fromUid != null">
+                #{fromUid,jdbcType=BIGINT},
+            </if>
+            <if test="toUid != null">
+                #{toUid,jdbcType=BIGINT},
+            </if>
+            <if test="time != null">
+                #{time,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hlju.tour.entity.Message">
+        update message
+        <set>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="fromUid != null">
+                from_uid = #{fromUid,jdbcType=BIGINT},
+            </if>
+            <if test="toUid != null">
+                to_uid = #{toUid,jdbcType=BIGINT},
+            </if>
+            <if test="time != null">
+                time = #{time,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="cn.edu.hlju.tour.entity.Message">
     update message
     set content = #{content,jdbcType=VARCHAR},
       from_uid = #{fromUid,jdbcType=BIGINT},
