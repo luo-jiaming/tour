@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -36,10 +37,30 @@ public class MessageController {
         messageService.update(message);
     }
 
-    @RequestMapping(value = "test")
-    public String test(HttpServletRequest request) {
-        request.setAttribute("name", "wen");
-        return "forward:test.jsp";
+
+//    /**
+//     *
+//     * @param request
+//     * @return
+//     */
+//    @RequestMapping(value = "test")
+//    public String test(HttpServletRequest request) {
+//        request.setAttribute("name", "wen");
+//        return "forward:test.jsp";
+//    }
+
+
+    /**
+     * 回复消息
+     */
+    @RequestMapping(value = "sendMessage")
+    @ResponseBody
+    public void sendMessage(Message message, HttpServletRequest request) {
+        User user = (User)request.getSession().getAttribute("user");
+        message.setFromUid(user.getId());
+        message.setType(0L);
+        message.setTime(new Date());
+        messageService.addMessage(message);
     }
 
 }

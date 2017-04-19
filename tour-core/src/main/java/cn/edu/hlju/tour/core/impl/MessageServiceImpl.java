@@ -39,8 +39,15 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public void update(Message message) {
-        message.setStatus("1");
+        message.setStatus(1L);
         messageMapper.updateByPrimaryKeySelective(message);
     }
+
+    @Override
+    public void addMessage(Message message) {
+        message.setStatus(0L);
+        messageMapper.insertSelective(message);
+    }
+
 
 }

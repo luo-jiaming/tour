@@ -237,23 +237,24 @@ public class TravelServiceImpl implements TravelService {
     }
 
     /**
-     * 发表评论还有消息
+     * 发表评论
      * @param comment
      * @param request
      */
     @Override
     public void saveComment(TravelComment comment, HttpServletRequest request) {
         Date date = new Date();
-        User user = (User)request.getSession().getAttribute("user");        //获取当前用户
+        User user = (User)request.getSession().getAttribute("user");            //获取当前用户
         comment.setUserId(user.getId());
         comment.setTime(date);
-        Message message = new Message();                                    //建立message对象
+        Message message = new Message();                                        //建立message对象
         message.setFromUid(user.getId());
-        message.setStatus("0");
+        message.setStatus(0L);
         message.setTime(date);
+        message.setType(0L);
         Travel travel = travelMapper.selectByPrimaryKey(comment.getTravelId()); //获得游记实体
         String content = "";
-        if (comment.getApplyCid() == null) {                                //判断该评论是回复还是直接评论
+        if (comment.getApplyCid() == null) {                                    //判断该评论是回复还是直接评论
             message.setToUid(travel.getUserId());
             content = "评论了你的游记 <a href='/tour/travel?id=" + travel.getId() + "'>" + travel.getTitle() + "</a><br/>";
         } else {
@@ -262,8 +263,8 @@ public class TravelServiceImpl implements TravelService {
         }
         content += comment.getContent();
         message.setContent(content);
-        messageMapper.insertSelective(message);
-        travelCommentMapper.insertSelective(comment);
+        messageMapper.insertSelective(message); //添加消息
+        travelCommentMapper.insertSelective(comment);//发表评论
     }
 
     @Override

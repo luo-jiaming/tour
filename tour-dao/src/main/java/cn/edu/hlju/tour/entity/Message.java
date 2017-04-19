@@ -14,17 +14,20 @@ public class Message implements Serializable {
 
     private Date time;
 
-    private String status;
+    private Long status;
+
+    private Long type;
 
     private static final long serialVersionUID = 1L;
 
-    public Message(Long id, String content, Long fromUid, Long toUid, Date time, String status) {
+    public Message(Long id, String content, Long fromUid, Long toUid, Date time, Long status, Long type) {
         this.id = id;
         this.content = content;
         this.fromUid = fromUid;
         this.toUid = toUid;
         this.time = time;
         this.status = status;
+        this.type = type;
     }
 
     public Message() {
@@ -71,12 +74,20 @@ public class Message implements Serializable {
         this.time = time;
     }
 
-    public String getStatus() {
+    public Long getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Long getType() {
+        return type;
+    }
+
+    public void setType(Long type) {
+        this.type = type;
     }
 
     @Override
@@ -91,6 +102,7 @@ public class Message implements Serializable {
         sb.append(", toUid=").append(toUid);
         sb.append(", time=").append(time);
         sb.append(", status=").append(status);
+        sb.append(", type=").append(type);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

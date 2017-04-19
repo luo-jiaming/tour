@@ -428,7 +428,7 @@
                                             "<div class='msg-reply'>回复</div>" +
                                         "</div>" +
                                         "<div class='msg-reply-div'>" +
-                                            "<input class='touid' type='hidden' value='' />" +
+                                            "<input class='touid' type='hidden' value='" + data[i].message.fromUid + "' />" +
                                             "<textarea class='form-control reply-content' rows='5' placeholder='回复 :'></textarea>" +
                                             "<input type='button' class='btn btn-style btn-warning btn-sm reply' value='回复'>" +
                                             "<input type='button' class='btn btn-default btn-sm cancel' value='收起'>" +
@@ -495,18 +495,16 @@
                         var textarea = $(this).parent().find('textarea');
                         var content = $.trim(textarea.val());
                         var touid = $(this).parent().find('.touid');
-                        var applycid = $(this).parent().find('.applycid');
                         if (validateContent(textarea)) {
                             $.ajax({
                                 type: "POST",
-                                url: "/tour/addTravelComment",
-                                data: {"travelId": $('#travelid').val(), "content": content, "applyCid": applycid.val()},
+                                url: "/tour/addMessage",
+                                data: {"toUid":touid, "content": content},
                                 async: true,
                                 success: function (data) {
-                                    $('.tip').html("感谢您的评论");
+                                    $('.tip').html("回复成功");
                                     $('#modal').modal('show');
                                     $('#content').val("");
-                                    ajaxFirstComment();
                                 }
                             });
                         }
@@ -514,6 +512,21 @@
                 });
             });
 
+        }
+
+        /**
+         * 验证回复消息输入
+         * private  obj=$('')
+         */
+        function validateContent(obj) {
+            var content = $.trim(obj.val());
+            if (content == null || content == '') {
+                $('.tip').html("客官，请输入评论内容");
+                $('#modal').modal('show');
+                obj.val("");
+                return false;
+            }
+            return true;
         }
 
         /**

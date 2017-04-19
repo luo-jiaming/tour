@@ -319,7 +319,7 @@
                                 data: {"travelId": $('#travelid').val(), "content": content, "applyCid": applycid.val()},
                                 async: true,
                                 success: function (data) {
-                                    $('.tip').html("感谢您的评论");
+                                    $('.tip').html("回复成功");
                                     $('#modal').modal('show');
                                     $('#content').val("");
                                     ajaxFirstComment();

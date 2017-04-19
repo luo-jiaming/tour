@@ -8,12 +8,13 @@
             <arg column="from_uid" jdbcType="BIGINT" javaType="java.lang.Long"/>
             <arg column="to_uid" jdbcType="BIGINT" javaType="java.lang.Long"/>
             <arg column="time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
-            <arg column="status" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="status" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="type" jdbcType="BIGINT" javaType="java.lang.Long"/>
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
-    id, content, from_uid, to_uid, time, status
-  </sql>
+        id, content, from_uid, to_uid, time, status, type
+    </sql>
 
     <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select
@@ -28,19 +29,18 @@
         from message
         where id = #{id,jdbcType=BIGINT}
     </select>
-
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from message
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
+        delete from message
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
     <insert id="insert" parameterType="cn.edu.hlju.tour.entity.Message">
-    insert into message (id, content, from_uid, 
-      to_uid, time, status
-      )
-    values (#{id,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, #{fromUid,jdbcType=BIGINT}, 
-      #{toUid,jdbcType=BIGINT}, #{time,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}
-      )
-  </insert>
+        insert into message (id, content, from_uid,
+        to_uid, time, status,
+        type)
+        values (#{id,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, #{fromUid,jdbcType=BIGINT},
+        #{toUid,jdbcType=BIGINT}, #{time,jdbcType=TIMESTAMP}, #{status,jdbcType=BIGINT},
+        #{type,jdbcType=BIGINT})
+    </insert>
     <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.Message">
         insert into message
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -62,6 +62,9 @@
             <if test="status != null">
                 status,
             </if>
+            <if test="type != null">
+                type,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -80,7 +83,10 @@
                 #{time,jdbcType=TIMESTAMP},
             </if>
             <if test="status != null">
-                #{status,jdbcType=VARCHAR},
+                #{status,jdbcType=BIGINT},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=BIGINT},
             </if>
         </trim>
     </insert>
@@ -100,7 +106,10 @@
                 time = #{time,jdbcType=TIMESTAMP},
             </if>
             <if test="status != null">
-                status = #{status,jdbcType=VARCHAR},
+                status = #{status,jdbcType=BIGINT},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=BIGINT},
             </if>
         </set>
         where id = #{id,jdbcType=BIGINT}
@@ -111,7 +120,8 @@
       from_uid = #{fromUid,jdbcType=BIGINT},
       to_uid = #{toUid,jdbcType=BIGINT},
       time = #{time,jdbcType=TIMESTAMP},
-      status = #{status,jdbcType=VARCHAR}
+      status = #{status,jdbcType=BIGINT},
+      type = #{type,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
