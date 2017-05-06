@@ -11,8 +11,16 @@
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
-    id, spot_id, content, user_id, time
+      id, spot_id, content, user_id, time
     </sql>
+
+    <delete id="delByUserId" parameterType="long[]">
+        delete from spot_comment
+        where user_id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
 
     <select id="selectAll" resultMap="BaseResultMap">
         select

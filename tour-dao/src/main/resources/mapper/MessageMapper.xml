@@ -16,6 +16,18 @@
         id, content, from_uid, to_uid, time, status, type
     </sql>
 
+    <delete id="delByUserId" parameterType="long[]">
+        delete from message
+        where from_uid in
+            <foreach collection="array" open="(" item="id" separator=", " close=")">
+                #{id, jdbcType=BIGINT}
+            </foreach>
+        or to_uid in
+            <foreach collection="array" open="(" item="id" separator=", " close=")">
+                #{id, jdbcType=BIGINT}
+            </foreach>
+    </delete>
+
     <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select
         <include refid="Base_Column_List"/>

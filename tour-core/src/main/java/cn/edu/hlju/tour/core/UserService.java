@@ -1,6 +1,7 @@
 package cn.edu.hlju.tour.core;
 
 import cn.edu.hlju.tour.entity.User;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,4 +33,9 @@ public interface UserService {
     Map uploadNick(MultipartFile file, HttpServletRequest request) throws IOException;
 
     void update(User user);
+
+    JSONObject selectAllUserByPage(int pageNum, int size);
+
+    void delUser(Long[] ids);
+
 }

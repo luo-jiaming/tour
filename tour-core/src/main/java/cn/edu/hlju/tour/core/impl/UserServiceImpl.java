@@ -6,16 +6,22 @@ import cn.edu.hlju.tour.common.utils.UploadUtils;
 import cn.edu.hlju.tour.common.utils.VerifyCodeUtils;
 import cn.edu.hlju.tour.core.UserService;
 import cn.edu.hlju.tour.core.utils.MailConfig;
-import cn.edu.hlju.tour.dao.UserMapper;
+import cn.edu.hlju.tour.dao.*;
+import cn.edu.hlju.tour.entity.TravelComment;
 import cn.edu.hlju.tour.entity.User;
+import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -30,8 +36,24 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private MailConfig mailConfig;
 
+    @Autowired
+    private MessageMapper messageMapper;
+
+    @Autowired
+    private HotelCommentMapper hotelCommentMapper;
+
+    @Autowired
+    private SpotCommentMapper spotCommentMapper;
+
+    @Autowired
+    private TravelMapper travelMapper;
+
+    @Autowired
+    private TravelCommentMapper travelCommentMapper;
+
     /**
      * 登录页面按钮的提交
+     *
      * @param email
      * @param password
      * @return
@@ -44,6 +66,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 注册页面按钮的提交
+     *
      * @param user
      * @return
      */
@@ -57,6 +80,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 发送邮箱验证码
+     *
      * @param request
      * @return
      */
@@ -73,11 +97,12 @@ public class UserServiceImpl implements UserService {
         String smtpAuth = mailConfig.getSmtpAuth();
         String transportProtocol = mailConfig.getTransportProtocol();
         MailUtils.send(transportProtocol, senderEmailSMTPHost, smtpAuth, senderEmail, "途悠游", senderPassword,
-            request.getParameter("email"), request.getParameter("nick"), subject, content, "utf-8");
+                request.getParameter("email"), request.getParameter("nick"), subject, content, "utf-8");
     }
 
     /**
      * 发送验证码图片
+     *
      * @param request
      * @param response
      * @throws IOException
@@ -100,6 +125,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 更新密码
+     *
      * @param email
      * @param password
      */
@@ -111,6 +137,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * email是否存在
+     *
      * @param email
      * @return
      */
@@ -125,6 +152,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 验证码是否正确
+     *
      * @param verifyCode
      * @param serverVerifyCode
      * @return
@@ -136,6 +164,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 邮箱验证码是否正确
+     *
      * @param emailCode
      * @param serverEmailCode
      * @return
@@ -147,6 +176,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 上传头像
+     *
      * @param file
      * @param request
      * @return
@@ -154,7 +184,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public Map uploadNick(MultipartFile file, HttpServletRequest request) throws IOException {
-        User user = (User)request.getSession().getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
         String contextPath = UploadUtils.uploadFile(file, request, "user/avatar/");
         Map<String, String> map = new HashMap<>();
         map.put("src", contextPath);
@@ -168,6 +198,47 @@ public class UserServiceImpl implements UserService {
     @Override
     public void update(User user) {
         userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    @Override
+    public JSONObject selectAllUserByPage(int pageNum, int size) {
+        PageHelper.startPage(pageNum, size);                              //分页
+        List<User> list = userMapper.selectAll();                         //得到分页之后的用户
+        PageInfo<TravelComment> pageInfo = new PageInfo(list);            //分页参数
+        JSONObject json = new JSONObject();
+        json.put("pageinfo", pageInfo);
+        json.put("list", list);
+        return json;
+    }
+
+    @Override
+    @Transactional
+    public void delUser(Long[] ids) {
+        //删除message
+        //1. 删除用户的消息 or
+        //2. 删除回复用户人的消息
+        messageMapper.delByUserId(ids);
+
+        //删除用户对酒店的评论
+        hotelCommentMapper.delByUserId(ids);
+
+        //删除用户对景点的评论
+        spotCommentMapper.delByUserId(ids);
+
+        //删除用户的游记
+        for (long id : ids) {
+            //用户游记
+            Long[] travelIds = travelMapper.selectByUserId(id);
+            //删除游记的评论
+            travelCommentMapper.delByTravelId(travelIds);
+            //删除该用户对其他游记的评论
+            travelCommentMapper.delByUserId(id);
+            //删除游记
+            travelMapper.delByTravelId(travelIds);
+        }
+
+        //删除用户
+        userMapper.delByUserId(ids);
     }
 
 }

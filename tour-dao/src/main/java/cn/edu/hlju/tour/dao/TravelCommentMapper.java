@@ -18,4 +18,11 @@ public interface TravelCommentMapper {
     int updateByPrimaryKey(TravelComment record);
 
     List<TravelComment> selectCommentByTravelId(Long id);
+
+    //删除某个用户所有游记下面的评论
+    void delByTravelId(Long[] ids);
+
+    //删除某个用户所有的评论（所有游记）
+    void delByUserId(Long id);
+
 }

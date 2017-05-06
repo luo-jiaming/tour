@@ -31,6 +31,20 @@
       content
     </sql>
 
+    <select id="selectByUserId" parameterType="java.lang.Long" resultType="long">
+        select id
+        from travel
+        where user_id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="delByTravelId" parameterType="long[]">
+        delete from travel
+        where id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
+
     <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
         select
         <include refid="Base_Column_List"/>

@@ -13,8 +13,21 @@
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
-    id, nick, gender, avatar, email, password, permission
-  </sql>
+      id, nick, gender, avatar, email, password, permission
+    </sql>
+
+    <delete id="delByUserId" parameterType="long[]">
+        delete from user where id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+    </select>
 
     <select id="selectByEmailAndPassword" resultMap="BaseResultMap">
         select

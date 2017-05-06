@@ -18,4 +18,6 @@ public interface HotelCommentMapper {
     int updateByPrimaryKey(HotelComment record);
 
     List<HotelComment> selectCommentByHotelId(Long id);
+
+    void delByUserId(Long[] ids);
 }

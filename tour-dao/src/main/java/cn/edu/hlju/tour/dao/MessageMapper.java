@@ -18,4 +18,6 @@ public interface MessageMapper {
     int updateByPrimaryKey(Message record);
 
     List<Message> selectByUserId(Long id);
+
+    void delByUserId(Long[] ids);
 }

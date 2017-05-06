@@ -34,4 +34,13 @@ public interface TravelMapper {
 
     List<Travel> query(Travel travel);
 
+    /**
+     * 用于查找用户的游记，返回游记的所有ID
+     * @param id
+     * @return
+     */
+    Long[] selectByUserId(Long id);
+
+    void delByTravelId(Long[] ids);
+
 }
