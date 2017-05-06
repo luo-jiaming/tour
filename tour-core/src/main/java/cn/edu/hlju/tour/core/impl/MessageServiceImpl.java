@@ -30,7 +30,7 @@ public class MessageServiceImpl implements MessageService {
             Map map = new HashMap();
             Long userId = list.get(i).getFromUid();
             User user = userMapper.selectByPrimaryKey(userId);
-            map.put("user", user);
+            map.put("user", user);      //来自谁的消息
             map.put("message", list.get(i));
             listMap.add(map);
         }

@@ -10,6 +10,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -242,6 +243,7 @@ public class TravelServiceImpl implements TravelService {
      * @param request
      */
     @Override
+    @Transactional
     public void saveComment(TravelComment comment, HttpServletRequest request) {
         Date date = new Date();
         User user = (User)request.getSession().getAttribute("user");            //获取当前用户
@@ -252,8 +254,10 @@ public class TravelServiceImpl implements TravelService {
         message.setStatus(0L);
         message.setTime(date);
         message.setType(0L);
+
         Travel travel = travelMapper.selectByPrimaryKey(comment.getTravelId()); //获得游记实体
         String content = "";
+
         if (comment.getApplyCid() == null) {                                    //判断该评论是回复还是直接评论
             message.setToUid(travel.getUserId());
             content = "评论了你的游记 <a href='/tour/travel?id=" + travel.getId() + "'>" + travel.getTitle() + "</a><br/>";
@@ -261,6 +265,7 @@ public class TravelServiceImpl implements TravelService {
             message.setToUid(travelCommentMapper.selectByPrimaryKey(comment.getApplyCid()).getUserId());
             content = "回复了你在游记 <a href='/tour/travel?id=" + travel.getId() + "'>" + travel.getTitle() + "</a> 中的评论<br/>";
         }
+
         content += comment.getContent();
         message.setContent(content);
         messageMapper.insertSelective(message); //添加消息

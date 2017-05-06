@@ -259,7 +259,7 @@
                                         "<div class='comment-reply'>回复</div>" +
                                     "</div>" +
                                     "<div class='comment-reply-div'>" +
-                                        "<input class='touid' type='hidden' value='" + maplist[i].user.id + "' />" +
+                                        "<input class='applycid' type='hidden' value='" + maplist[i].comment.id + "' />" +
                                         "<textarea class='form-control reply-content' rows='5' placeholder='回复 " + maplist[i].user.nick + " :'></textarea>" +
                                         "<input type='button' class='btn btn-style btn-warning btn-sm reply' value='回复'>" +
                                         "<input type='button' class='btn btn-default btn-sm cancel' value='收起'>" +

@@ -102,7 +102,7 @@
             color: #ff9d00;
         }
 
-        .infor, .travel, .msg{
+        .infor, .travel, .msg {
             text-align: center;
             width: 20%;
             height: 100%;
@@ -190,7 +190,7 @@
         }
 
         .travel-operate:hover {
-            color:  #ff9d00;
+            color: #ff9d00;
             cursor: pointer;
         }
 
@@ -265,7 +265,7 @@
         .msg-reply {
             font-size: 5px;
             float: right;
-            color:  #ff9d00;
+            color: #ff9d00;
             cursor: pointer;
             margin-top: 5px;
             height: 20px;
@@ -346,7 +346,7 @@
                 type: "POST",
                 url: "/tour/mytravels",
                 async: true,
-                success: function(data) {
+                success: function (data) {
                     addTravelAsync(data);
                 }
             });
@@ -362,12 +362,12 @@
             if (data.length == 0) {
                 inner += "<div class='empty-travel'>您还没有添加任何游记哦<div>";
             } else {
-                for (var i = 0; i<data.length; i++) {
+                for (var i = 0; i < data.length; i++) {
                     var j = i + 1;
                     inner += "<div class='travel-div'>" +
-                                "<div class='travel-title'>" + j + "、<a href='/tour/travel?id=" + data[i].id + "' target='_blank'>" + data[i].title + "</a></div>" +
-                                "<div class='travel-operate'><span class='glyphicon glyphicon-trash'><input type='hidden' value='" + data[i].id + "' /></span></div>" +
-                             "</div>";
+                            "<div class='travel-title'>" + j + "、<a href='/tour/travel?id=" + data[i].id + "' target='_blank'>" + data[i].title + "</a></div>" +
+                            "<div class='travel-operate'><span class='glyphicon glyphicon-trash'><input type='hidden' value='" + data[i].id + "' /></span></div>" +
+                            "</div>";
                 }
             }
             $('.personal-travel').append(inner);
@@ -378,8 +378,8 @@
          * 删除事件
          */
         function trashClick() {
-            $('.glyphicon-trash').each(function(i) {
-                $(this).click(function() {
+            $('.glyphicon-trash').each(function (i) {
+                $(this).click(function () {
                     var travelid = $(this).find('input').val();
                     $('#dialog').modal('show');
                     confirmBtnClick(travelid);
@@ -395,7 +395,7 @@
                 type: "POST",
                 url: "/tour/messages",
                 async: true,
-                success: function(data) {
+                success: function (data) {
                     addMsgAsync(data);
                 }
             });
@@ -410,30 +410,30 @@
             if (data.length == 0) {
                 inner += "<div class='empty-travel'>您还没有任何新消息哦<div>";
             } else {
-                for (var i = 0; i<data.length; i++) {
+                for (var i = 0; i < data.length; i++) {
                     var newDate = new Date(data[i].message.time);
                     inner += "<div class='msg-div'>" +
-                                    "<div class='media'>" +
-                                        "<div class='media-left'>" +
-                                            "<img src='" + data[i].user.avatar + "' class='img-circle'>" +
-                                        "</div>" +
-                                        "<div class='media-body'>" +
-                                            "<div class='msg-title'>" +
-                                                "<div class='msg-from'>" + data[i].user.nick + "</div>" +
-                                                "<div class='msg-close'>&times;</div>" +
-                                                "<input type='hidden' class='messageid' value='" + data[i].message.id + "' />" +
-                                                "<div class='msg-time'>" + newDate.toLocaleString() + "</div>" +
-                                            "</div>" +
-                                            "<div class='msg-content'>" + data[i].message.content + "</div>" +
-                                            "<div class='msg-reply'>回复</div>" +
-                                        "</div>" +
-                                        "<div class='msg-reply-div'>" +
-                                            "<input class='touid' type='hidden' value='" + data[i].message.fromUid + "' />" +
-                                            "<textarea class='form-control reply-content' rows='5' placeholder='回复 :'></textarea>" +
-                                            "<input type='button' class='btn btn-style btn-warning btn-sm reply' value='回复'>" +
-                                            "<input type='button' class='btn btn-default btn-sm cancel' value='收起'>" +
-                                        "</div>" +
-                                    "</div>" +
+                            "<div class='media'>" +
+                            "<div class='media-left'>" +
+                            "<img src='" + data[i].user.avatar + "' class='img-circle'>" +
+                            "</div>" +
+                            "<div class='media-body'>" +
+                            "<div class='msg-title'>" +
+                            "<div class='msg-from'>" + data[i].user.nick + "</div>" +
+                            "<div class='msg-close'>&times;</div>" +
+                            "<input type='hidden' class='messageid' value='" + data[i].message.id + "' />" +
+                            "<div class='msg-time'>" + newDate.toLocaleString() + "</div>" +
+                            "</div>" +
+                            "<div class='msg-content'>" + data[i].message.content + "</div>" +
+                            "<div class='msg-reply'>回复</div>" +
+                            "</div>" +
+                            "<div class='msg-reply-div'>" +
+                            "<input class='touid' type='hidden' value='" + data[i].message.fromUid + "' />" +
+                            "<textarea class='form-control reply-content' rows='5' placeholder='回复 :'></textarea>" +
+                            "<input type='button' class='btn btn-style btn-warning btn-sm reply' value='回复'>" +
+                            "<input type='button' class='btn btn-default btn-sm cancel' value='收起'>" +
+                            "</div>" +
+                            "</div>" +
                             "</div>";
                 }
             }
@@ -441,20 +441,24 @@
             closeClick();
             cancelBtnClick();
             reply();
+            replyBtnClick();
         }
 
         /**
          * 点击消息关闭按钮
          */
         function closeClick() {
-            $('.msg-close').each(function(i) {
-                $(this).click(function() {
+            $('.msg-close').each(function (i) {
+                $(this).click(function () {
                     var messageid = $(this).parent().find('.messageid').val();
                     $(this).parents('.msg-div').slideUp();
                     $.ajax({
                         url: "/tour/updateMsg",
                         type: "POST",
-                        data: {"id":messageid}
+                        data: {"id": messageid},
+                        success: function () {
+                            loadMsg();
+                        }
                     });
                 });
             });
@@ -464,8 +468,8 @@
          * 点击回复，出现回复输入框
          */
         function reply() {
-            $('.msg-reply').each(function() {
-                $(this).click(function() {
+            $('.msg-reply').each(function () {
+                $(this).click(function () {
                     $('.cancel').click();
                     $(this).parent().next().slideDown("fast");
                     $(this).html("");
@@ -477,8 +481,8 @@
          * 点击取消按钮时间，恢复之前的样子
          */
         function cancelBtnClick() {
-            $(".cancel").each(function() {
-                $(this).click(function() {
+            $(".cancel").each(function () {
+                $(this).click(function () {
                     $(this).parent().slideUp("fast");
                     $(this).parent().prev().find('.msg-reply').html("回复");
                 });
@@ -489,26 +493,25 @@
          * 点击回复按钮事件
          */
         function replyBtnClick() {
-            $('.reply').each(function() {
-                $(this).click(function() {
-                    if (validateUser()) {
-                        var textarea = $(this).parent().find('textarea');
-                        var content = $.trim(textarea.val());
-                        var touid = $(this).parent().find('.touid');
-                        if (validateContent(textarea)) {
-                            $.ajax({
-                                type: "POST",
-                                url: "/tour/addMessage",
-                                data: {"toUid":touid, "content": content},
-                                async: true,
-                                success: function (data) {
-                                    $('.tip').html("回复成功");
-                                    $('#modal').modal('show');
-                                    $('#content').val("");
-                                }
-                            });
-                        }
+            $('.reply').each(function () {
+                $(this).click(function () {
+                    var textarea = $(this).parent().find('textarea');
+                    var content = $.trim(textarea.val());
+                    var touid = $(this).parent().find('.touid').val();
+                    if (validateContent(textarea)) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/tour/sendMessage",
+                            data: {"toUid": touid, "content": content},
+                            async: true,
+                            success: function () {
+                                $('.tip').html("回复成功");
+                                $('#modal').modal('show');
+                            }
+                        });
                     }
+                    $(this).next().click();
+                    textarea.val("");
                 });
             });
 
@@ -555,7 +558,7 @@
          * 确认删除按钮点击事件
          */
         function confirmBtnClick(id) {
-            $('#confirm').click(function() {
+            $('#confirm').click(function () {
                 $.ajax({
                     type: "POST",
                     url: "/tour/deltravel",
@@ -574,16 +577,16 @@
          * 点击保存事件
          */
         function saveBtnClick() {
-            $('#saveBtn').click(function() {
+            $('#saveBtn').click(function () {
                 if (validateUser()) {
                     var gender = $('input:checked').val();
                     var nick = $.trim($('#nick').val());
                     $.ajax({
                         type: "POST",
                         url: "/tour/updateUser",
-                        data: {"nick":nick, "gender":gender},
+                        data: {"nick": nick, "gender": gender},
                         async: true,
-                        success: function(data) {
+                        success: function (data) {
                             $('.err-tip').hide();
                             $('.tip').html("保存成功");
                             $('#modal').modal('show');
@@ -615,7 +618,7 @@
 <%@ include file="/tip.jsp" %>
 
 <div class="personal-head">
-    <img src="resources/img/bn-reviews.png" />
+    <img src="resources/img/bn-reviews.png"/>
 </div>
 
 <div class="personal-nav container">
@@ -656,7 +659,9 @@
         <div class="col-md-4">
             <div class="write-travel panel">
                 <h3>写游记</h3>
-                <a href="writeTravel.jsp"><div class="item-glyphicon"><span class="glyphicon glyphicon-edit"></span></div></a>
+                <a href="writeTravel.jsp">
+                    <div class="item-glyphicon"><span class="glyphicon glyphicon-edit"></span></div>
+                </a>
                 <div class="item-content">
                     <p>记录旅游的一些好玩的事情，分享给大家吧</p>
                 </div>
@@ -676,14 +681,14 @@
                 <div class="form-group">
                     <div class="col-sm-2 form-label">邮箱:</div>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" value="${user.email}" name="college" readonly />
+                        <input type="text" class="form-control" value="${user.email}" name="college" readonly/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-2 form-label">昵称:</div>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" value="${user.nick}" name="nick" id="nick" />
+                        <input type="text" class="form-control" value="${user.nick}" name="nick" id="nick"/>
                     </div>
                     <div class="col-sm-2">
                         <div class="err-tip">昵称不能为空</div>
@@ -694,11 +699,13 @@
                     <div class="col-sm-2 form-label">性别:</div>
 
                     <div class="col-sm-1 form-sex">
-                        <input type="radio" name="gender" ${user.gender == '男'?'checked':''} id="man" value="男"><div>男</div>
+                        <input type="radio" name="gender" ${user.gender == '男'?'checked':''} id="man" value="男">
+                        <div>男</div>
                     </div>
 
                     <div class="col-sm-1 form-sex">
-                        <input type="radio" name="gender" ${user.gender == '女'?'checked':''} id="woman" value="女"><div>女</div>
+                        <input type="radio" name="gender" ${user.gender == '女'?'checked':''} id="woman" value="女">
+                        <div>女</div>
                     </div>
                 </div>
 
