@@ -14,6 +14,21 @@
       id, spot_id, content, user_id, time
     </sql>
 
+    <select id="selectByMap" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+        select
+          sc.id id, sc.content content, s.spot_name spotName, sc.time time, u.nick nick
+        from spot_comment sc, spot s, user u
+        <where>
+            sc.spot_id = s.id and sc.user_id = u.id
+            <if test="spotName != null">
+                and s.spot_name like concat('%', concat(#{spotName, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="nick != null">
+                and u.nick like concat('%', concat(#{nick, jdbcType=VARCHAR}, '%'))
+            </if>
+        </where>
+    </select>
+
     <delete id="delByUserId" parameterType="long[]">
         delete from spot_comment
         where user_id in
@@ -30,11 +45,13 @@
         </foreach>
     </delete>
 
-    <select id="selectAll" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from spot_comment
-    </select>
+    <delete id="delBySpotCommentId" parameterType="long[]">
+        delete from spot_comment
+        where id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
 
     <select id="selectCommentBySpotId" resultMap="BaseResultMap">
         select
@@ -49,6 +66,7 @@
         from spot_comment
         where id = #{id,jdbcType=BIGINT}
     </select>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from spot_comment
     where id = #{id,jdbcType=BIGINT}

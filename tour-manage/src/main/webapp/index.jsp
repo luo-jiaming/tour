@@ -79,6 +79,31 @@
                     <li><a title="jsp/spotImg.jsp" class="easyui-linkbutton">景点图片列表</a></li>
                 </ul>
             </div>
+
+            <div title="景点评论管理" style="overflow:auto">
+                <ul>
+                    <li><a title="jsp/spotComment.jsp" class="easyui-linkbutton">景点评论列表</a></li>
+                </ul>
+            </div>
+
+            <div title="酒店管理" style="overflow:auto">
+                <ul>
+                    <li><a title="jsp/hotel.jsp" class="easyui-linkbutton">酒店列表</a></li>
+                </ul>
+            </div>
+
+            <div title="房间管理" style="overflow:auto">
+                <ul>
+                    <li><a title="jsp/roomType.jsp" class="easyui-linkbutton">房间列表</a></li>
+                </ul>
+            </div>
+
+            <div title="酒店评论管理" style="overflow:auto">
+                <ul>
+                    <li><a title="jsp/hotelComment.jsp" class="easyui-linkbutton">酒店评论列表</a></li>
+                </ul>
+            </div>
+
         </div>
 
     </div>
