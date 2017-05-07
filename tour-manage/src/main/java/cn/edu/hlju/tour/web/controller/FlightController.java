@@ -1,6 +1,7 @@
 package cn.edu.hlju.tour.web.controller;
 
-import cn.edu.hlju.tour.core.UserService;
+import cn.edu.hlju.tour.core.FlightService;
+import cn.edu.hlju.tour.entity.Flight;
 import cn.edu.hlju.tour.entity.User;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -14,20 +15,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * Created by Sole on 2017/3/2.
+ * Created by lft on 2017/5/7.
  */
 @Controller
-public class UserController {
+public class FlightController {
 
     @Autowired
-    private UserService userService;
+    private FlightService flightService;
 
-    @RequestMapping(value= "getUserList")
+    @RequestMapping(value= "getFlightList")
     @ResponseBody
-    public String getList(int page, int rows, User user) {
+    public String getList(int page, int rows, Flight flight) {
 
         //{"total":10, "row":[{},{}]}
-        JSONObject json = userService.selectUserByPage(page, rows, user);
+        JSONObject json = flightService.selectFlightByPage(page, rows, flight);
         PageInfo pageInfo = (PageInfo)json.get("pageinfo");
         List<User> list = (List)json.get("list");
         long total = pageInfo.getTotal();
@@ -37,21 +38,27 @@ public class UserController {
 
     }
 
-    @RequestMapping(value= "delUser")
+    @RequestMapping(value= "editFlight")
     @ResponseBody
-    public void delUser(@RequestParam("ids") String idsTemp) {
+    public void editFlight(Flight flight) {
+        flightService.update(flight);
+    }
+
+    @RequestMapping(value= "delFlight")
+    @ResponseBody
+    public void delFlight(@RequestParam("ids") String idsTemp) {
         String[] tempArray = idsTemp.split(",");
         Long[] ids = new Long[tempArray.length];
         for (int i = 0; i<tempArray.length; i++) {
             ids[i] = Long.parseLong(tempArray[i]);
         }
-        userService.delUser(ids);
+        flightService.delFlight(ids);
     }
 
-    @RequestMapping(value= "editUser")
+    @RequestMapping(value= "addFlight")
     @ResponseBody
-    public void editUser(User user) {
-        userService.update(user);
+    public void addFlight(Flight flight) {
+        flightService.addFlight(flight);
     }
 
 }

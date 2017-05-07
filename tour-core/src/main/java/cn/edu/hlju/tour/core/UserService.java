@@ -34,7 +34,7 @@ public interface UserService {
 
     void update(User user);
 
-    JSONObject selectAllUserByPage(int pageNum, int size);
+    JSONObject selectUserByPage(int pageNum, int size, User user);
 
     void delUser(Long[] ids);
 

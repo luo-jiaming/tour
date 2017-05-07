@@ -1,41 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.edu.hlju.tour.dao.FlightMapper" >
-  <resultMap id="BaseResultMap" type="cn.edu.hlju.tour.entity.Flight" >
-    <constructor >
-      <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
-      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="start_time" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="end_time" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="from_loc" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="to_loc" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="start_terminal" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="end_terminal" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="price" jdbcType="VARCHAR" javaType="java.lang.String" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List" >
-    id, name, start_time, end_time, from_loc, to_loc, start_terminal, end_terminal, price
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select
-    <include refid="Base_Column_List" />
-    from flight
-    where id = #{id,jdbcType=BIGINT}
-  </select>
+<mapper namespace="cn.edu.hlju.tour.dao.FlightMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.hlju.tour.entity.Flight">
+        <constructor>
+            <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="start_time" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="end_time" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="from_loc" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="to_loc" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="start_terminal" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="end_terminal" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="price" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+      id, name, start_time, end_time, from_loc, to_loc, start_terminal, end_terminal, price
+    </sql>
 
-  <select id="selectFlightByFromTo" resultMap="BaseResultMap" >
-    select
-    <include refid="Base_Column_List" />
-    from flight
-    where from_loc = #{from,jdbcType=VARCHAR} and to_loc = #{to,jdbcType=VARCHAR}
-  </select>
+    <delete id="delByFlightId" parameterType="long[]">
+        delete from flight where id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
 
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    <select id="selectByFlight" resultMap="BaseResultMap" parameterType="cn.edu.hlju.tour.entity.Flight">
+        select
+        <include refid="Base_Column_List"/>
+        from flight
+        <where>
+            <if test="name != null">
+                name like concat('%', concat(#{name, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="startTime != null">
+                and start_time like concat('%', concat(#{startTime, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="endTime != null">
+                and end_time like concat('%', concat(#{endTime, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="fromLoc != null">
+                and from_loc like concat('%', concat(#{fromLoc, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="toLoc != null">
+                and to_loc like concat('%', concat(#{toLoc, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="startTerminal != null">
+                and start_terminal like concat('%', concat(#{startTerminal, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="endTerminal != null">
+                and end_terminal like concat('%', concat(#{endTerminal, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="price != null">
+                and price like concat('%', concat(#{price, jdbcType=VARCHAR}, '%'))
+            </if>
+        </where>
+    </select>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from flight
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectFlightByFromTo" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from flight
+        where from_loc = #{from,jdbcType=VARCHAR} and to_loc = #{to,jdbcType=VARCHAR}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from flight
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="cn.edu.hlju.tour.entity.Flight" >
+    <insert id="insert" parameterType="cn.edu.hlju.tour.entity.Flight">
     insert into flight (id, name, start_time,
     end_time, from_loc, to_loc,
     start_terminal, end_terminal, price
@@ -45,98 +85,98 @@
     #{startTerminal,jdbcType=VARCHAR}, #{endTerminal,jdbcType=VARCHAR}, #{price,jdbcType=VARCHAR}
     )
   </insert>
-  <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.Flight" >
-    insert into flight
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="name != null" >
-        name,
-      </if>
-      <if test="startTime != null" >
-        start_time,
-      </if>
-      <if test="endTime != null" >
-        end_time,
-      </if>
-      <if test="fromLoc != null" >
-        from_loc,
-      </if>
-      <if test="toLoc != null" >
-        to_loc,
-      </if>
-      <if test="startTerminal != null" >
-        start_terminal,
-      </if>
-      <if test="endTerminal != null" >
-        end_terminal,
-      </if>
-      <if test="price != null" >
-        price,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="startTime != null" >
-        #{startTime,jdbcType=VARCHAR},
-      </if>
-      <if test="endTime != null" >
-        #{endTime,jdbcType=VARCHAR},
-      </if>
-      <if test="fromLoc != null" >
-        #{fromLoc,jdbcType=VARCHAR},
-      </if>
-      <if test="toLoc != null" >
-        #{toLoc,jdbcType=VARCHAR},
-      </if>
-      <if test="startTerminal != null" >
-        #{startTerminal,jdbcType=VARCHAR},
-      </if>
-      <if test="endTerminal != null" >
-        #{endTerminal,jdbcType=VARCHAR},
-      </if>
-      <if test="price != null" >
-        #{price,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hlju.tour.entity.Flight" >
-    update flight
-    <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="startTime != null" >
-        start_time = #{startTime,jdbcType=VARCHAR},
-      </if>
-      <if test="endTime != null" >
-        end_time = #{endTime,jdbcType=VARCHAR},
-      </if>
-      <if test="fromLoc != null" >
-        from_loc = #{fromLoc,jdbcType=VARCHAR},
-      </if>
-      <if test="toLoc != null" >
-        to_loc = #{toLoc,jdbcType=VARCHAR},
-      </if>
-      <if test="startTerminal != null" >
-        start_terminal = #{startTerminal,jdbcType=VARCHAR},
-      </if>
-      <if test="endTerminal != null" >
-        end_terminal = #{endTerminal,jdbcType=VARCHAR},
-      </if>
-      <if test="price != null" >
-        price = #{price,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.edu.hlju.tour.entity.Flight" >
+    <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.Flight">
+        insert into flight
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="startTime != null">
+                start_time,
+            </if>
+            <if test="endTime != null">
+                end_time,
+            </if>
+            <if test="fromLoc != null">
+                from_loc,
+            </if>
+            <if test="toLoc != null">
+                to_loc,
+            </if>
+            <if test="startTerminal != null">
+                start_terminal,
+            </if>
+            <if test="endTerminal != null">
+                end_terminal,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="startTime != null">
+                #{startTime,jdbcType=VARCHAR},
+            </if>
+            <if test="endTime != null">
+                #{endTime,jdbcType=VARCHAR},
+            </if>
+            <if test="fromLoc != null">
+                #{fromLoc,jdbcType=VARCHAR},
+            </if>
+            <if test="toLoc != null">
+                #{toLoc,jdbcType=VARCHAR},
+            </if>
+            <if test="startTerminal != null">
+                #{startTerminal,jdbcType=VARCHAR},
+            </if>
+            <if test="endTerminal != null">
+                #{endTerminal,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hlju.tour.entity.Flight">
+        update flight
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="startTime != null">
+                start_time = #{startTime,jdbcType=VARCHAR},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime,jdbcType=VARCHAR},
+            </if>
+            <if test="fromLoc != null">
+                from_loc = #{fromLoc,jdbcType=VARCHAR},
+            </if>
+            <if test="toLoc != null">
+                to_loc = #{toLoc,jdbcType=VARCHAR},
+            </if>
+            <if test="startTerminal != null">
+                start_terminal = #{startTerminal,jdbcType=VARCHAR},
+            </if>
+            <if test="endTerminal != null">
+                end_terminal = #{endTerminal,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="cn.edu.hlju.tour.entity.Flight">
     update flight
     set name = #{name,jdbcType=VARCHAR},
       start_time = #{startTime,jdbcType=VARCHAR},

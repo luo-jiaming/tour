@@ -5,7 +5,7 @@
 <html>
 <head>
 
-    <title>用户管理</title>
+    <title>航班管理</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
@@ -27,12 +27,12 @@
             initDataGrid();
 
             $("#searchbtn").click(function() {
-                $("#t_user").datagrid('load', serializeForm($("#search")));
+                $("#t_flight").datagrid('load', serializeForm($("#search")));
             });
 
             $("#clearbtn").click(function() {
                 $("#search").form('clear');
-                $("#t_user").datagrid('load', {});
+                $("#t_flight").datagrid('load', {});
             });
 
             saveBtnClick();
@@ -41,10 +41,10 @@
 
         //初始化数据表格
         function initDataGrid() {
-            $('#t_user').datagrid({
+            $('#t_flight').datagrid({
 
-                //  title : '用户列表',
-                url: '/manage/getUserList',
+                //	title : '航班列表',
+                url: '/manage/getFlightList',
                 idField: 'id',
 
                 height: 390,
@@ -60,28 +60,53 @@
                         checkbox: true,
                         width: 10
                     }, {
-                        field: 'nick',
-                        title: '昵称',
-                        width: 50
-                    }, {
-                        field: 'email',
-                        title: '邮箱',
+                        field: 'name',
+                        title: '航班名称',
                         width: 50,
                         sortable: true
                     }, {
-                        field: 'gender',
-                        title: '性别',
+                        field: 'fromLoc',
+                        title: '起飞城市',
+                        width: 50,
+                    }, {
+                        field: 'toLoc',
+                        title: '到达城市',
                         width: 50
+                    }, {
+                        field: 'startTerminal',
+                        title: '起点航站楼',
+                        width: 50,
+                    }, {
+                        field: 'endTerminal',
+                        title: '终点航站楼',
+                        width: 50
+                    }, {
+                        field: 'startTime',
+                        title: '起飞时间',
+                        width: 50,
+                    }, {
+                        field: 'endTime',
+                        title: '到达时间',
+                        width: 50
+                    }, {
+                        field: 'price',
+                        title: '价格',
+                        width: 50,
+                        sortable: true
                     }
 
                 ]],
                 toolbar: [
                     {
-                        text: '删除用户',
+                        text: '新增航班',
+                        iconCls: 'icon-add',
+                        handler: add
+                    }, {
+                        text: '删除航班',
                         iconCls: 'icon-remove',
                         handler: del
                     }, {
-                        text: '修改用户',
+                        text: '修改航班',
                         iconCls: 'icon-edit',
                         handler: edit
                     }
@@ -89,9 +114,22 @@
             });
         }
 
+        var flag;		//判断新增和修改
+
+        function add() {
+            flag = 'add';
+            $("#mydialog").dialog({
+                title: '新增航班',
+                iconCls: 'icon-add'
+            });
+            $("#mydialog").dialog('open');
+            $("#myform").get(0).reset();
+            $("#id").val("");		//设id为空
+        }
+
         function edit() {
             flag = 'edit';
-            var arr = $("#t_user").datagrid('getSelections');
+            var arr = $("#t_flight").datagrid('getSelections');
             if (arr.length != 1) {
                 $.messager.show({
                     title: '提示信息',
@@ -99,26 +137,64 @@
                 });
             } else {
                 $("#mydialog").dialog({
-                    title: '修改用户',
+                    title: '修改航班',
                     iconCls: 'icon-edit'
                 });
                 $('#mydialog').dialog('open'); //打开窗口
                 $('#myform').get(0).reset();   //清空表单数据
-                $('#myform').form('load', {    //调用load方法把所选中的数据load到表单中
+                $('#myform').form('load', {	   //调用load方法把所选中的数据load到表单中
                     id: arr[0].id,
-                    nick: arr[0].nick,
-                    gender: arr[0].gender,
-                    email: arr[0].email,
+                    name: arr[0].name,
+                    fromLoc: arr[0].fromLoc,
+                    toLoc: arr[0].toLoc,
+                    startTerminal: arr[0].startTerminal,
+                    endTerminal: arr[0].endTerminal,
+                    startTime: arr[0].startTime,
+                    endTime: arr[0].endTime,
+                    price: arr[0].price,
                 });
-                $("#nick").validatebox({
-                    required: true,
-                    missingMessage: '昵称必填'
-                });
+                validate();
             }
         }
 
+        //验证
+        function validate() {
+            $("#name").validatebox({
+                required: true,
+                missingMessage: '航班名称必填'
+            });
+            $("#fromLoc").validatebox({
+                required: true,
+                missingMessage: '起点城市必填'
+            });
+            $("#toLoc").validatebox({
+                required: true,
+                missingMessage: '到达城市必填'
+            });
+            $("#startTerminal").validatebox({
+                required: true,
+                missingMessage: '起点航站楼必填'
+            });
+            $("#endTerminal").validatebox({
+                required: true,
+                missingMessage: '终点航站楼必填'
+            });
+            $("#startTime").validatebox({
+                required: true,
+                missingMessage: '起飞时间必填'
+            });
+            $("#endTime").validatebox({
+                required: true,
+                missingMessage: '到达时间必填'
+            });
+            $("#price").validatebox({
+                required: true,
+                missingMessage: '价格必填'
+            });
+        }
+
         function del() {
-            var arr = $("#t_user").datagrid('getSelections');
+            var arr = $("#t_flight").datagrid('getSelections');
             if (arr.length <= 0) {
                 $.messager.show({
                     title: '提示信息',
@@ -135,14 +211,14 @@
                         $.ajax({
                             type: 'post',
                             cache: false,
-                            url: '/manage/delUser',
+                            url: '/manage/delFlight',
                             data: {'ids': ids},
                             success: function (data) {
                                 //刷新数据表格
-                                $("#t_user").datagrid('reload');
+                                $("#t_flight").datagrid('reload');
                                 //清空idField
-                                $("#t_user").datagrid('unselectAll');
-                                $("#t_user").datagrid('clearSelections');
+                                $("#t_flight").datagrid('unselectAll');
+                                $("#t_flight").datagrid('clearSelections');
                                 $.messager.show({
                                     title: '提示信息',
                                     msg: '删除成功！'
@@ -185,14 +261,14 @@
                 } else {
                     $.ajax({
                         type: 'post',
-                        url: flag == 'add' ? 'add' : '/manage/editUser',
+                        url: flag == 'add' ? '/manage/addFlight' : '/manage/editFlight',
                         cache: false,
                         data: $("#myform").serialize(),
                         success: function(data) {
                             //关闭窗口
                             $("#mydialog").dialog('close');
                             //刷新datagrid
-                            $("#t_user").datagrid('reload');
+                            $("#t_flight").datagrid('reload');
                             $.messager.show({
                                 title: '提示信息',
                                 msg: '操作成功！'
@@ -219,10 +295,12 @@
     <form id="search">
         <table style="width:70%">
             <tr>
-                <td align="right">昵称:</td>
-                <td><input type="text" name="nick" value=""/></td>
-                <td align="right">邮箱:</td>
-                <td><input type="text" name="email" value=""/></td>
+                <td align="right">航班:</td>
+                <td><input type="text" name="name" value=""/></td>
+                <td align="right">起飞城市:</td>
+                <td><input type="text" name="fromLoc" value=""/></td>
+                <td align="right">到达城市:</td>
+                <td><input type="text" name="toLoc" value=""/></td>
                 <td align="right"><a id="searchbtn" class="easyui-linkbutton" iconCls="icon-search"></a></td>
                 <td align="right"><a id="clearbtn" class="easyui-linkbutton">清空</a></td>
             </tr>
@@ -231,7 +309,7 @@
 
 </div>
 
-<table id="t_user"></table>
+<table id="t_flight"></table>
 
 <div id="mydialog" class="easyui-dialog" closed="true" modal="true" draggable="true" style="width:300px; margin: 20px 40px">
 
@@ -239,26 +317,49 @@
         <input id="id" type="hidden" name="id" value="" />
         <table>
             <tr>
-                <td>昵称:</td>
-                <td><input id="nick" type="text" name="nick" value="" /></td>
+                <td>航班名称:</td>
+                <td><input id="name" type="text" name="name" value="" /></td>
             </tr>
 
             <tr>
-                <td>性别:</td>
-                <td>
-                    男:<input type="radio" checked="checked" name="gender" value="男" />
-                    女:<input type="radio" name="gender" value="女" />
-                </td>
+                <td>起飞城市:</td>
+                <td><input id="fromLoc" type="text" name="fromLoc" value="" /></td>
             </tr>
 
             <tr>
-                <td>email:</td>
-                <td><input id="" type="text" name="email" value="" readonly /></td>
+                <td>到达城市:</td>
+                <td><input id="toLoc" type="text" name="toLoc" value="" /></td>
+            </tr>
+
+            <tr>
+                <td>起点航站楼:</td>
+                <td><input id="startTerminal" type="text" name="startTerminal" value="" /></td>
+            </tr>
+
+            <tr>
+                <td>终点航站楼:</td>
+                <td><input id="endTerminal" type="text" name="endTerminal" value="" /></td>
+            </tr>
+
+            <tr>
+                <td>起飞时间:</td>
+                <td><input id="startTime" type="text" name="startTime" value="" /></td>
+            </tr>
+
+            <tr>
+                <td>到达时间:</td>
+                <td><input id="endTime" type="text" name="endTime" value="" /></td>
+            </tr>
+
+            <tr>
+                <td>票价:</td>
+                <td><input id="price" type="text" name="price" value="" /></td>
             </tr>
 
             <tr align="center">
                 <td colspan="2"><a id="saveBtn" class="easyui-linkbutton" iconCls="icon-save">保存</a></td>
             </tr>
+
         </table>
     </form>
 </div>

@@ -19,4 +19,8 @@ public interface FlightMapper {
     int updateByPrimaryKey(Flight record);
 
     List<Flight> selectFlightByFromTo(@Param("from") String from, @Param("to") String to);
+
+    List<Flight> selectByFlight(Flight flight);
+
+    void delByFlightId(Long[] ids);
 }

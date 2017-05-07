@@ -23,10 +23,18 @@
         </foreach>
     </delete>
 
-    <select id="selectAll" resultMap="BaseResultMap">
+    <select id="selectByUser" resultMap="BaseResultMap" parameterType="cn.edu.hlju.tour.entity.User">
         select
         <include refid="Base_Column_List"/>
         from user
+        <where>
+            <if test="nick != null">
+                nick like concat('%', concat(#{nick, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="email != null">
+                and email like concat('%', concat(#{email, jdbcType=VARCHAR}, '%'))
+            </if>
+        </where>
     </select>
 
     <select id="selectByEmailAndPassword" resultMap="BaseResultMap">

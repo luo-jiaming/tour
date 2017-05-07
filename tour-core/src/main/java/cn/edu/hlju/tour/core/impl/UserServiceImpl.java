@@ -201,9 +201,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public JSONObject selectAllUserByPage(int pageNum, int size) {
+    public JSONObject selectUserByPage(int pageNum, int size, User user) {
         PageHelper.startPage(pageNum, size);                              //分页
-        List<User> list = userMapper.selectAll();                         //得到分页之后的用户
+        List<User> list = userMapper.selectByUser(user);                  //得到分页之后的用户
         PageInfo<TravelComment> pageInfo = new PageInfo(list);            //分页参数
         JSONObject json = new JSONObject();
         json.put("pageinfo", pageInfo);

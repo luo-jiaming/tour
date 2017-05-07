@@ -62,9 +62,9 @@
                 </ul>
             </div>
 
-            <div title="部门管理" style="overflow:auto">
+            <div title="航班管理" style="overflow:auto">
                 <ul>
-                    <li><a title="jsp/dept.jsp" class="easyui-linkbutton">部门列表</a></li>
+                    <li><a title="jsp/flight.jsp" class="easyui-linkbutton">航班列表</a></li>
                 </ul>
             </div>
 

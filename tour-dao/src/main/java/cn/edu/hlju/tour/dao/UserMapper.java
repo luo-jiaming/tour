@@ -25,7 +25,7 @@ public interface UserMapper {
 
     void updatePasswordByEmail(@Param("email") String email, @Param("password")String password);
 
-    List<User> selectAll();
+    List<User> selectByUser(User user);
 
     void delByUserId(Long[] ids);
 
