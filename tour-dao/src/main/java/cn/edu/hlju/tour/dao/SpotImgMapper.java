@@ -22,4 +22,8 @@ public interface SpotImgMapper {
     List<SpotImg> selectBySpotId(Long id);
 
     List<Map> selectBySpotName(@Param("spotName") String spotName);
+
+    void delBySpotId(Long[] ids);
+
+    void delBySpotImgId(Long[] ids);
 }

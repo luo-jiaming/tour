@@ -27,6 +27,8 @@
 
             initDataGrid();
 
+            initAllSpot();
+
             $("#searchbtn").click(function() {
                 $("#t_spotImg").datagrid('load', serializeForm($("#search")));
             });
@@ -66,6 +68,9 @@
                         width: 50,
                         sortable: true
                     }, {
+                        field: 'spotId',
+                        hidden: true
+                    }, {
                         field: 'img',
                         title: '图片',
                         width: 50,
@@ -95,6 +100,22 @@
             });
         }
 
+        // 加载所有景点
+        function initAllSpot() {
+            $('#spotId').empty();
+            $.ajax({
+                type: "POST",
+                url: "/manage/getAllSpot",
+                success: function(data) {
+                    var inner = "";
+                    for (var i = 0; i<data.length; i++) {
+                        inner += " <option value='" + data[i].id + "'>" + data[i].spotName + "</option>";
+                    }
+                    $('#spotId').append(inner);
+                }
+            });
+        }
+
         var flag;		//判断新增和修改
 
         function add() {
@@ -106,7 +127,6 @@
             $("#mydialog").dialog('open');
             $("#myform").get(0).reset();
             $("#id").val("");		//设id为空
-            validate();
         }
 
         function edit() {
@@ -126,33 +146,9 @@
                 $('#myform').get(0).reset();   //清空表单数据
                 $('#myform').form('load', {	   //调用load方法把所选中的数据load到表单中
                     id: arr[0].id,
-                    spotName: arr[0].spotName,
-                    spotIntroduce: arr[0].spotIntroduce,
-                    spendTime: arr[0].spendTime,
-                    traffic: arr[0].traffic,
-                    ticket: arr[0].ticket,
-                    openTime: arr[0].openTime,
-                    location: arr[0].location,
-                    coordinate: arr[0].coordinate,
+                    spotId: arr[0].spotId
                 });
             }
-            validate();
-        }
-
-        //验证
-        function validate() {
-            $("#spotName").validatebox({
-                required: true,
-                missingMessage: '景点名称必填'
-            });
-            $("#spotIntroduce").validatebox({
-                required: true,
-                missingMessage: '景点介绍必填'
-            });
-            $("#spendTime").validatebox({
-                required: true,
-                missingMessage: '花费时间必填'
-            });
         }
 
         function del() {
@@ -173,7 +169,7 @@
                         $.ajax({
                             type: 'post',
                             cache: false,
-                            url: '/manage/delSpot',
+                            url: '/manage/delSpotImg',
                             data: {'ids': ids},
                             success: function (data) {
                                 //刷新数据表格
@@ -235,7 +231,7 @@
 
         function ajaxSubmitForm() {
             var option = {
-                url: flag == 'add' ? '/manage/addSpot' : '/manage/editSpot',
+                url: flag == 'add' ? '/manage/addSpotImg' : '/manage/editSpotImg',
                 type: 'POST',
                 dataType: 'json',
                 headers: {"ClientCallMode" : "ajax"}, //添加请求头部
@@ -281,60 +277,20 @@
 
 <table id="t_spotImg"></table>
 
-<div id="mydialog" class="easyui-dialog" closed="true" modal="true" draggable="true" style="width:530px; margin: 20px 40px">
+<div id="mydialog" class="easyui-dialog" closed="true" modal="true" draggable="true" style="width:370px; margin: 20px 40px">
 
     <form id="myform" method="post" enctype="multipart/form-data">
         <input id="id" type="hidden" name="id" value="" />
         <table>
             <tr>
                 <td>景点名称:</td>
-                <td><input id="spotName" type="text" name="spotName" value="" style="width:200px" /></td>
-            </tr>
-
-            <tr>
-                <td>花费时间:</td>
-                <td><input id="spendTime" type="text" name="spendTime" value="" style="width:200px" /></td>
-            </tr>
-
-            <tr>
-                <td>开放时间:</td>
-                <td><input id="openTime" type="text" name="openTime" value="" style="width:200px" /></td>
-            </tr>
-
-            <tr>
-                <td>票价:</td>
-                <td><input id="ticket" type="text" name="ticket" value="" style="width:200px" /></td>
-            </tr>
-
-            <tr>
-                <td>坐标:</td>
                 <td>
-                    <input id="coordinate" type="text" name="coordinate" value="" style="width:200px" />
-                    <a href="http://lbs.amap.com/console/show/picker" target="_blank">坐标拾取器</a>
+                    <select id="spotId" name="spotId" style="width:200px"></select>
                 </td>
             </tr>
 
             <tr>
-                <td>地址:</td>
-                <td><input id="location" type="text" name="location" value="" style="width:370px" /></td>
-            </tr>
-
-            <tr>
-                <td>交通状况:</td>
-                <td>
-                    <textarea id="traffic" rows="3" cols="50" name="traffic"></textarea>
-                </td>
-            </tr>
-
-            <tr>
-                <td>景点介绍:</td>
-                <td>
-                    <textarea id="spotIntroduce" rows="8" cols="50" name="spotIntroduce"></textarea>
-                </td>
-            </tr>
-
-            <tr>
-                <td>主页照片:</td>
+                <td>图片:</td>
                 <td>
                     <input id="file" type="file" name="file" accept="image/*" />
                 </td>
@@ -343,7 +299,6 @@
             <tr align="center">
                 <td colspan="2"><a id="saveBtn" class="easyui-linkbutton" iconCls="icon-save">保存</a></td>
             </tr>
-
         </table>
     </form>
 </div>

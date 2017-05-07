@@ -132,6 +132,9 @@ public class SpotServiceImpl implements SpotService {
         //删除景点评论
         spotCommentMapper.delBySpotId(ids);
 
+        //删除景点图片
+        spotImgMapper.delBySpotId(ids);
+
         //删除景点
         spotMapper.delBySpotId(ids);
     }

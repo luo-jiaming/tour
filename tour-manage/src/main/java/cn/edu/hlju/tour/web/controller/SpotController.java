@@ -44,7 +44,6 @@ public class SpotController {
     @RequestMapping(value= "editSpot")
     @ResponseBody
     public void editSpot(Spot spot, @RequestParam(value="file", required=false) MultipartFile file, HttpServletRequest request) throws IOException {
-        System.out.println(file == null);
         if (file != null) {
             String str = spotService.uploadIndexImg(file , request);
             spot.setIndexImg(str);
@@ -71,6 +70,12 @@ public class SpotController {
         spotService.addSpot(spot);
     }
 
+    @RequestMapping(value= "getAllSpot")
+    @ResponseBody
+    public List getAllSpot() throws IOException {
+        List<Spot> list = spotService.getAllSpot();
+        return list;
+    }
 
 //    @RequestMapping(value= "test")
 //    @ResponseBody

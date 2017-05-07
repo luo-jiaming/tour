@@ -11,6 +11,21 @@
     <sql id="Base_Column_List">
       id, spot_id, img
     </sql>
+
+    <delete id="delBySpotId" parameterType="long[]">
+        delete from spot_img where spot_id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
+
+    <delete id="delBySpotImgId" parameterType="long[]">
+        delete from spot_img where id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
+
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select
         <include refid="Base_Column_List"/>
