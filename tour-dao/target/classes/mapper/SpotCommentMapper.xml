@@ -22,6 +22,14 @@
         </foreach>
     </delete>
 
+    <delete id="delBySpotId" parameterType="long[]">
+        delete from spot_comment
+        where spot_id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
+
     <select id="selectAll" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>

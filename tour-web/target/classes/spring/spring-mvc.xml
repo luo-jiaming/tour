@@ -9,15 +9,18 @@
 
     <context:component-scan base-package="cn.edu.hlju.tour.web.controller"></context:component-scan>
 
+    <!-- 注解驱动 -->
     <mvc:annotation-driven />
 
-    <mvc:default-servlet-handler/>
+    <!-- 过滤静态文件 -->
+    <mvc:default-servlet-handler />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
 
+    <!-- 上传文件 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="defaultEncoding" value="utf-8"></property>
     </bean>

@@ -5,7 +5,7 @@
 <html>
 <head>
 
-    <title>景点管理</title>
+    <title>景点图片管理</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
@@ -28,12 +28,12 @@
             initDataGrid();
 
             $("#searchbtn").click(function() {
-                $("#t_spot").datagrid('load', serializeForm($("#search")));
+                $("#t_spotImg").datagrid('load', serializeForm($("#search")));
             });
 
             $("#clearbtn").click(function() {
                 $("#search").form('clear');
-                $("#t_spot").datagrid('load', {});
+                $("#t_spotImg").datagrid('load', {});
             });
 
             saveBtnClick();
@@ -42,16 +42,16 @@
 
         //初始化数据表格
         function initDataGrid() {
-            $('#t_spot').datagrid({
+            $('#t_spotImg').datagrid({
 
-                //	title : '景点列表',
-                url: '/manage/getSpotList',
+                //	title : '景点图片列表',
+                url: '/manage/getSpotImgList',
                 idField: 'id',
 
                 height: 500,
                 striped: true,
                 rownumbers: true,
-                fitColumns: false,
+                fitColumns: true,
                 pagination: true,
                 pageSize: 10,
                 pageList: [5, 10, 15, 20],
@@ -63,58 +63,31 @@
                     }, {
                         field: 'spotName',
                         title: '景点名称',
-                        width: 150,
+                        width: 50,
+                        sortable: true
                     }, {
-                        field: 'spotIntroduce',
-                        title: '景点介绍',
-                        width: 200,
-                    }, {
-                        field: 'spendTime',
-                        title: '花费时间',
-                        width: 100
-                    }, {
-                        field: 'traffic',
-                        title: '交通状况',
-                        width: 200,
-                    }, {
-                        field: 'ticket',
-                        title: '票价',
-                        width: 150
-                    }, {
-                        field: 'openTime',
-                        title: '开放时间',
-                        width: 100,
-                    }, {
-                        field: 'location',
-                        title: '地址',
-                        width: 250
-                    }, {
-                        field: 'coordinate',
-                        title: '坐标',
-                        width: 200,
-                    }, {
-                        field: 'indexImg',
+                        field: 'img',
                         title: '图片',
-                        width: 200,
+                        width: 50,
                         align: 'center',
                         formatter : function(value, record, index) {
                             var str = '';
-                            str = "<img style='width:50%; height:60px; border-radius: 5%;' src='" + value + "'>";
+                            str = "<img style='width:30%; height:20%; border-radius: 5%;' src='" + value + "'>";
                             return str;
                         }
                     }
                 ]],
                 toolbar: [
                     {
-                        text: '新增景点',
+                        text: '新增景点图片',
                         iconCls: 'icon-add',
                         handler: add
                     }, {
-                        text: '删除景点',
+                        text: '删除景点图片',
                         iconCls: 'icon-remove',
                         handler: del
                     }, {
-                        text: '修改景点',
+                        text: '更换景点图片',
                         iconCls: 'icon-edit',
                         handler: edit
                     }
@@ -127,7 +100,7 @@
         function add() {
             flag = 'add';
             $("#mydialog").dialog({
-                title: '新增景点',
+                title: '新增景点图片',
                 iconCls: 'icon-add'
             });
             $("#mydialog").dialog('open');
@@ -138,7 +111,7 @@
 
         function edit() {
             flag = 'edit';
-            var arr = $("#t_spot").datagrid('getSelections');
+            var arr = $("#t_spotImg").datagrid('getSelections');
             if (arr.length != 1) {
                 $.messager.show({
                     title: '提示信息',
@@ -146,7 +119,7 @@
                 });
             } else {
                 $("#mydialog").dialog({
-                    title: '修改景点',
+                    title: '修改景点图片',
                     iconCls: 'icon-edit'
                 });
                 $('#mydialog').dialog('open'); //打开窗口
@@ -180,30 +153,10 @@
                 required: true,
                 missingMessage: '花费时间必填'
             });
-            $("#traffic").validatebox({
-                required: true,
-                missingMessage: '交通状况必填'
-            });
-            $("#ticket").validatebox({
-                required: true,
-                missingMessage: '门票必填'
-            });
-            $("#openTime").validatebox({
-                required: true,
-                missingMessage: '开放时间必填'
-            });
-            $("#location").validatebox({
-                required: true,
-                missingMessage: '位置必填'
-            });
-            $("#coordinate").validatebox({
-                required: true,
-                missingMessage: '坐标必填'
-            });
         }
 
         function del() {
-            var arr = $("#t_spot").datagrid('getSelections');
+            var arr = $("#t_spotImg").datagrid('getSelections');
             if (arr.length <= 0) {
                 $.messager.show({
                     title: '提示信息',
@@ -224,10 +177,10 @@
                             data: {'ids': ids},
                             success: function (data) {
                                 //刷新数据表格
-                                $("#t_spot").datagrid('reload');
+                                $("#t_spotImg").datagrid('reload');
                                 //清空idField
-                                $("#t_spot").datagrid('unselectAll');
-                                $("#t_spot").datagrid('clearSelections');
+                                $("#t_spotImg").datagrid('unselectAll');
+                                $("#t_spotImg").datagrid('clearSelections');
                                 $.messager.show({
                                     title: '提示信息',
                                     msg: '删除成功！'
@@ -290,7 +243,7 @@
                     //关闭窗口
                     $("#mydialog").dialog('close');
                     //刷新datagrid
-                    $("#t_spot").datagrid('reload');
+                    $("#t_spotImg").datagrid('reload');
                     $.messager.show({
                         title: '提示信息',
                         msg: '操作成功！'
@@ -326,7 +279,7 @@
 
 </div>
 
-<table id="t_spot"></table>
+<table id="t_spotImg"></table>
 
 <div id="mydialog" class="easyui-dialog" closed="true" modal="true" draggable="true" style="width:530px; margin: 20px 40px">
 

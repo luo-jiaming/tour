@@ -73,6 +73,12 @@
                     <li><a title="jsp/spot.jsp" class="easyui-linkbutton">景点列表</a></li>
                 </ul>
             </div>
+
+            <div title="景点图片管理" style="overflow:auto">
+                <ul>
+                    <li><a title="jsp/spotImg.jsp" class="easyui-linkbutton">景点图片列表</a></li>
+                </ul>
+            </div>
         </div>
 
     </div>

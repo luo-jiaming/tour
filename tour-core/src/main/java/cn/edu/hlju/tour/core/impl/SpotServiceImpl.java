@@ -12,6 +12,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -126,7 +127,12 @@ public class SpotServiceImpl implements SpotService {
     }
 
     @Override
+    @Transactional
     public void delSpot(Long[] ids) {
+        //删除景点评论
+        spotCommentMapper.delBySpotId(ids);
+
+        //删除景点
         spotMapper.delBySpotId(ids);
     }
 

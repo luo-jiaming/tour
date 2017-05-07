@@ -9,13 +9,25 @@
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
-    id, spot_id, img
-  </sql>
+      id, spot_id, img
+    </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select
         <include refid="Base_Column_List"/>
         from spot_img
         where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectBySpotName" resultType="java.util.HashMap" parameterType="java.lang.String" >
+        select
+          si.id id, si.spot_id spotId, si.img img, s.spot_name spotName
+        from spot_img si, spot s
+        <where>
+            s.id = si.spot_id
+            <if test="spotName != null">
+                and s.spot_name like concat('%', concat(#{spotName, jdbcType=VARCHAR}, '%'))
+            </if>
+        </where>
     </select>
 
     <select id="selectBySpotId" resultMap="BaseResultMap" parameterType="java.lang.Long">
@@ -24,7 +36,6 @@
         from spot_img
         where spot_id = #{id,jdbcType=BIGINT}
     </select>
-
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from spot_img

@@ -47,7 +47,7 @@
                 url: '/manage/getFlightList',
                 idField: 'id',
 
-                height: 390,
+                height: 500,
                 striped: true,
                 rownumbers: true,
                 fitColumns: true,

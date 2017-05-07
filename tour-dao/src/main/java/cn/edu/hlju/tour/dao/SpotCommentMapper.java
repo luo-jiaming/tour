@@ -23,4 +23,6 @@ public interface SpotCommentMapper {
 
     void delByUserId(Long[] ids);
 
+    void delBySpotId(Long[] ids);
+
 }
