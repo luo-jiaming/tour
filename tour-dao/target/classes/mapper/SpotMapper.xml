@@ -1,51 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.edu.hlju.tour.dao.SpotMapper" >
-  <resultMap id="BaseResultMap" type="cn.edu.hlju.tour.entity.Spot" >
-    <constructor >
-      <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
-      <arg column="spot_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="spot_introduce" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="spend_time" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="traffic" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="ticket" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="open_time" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="location" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="coordinate" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="index_img" jdbcType="VARCHAR" javaType="java.lang.String" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List" >
-    id, spot_name, spot_introduce, spend_time, traffic, ticket, open_time, location,
-    coordinate, index_img
-  </sql>
+<mapper namespace="cn.edu.hlju.tour.dao.SpotMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.hlju.tour.entity.Spot">
+        <constructor>
+            <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="spot_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="spot_introduce" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="spend_time" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="traffic" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="ticket" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="open_time" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="location" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="coordinate" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="index_img" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+      id, spot_name, spot_introduce, spend_time, traffic, ticket, open_time, location,
+      coordinate, index_img
+    </sql>
 
-  <select id="selectAll" resultMap="BaseResultMap" >
-    select
-    <include refid="Base_Column_List" />
-    from spot
-  </select>
+    <delete id="delBySpotId" parameterType="long[]">
+        delete from spot where id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
 
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select
-    <include refid="Base_Column_List" />
-    from spot
-    where id = #{id,jdbcType=BIGINT}
-  </select>
+    <select id="selectBySpot" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from spot
+        <where>
+            <if test="spotName != null">
+                spot_name like concat('%', concat(#{spotName, jdbcType=VARCHAR}, '%'))
+            </if>
+        </where>
+    </select>
 
-  <select id="selectBySpotName" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select
-    <include refid="Base_Column_List" />
-    from spot
-    where spot_name = #{spotname,jdbcType=VARCHAR}
-  </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from spot
+    </select>
 
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from spot
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectBySpotName" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from spot
+        where spot_name = #{spotname,jdbcType=VARCHAR}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from spot
     where id = #{id,jdbcType=BIGINT}
   </delete>
 
-  <insert id="insert" parameterType="cn.edu.hlju.tour.entity.Spot" >
+    <insert id="insert" parameterType="cn.edu.hlju.tour.entity.Spot">
     insert into spot (id, spot_name, spot_introduce,
     spend_time, traffic, ticket,
     open_time, location, coordinate,
@@ -55,107 +73,107 @@
     #{openTime,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{coordinate,jdbcType=VARCHAR},
     #{indexImg,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.Spot" >
-    insert into spot
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="spotName != null" >
-        spot_name,
-      </if>
-      <if test="spotIntroduce != null" >
-        spot_introduce,
-      </if>
-      <if test="spendTime != null" >
-        spend_time,
-      </if>
-      <if test="traffic != null" >
-        traffic,
-      </if>
-      <if test="ticket != null" >
-        ticket,
-      </if>
-      <if test="openTime != null" >
-        open_time,
-      </if>
-      <if test="location != null" >
-        location,
-      </if>
-      <if test="coordinate != null" >
-        coordinate,
-      </if>
-      <if test="indexImg != null" >
-        index_img,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="spotName != null" >
-        #{spotName,jdbcType=VARCHAR},
-      </if>
-      <if test="spotIntroduce != null" >
-        #{spotIntroduce,jdbcType=VARCHAR},
-      </if>
-      <if test="spendTime != null" >
-        #{spendTime,jdbcType=VARCHAR},
-      </if>
-      <if test="traffic != null" >
-        #{traffic,jdbcType=VARCHAR},
-      </if>
-      <if test="ticket != null" >
-        #{ticket,jdbcType=VARCHAR},
-      </if>
-      <if test="openTime != null" >
-        #{openTime,jdbcType=VARCHAR},
-      </if>
-      <if test="location != null" >
-        #{location,jdbcType=VARCHAR},
-      </if>
-      <if test="coordinate != null" >
-        #{coordinate,jdbcType=VARCHAR},
-      </if>
-      <if test="indexImg != null" >
-        #{indexImg,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hlju.tour.entity.Spot" >
-    update spot
-    <set >
-      <if test="spotName != null" >
-        spot_name = #{spotName,jdbcType=VARCHAR},
-      </if>
-      <if test="spotIntroduce != null" >
-        spot_introduce = #{spotIntroduce,jdbcType=VARCHAR},
-      </if>
-      <if test="spendTime != null" >
-        spend_time = #{spendTime,jdbcType=VARCHAR},
-      </if>
-      <if test="traffic != null" >
-        traffic = #{traffic,jdbcType=VARCHAR},
-      </if>
-      <if test="ticket != null" >
-        ticket = #{ticket,jdbcType=VARCHAR},
-      </if>
-      <if test="openTime != null" >
-        open_time = #{openTime,jdbcType=VARCHAR},
-      </if>
-      <if test="location != null" >
-        location = #{location,jdbcType=VARCHAR},
-      </if>
-      <if test="coordinate != null" >
-        coordinate = #{coordinate,jdbcType=VARCHAR},
-      </if>
-      <if test="indexImg != null" >
-        index_img = #{indexImg,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.edu.hlju.tour.entity.Spot" >
+    <insert id="insertSelective" parameterType="cn.edu.hlju.tour.entity.Spot">
+        insert into spot
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="spotName != null">
+                spot_name,
+            </if>
+            <if test="spotIntroduce != null">
+                spot_introduce,
+            </if>
+            <if test="spendTime != null">
+                spend_time,
+            </if>
+            <if test="traffic != null">
+                traffic,
+            </if>
+            <if test="ticket != null">
+                ticket,
+            </if>
+            <if test="openTime != null">
+                open_time,
+            </if>
+            <if test="location != null">
+                location,
+            </if>
+            <if test="coordinate != null">
+                coordinate,
+            </if>
+            <if test="indexImg != null">
+                index_img,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="spotName != null">
+                #{spotName,jdbcType=VARCHAR},
+            </if>
+            <if test="spotIntroduce != null">
+                #{spotIntroduce,jdbcType=VARCHAR},
+            </if>
+            <if test="spendTime != null">
+                #{spendTime,jdbcType=VARCHAR},
+            </if>
+            <if test="traffic != null">
+                #{traffic,jdbcType=VARCHAR},
+            </if>
+            <if test="ticket != null">
+                #{ticket,jdbcType=VARCHAR},
+            </if>
+            <if test="openTime != null">
+                #{openTime,jdbcType=VARCHAR},
+            </if>
+            <if test="location != null">
+                #{location,jdbcType=VARCHAR},
+            </if>
+            <if test="coordinate != null">
+                #{coordinate,jdbcType=VARCHAR},
+            </if>
+            <if test="indexImg != null">
+                #{indexImg,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hlju.tour.entity.Spot">
+        update spot
+        <set>
+            <if test="spotName != null">
+                spot_name = #{spotName,jdbcType=VARCHAR},
+            </if>
+            <if test="spotIntroduce != null">
+                spot_introduce = #{spotIntroduce,jdbcType=VARCHAR},
+            </if>
+            <if test="spendTime != null">
+                spend_time = #{spendTime,jdbcType=VARCHAR},
+            </if>
+            <if test="traffic != null">
+                traffic = #{traffic,jdbcType=VARCHAR},
+            </if>
+            <if test="ticket != null">
+                ticket = #{ticket,jdbcType=VARCHAR},
+            </if>
+            <if test="openTime != null">
+                open_time = #{openTime,jdbcType=VARCHAR},
+            </if>
+            <if test="location != null">
+                location = #{location,jdbcType=VARCHAR},
+            </if>
+            <if test="coordinate != null">
+                coordinate = #{coordinate,jdbcType=VARCHAR},
+            </if>
+            <if test="indexImg != null">
+                index_img = #{indexImg,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="cn.edu.hlju.tour.entity.Spot">
     update spot
     set spot_name = #{spotName,jdbcType=VARCHAR},
       spot_introduce = #{spotIntroduce,jdbcType=VARCHAR},

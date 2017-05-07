@@ -31,7 +31,7 @@ public class UploadUtils {
             f = File.createTempFile("upload", "."+str[str.length-1], f);
             file.transferTo(f);
             String contextPath = request.getSession().getServletContext().getContextPath();
-            relativePath = contextPath + "/" + path + f.getName();
+            relativePath = AddrUtils.getUrl(request) + contextPath + "/" + path + f.getName();
         }
         return relativePath;
     }

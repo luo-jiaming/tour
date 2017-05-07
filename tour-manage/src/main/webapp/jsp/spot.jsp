@@ -5,7 +5,7 @@
 <html>
 <head>
 
-    <title>航班管理</title>
+    <title>景点管理</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
@@ -19,6 +19,7 @@
 
     <script type="text/javascript" src="../resources/js/jquery-easyui-1.2.6/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../resources/js/jquery-easyui-1.2.6/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../resources/js/jquery-easyui-1.2.6/jquery.form.min.js"></script>
     <script type="text/javascript" src="../resources/js/jquery-easyui-1.2.6/locale/easyui-lang-zh_CN.js"></script>
 
     <script type="text/javascript">
@@ -27,12 +28,12 @@
             initDataGrid();
 
             $("#searchbtn").click(function() {
-                $("#t_flight").datagrid('load', serializeForm($("#search")));
+                $("#t_spot").datagrid('load', serializeForm($("#search")));
             });
 
             $("#clearbtn").click(function() {
                 $("#search").form('clear');
-                $("#t_flight").datagrid('load', {});
+                $("#t_spot").datagrid('load', {});
             });
 
             saveBtnClick();
@@ -41,10 +42,10 @@
 
         //初始化数据表格
         function initDataGrid() {
-            $('#t_flight').datagrid({
+            $('#t_spot').datagrid({
 
-                //	title : '航班列表',
-                url: '/manage/getFlightList',
+                //	title : '景点列表',
+                url: '/manage/getSpotList',
                 idField: 'id',
 
                 height: 390,
@@ -60,53 +61,54 @@
                         checkbox: true,
                         width: 10
                     }, {
-                        field: 'name',
-                        title: '航班名称',
-                        width: 50,
-                        sortable: true
-                    }, {
-                        field: 'fromLoc',
-                        title: '起飞城市',
+                        field: 'spotName',
+                        title: '景点名称',
                         width: 50,
                     }, {
-                        field: 'toLoc',
-                        title: '到达城市',
+                        field: 'spotIntroduce',
+                        title: '景点介绍',
+                        width: 50,
+                    }, {
+                        field: 'spendTime',
+                        title: '花费时间',
                         width: 50
                     }, {
-                        field: 'startTerminal',
-                        title: '起点航站楼',
+                        field: 'traffic',
+                        title: '交通状况',
                         width: 50,
                     }, {
-                        field: 'endTerminal',
-                        title: '终点航站楼',
+                        field: 'ticket',
+                        title: '票价',
                         width: 50
                     }, {
-                        field: 'startTime',
-                        title: '起飞时间',
+                        field: 'openTime',
+                        title: '开放时间',
                         width: 50,
                     }, {
-                        field: 'endTime',
-                        title: '到达时间',
+                        field: 'location',
+                        title: '地址',
                         width: 50
                     }, {
-                        field: 'price',
-                        title: '价格',
+                        field: 'coordinate',
+                        title: '坐标',
                         width: 50,
-                        sortable: true
+                    }, {
+                        field: 'indexImg',
+                        title: '图片',
+                        width: 50,
                     }
-
                 ]],
                 toolbar: [
                     {
-                        text: '新增航班',
+                        text: '新增景点',
                         iconCls: 'icon-add',
                         handler: add
                     }, {
-                        text: '删除航班',
+                        text: '删除景点',
                         iconCls: 'icon-remove',
                         handler: del
                     }, {
-                        text: '修改航班',
+                        text: '修改景点',
                         iconCls: 'icon-edit',
                         handler: edit
                     }
@@ -119,7 +121,7 @@
         function add() {
             flag = 'add';
             $("#mydialog").dialog({
-                title: '新增航班',
+                title: '新增景点',
                 iconCls: 'icon-add'
             });
             $("#mydialog").dialog('open');
@@ -130,7 +132,7 @@
 
         function edit() {
             flag = 'edit';
-            var arr = $("#t_flight").datagrid('getSelections');
+            var arr = $("#t_spot").datagrid('getSelections');
             if (arr.length != 1) {
                 $.messager.show({
                     title: '提示信息',
@@ -138,64 +140,64 @@
                 });
             } else {
                 $("#mydialog").dialog({
-                    title: '修改航班',
+                    title: '修改景点',
                     iconCls: 'icon-edit'
                 });
                 $('#mydialog').dialog('open'); //打开窗口
                 $('#myform').get(0).reset();   //清空表单数据
                 $('#myform').form('load', {	   //调用load方法把所选中的数据load到表单中
                     id: arr[0].id,
-                    name: arr[0].name,
-                    fromLoc: arr[0].fromLoc,
-                    toLoc: arr[0].toLoc,
-                    startTerminal: arr[0].startTerminal,
-                    endTerminal: arr[0].endTerminal,
-                    startTime: arr[0].startTime,
-                    endTime: arr[0].endTime,
-                    price: arr[0].price,
+                    spotName: arr[0].spotName,
+                    spotIntroduce: arr[0].spotIntroduce,
+                    spendTime: arr[0].spendTime,
+                    traffic: arr[0].traffic,
+                    ticket: arr[0].ticket,
+                    openTime: arr[0].openTime,
+                    location: arr[0].location,
+                    coordinate: arr[0].coordinate,
                 });
-                validate();
             }
+            validate();
         }
 
         //验证
         function validate() {
-            $("#name").validatebox({
+            $("#spotName").validatebox({
                 required: true,
-                missingMessage: '航班名称必填'
+                missingMessage: '景点名称必填'
             });
-            $("#fromLoc").validatebox({
+            $("#spotIntroduce").validatebox({
                 required: true,
-                missingMessage: '起点城市必填'
+                missingMessage: '景点介绍必填'
             });
-            $("#toLoc").validatebox({
+            $("#spendTime").validatebox({
                 required: true,
-                missingMessage: '到达城市必填'
+                missingMessage: '花费时间必填'
             });
-            $("#startTerminal").validatebox({
+            $("#traffic").validatebox({
                 required: true,
-                missingMessage: '起点航站楼必填'
+                missingMessage: '交通状况必填'
             });
-            $("#endTerminal").validatebox({
+            $("#ticket").validatebox({
                 required: true,
-                missingMessage: '终点航站楼必填'
+                missingMessage: '门票必填'
             });
-            $("#startTime").validatebox({
+            $("#openTime").validatebox({
                 required: true,
-                missingMessage: '起飞时间必填'
+                missingMessage: '开放时间必填'
             });
-            $("#endTime").validatebox({
+            $("#location").validatebox({
                 required: true,
-                missingMessage: '到达时间必填'
+                missingMessage: '位置必填'
             });
-            $("#price").validatebox({
+            $("#coordinate").validatebox({
                 required: true,
-                missingMessage: '价格必填'
+                missingMessage: '坐标必填'
             });
         }
 
         function del() {
-            var arr = $("#t_flight").datagrid('getSelections');
+            var arr = $("#t_spot").datagrid('getSelections');
             if (arr.length <= 0) {
                 $.messager.show({
                     title: '提示信息',
@@ -212,14 +214,14 @@
                         $.ajax({
                             type: 'post',
                             cache: false,
-                            url: '/manage/delFlight',
+                            url: '/manage/delSpot',
                             data: {'ids': ids},
                             success: function (data) {
                                 //刷新数据表格
-                                $("#t_flight").datagrid('reload');
+                                $("#t_spot").datagrid('reload');
                                 //清空idField
-                                $("#t_flight").datagrid('unselectAll');
-                                $("#t_flight").datagrid('clearSelections');
+                                $("#t_spot").datagrid('unselectAll');
+                                $("#t_spot").datagrid('clearSelections');
                                 $.messager.show({
                                     title: '提示信息',
                                     msg: '删除成功！'
@@ -260,30 +262,42 @@
                         msg: '验证没有通过, 不能提交表单',
                     });
                 } else {
-                    $.ajax({
-                        type: 'post',
-                        url: flag == 'add' ? '/manage/addFlight' : '/manage/editFlight',
-                        cache: false,
-                        data: $("#myform").serialize(),
-                        success: function(data) {
-                            //关闭窗口
-                            $("#mydialog").dialog('close');
-                            //刷新datagrid
-                            $("#t_flight").datagrid('reload');
-                            $.messager.show({
-                                title: '提示信息',
-                                msg: '操作成功！'
-                            });
-                        },
-                        error : function(data) {
-                            $.messager.show({
-                                title: '提示信息',
-                                msg: '操作失败！'
-                            });
-                        }
-                    });
+                    if (flag == 'add' && $('#file').val() == "") {
+                        $.messager.show({
+                            title: '提示信息',
+                            msg: '请上传图片',
+                        });
+                        return;
+                    }
+                    ajaxSubmitForm();
                 }
             });
+        }
+
+        function ajaxSubmitForm() {
+            var option = {
+                url: flag == 'add' ? '/manage/addSpot' : '/manage/editSpot',
+                type: 'POST',
+                dataType: 'json',
+                headers: {"ClientCallMode" : "ajax"}, //添加请求头部
+                success : function(data) {
+                    //关闭窗口
+                    $("#mydialog").dialog('close');
+                    //刷新datagrid
+                    $("#t_spot").datagrid('reload');
+                    $.messager.show({
+                        title: '提示信息',
+                        msg: '操作成功！'
+                    });
+                },
+                error: function(data) {
+                    $.messager.show({
+                        title: '提示信息',
+                        msg: '操作失败！'
+                    });
+                }
+            };
+            $("#myform").ajaxSubmit(option);
         }
 
     </script>
@@ -296,12 +310,8 @@
     <form id="search">
         <table style="width:70%">
             <tr>
-                <td align="right">航班:</td>
-                <td><input type="text" name="name" value=""/></td>
-                <td align="right">起飞城市:</td>
-                <td><input type="text" name="fromLoc" value=""/></td>
-                <td align="right">到达城市:</td>
-                <td><input type="text" name="toLoc" value=""/></td>
+                <td align="right">景点:</td>
+                <td><input type="text" name="spotName" value=""/></td>
                 <td align="right"><a id="searchbtn" class="easyui-linkbutton" iconCls="icon-search"></a></td>
                 <td align="right"><a id="clearbtn" class="easyui-linkbutton">清空</a></td>
             </tr>
@@ -310,51 +320,65 @@
 
 </div>
 
-<table id="t_flight"></table>
+<table id="t_spot"></table>
 
-<div id="mydialog" class="easyui-dialog" closed="true" modal="true" draggable="true" style="width:300px; margin: 20px 40px">
+<div id="mydialog" class="easyui-dialog" closed="true" modal="true" draggable="true" style="width:530px; margin: 20px 40px">
 
-    <form id="myform" method="post">
+    <form id="myform" method="post" enctype="multipart/form-data">
         <input id="id" type="hidden" name="id" value="" />
         <table>
             <tr>
-                <td>航班名称:</td>
-                <td><input id="name" type="text" name="name" value="" /></td>
+                <td>景点名称:</td>
+                <td><input id="spotName" type="text" name="spotName" value="" style="width:200px" /></td>
             </tr>
 
             <tr>
-                <td>起飞城市:</td>
-                <td><input id="fromLoc" type="text" name="fromLoc" value="" /></td>
+                <td>花费时间:</td>
+                <td><input id="spendTime" type="text" name="spendTime" value="" style="width:200px" /></td>
             </tr>
 
             <tr>
-                <td>到达城市:</td>
-                <td><input id="toLoc" type="text" name="toLoc" value="" /></td>
-            </tr>
-
-            <tr>
-                <td>起点航站楼:</td>
-                <td><input id="startTerminal" type="text" name="startTerminal" value="" /></td>
-            </tr>
-
-            <tr>
-                <td>终点航站楼:</td>
-                <td><input id="endTerminal" type="text" name="endTerminal" value="" /></td>
-            </tr>
-
-            <tr>
-                <td>起飞时间:</td>
-                <td><input id="startTime" type="text" name="startTime" value="" /></td>
-            </tr>
-
-            <tr>
-                <td>到达时间:</td>
-                <td><input id="endTime" type="text" name="endTime" value="" /></td>
+                <td>开放时间:</td>
+                <td><input id="openTime" type="text" name="openTime" value="" style="width:200px" /></td>
             </tr>
 
             <tr>
                 <td>票价:</td>
-                <td><input id="price" type="text" name="price" value="" /></td>
+                <td><input id="ticket" type="text" name="ticket" value="" style="width:200px" /></td>
+            </tr>
+
+            <tr>
+                <td>坐标:</td>
+                <td>
+                    <input id="coordinate" type="text" name="coordinate" value="" style="width:200px" />
+                    <a href="http://lbs.amap.com/console/show/picker" target="_blank">坐标拾取器</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>地址:</td>
+                <td><input id="location" type="text" name="location" value="" style="width:370px" /></td>
+            </tr>
+
+            <tr>
+                <td>交通状况:</td>
+                <td>
+                    <textarea id="traffic" rows="3" cols="50" name="traffic"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>景点介绍:</td>
+                <td>
+                    <textarea id="spotIntroduce" rows="8" cols="50" name="spotIntroduce"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>主页照片:</td>
+                <td>
+                    <input id="file" type="file" name="file" accept="image/*" />
+                </td>
             </tr>
 
             <tr align="center">

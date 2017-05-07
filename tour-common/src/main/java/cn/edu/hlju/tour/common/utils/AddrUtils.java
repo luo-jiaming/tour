@@ -24,4 +24,16 @@ public class AddrUtils {
         return indexUrl;
     }
 
+    /**
+     * 得到服务器地址 http://127.0.0.1:8082
+     * @param request
+     * @return
+     */
+    public static String getUrl(HttpServletRequest request) {
+        String url = request.getRequestURL().toString();
+        URI uri = URI.create(url);
+        String indexUrl = String.format("%s://%s", uri.getScheme(), uri.getAuthority());
+        return indexUrl;
+    }
+
 }

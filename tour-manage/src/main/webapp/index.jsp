@@ -68,9 +68,9 @@
                 </ul>
             </div>
 
-            <div title="单位管理" style="overflow:auto">
+            <div title="景点管理" style="overflow:auto">
                 <ul>
-                    <li><a title="jsp/dwdj_1.jsp" class="easyui-linkbutton">单位登记</a></li>
+                    <li><a title="jsp/spot.jsp" class="easyui-linkbutton">景点列表</a></li>
                 </ul>
             </div>
         </div>

@@ -7,7 +7,6 @@ import cn.edu.hlju.tour.common.utils.VerifyCodeUtils;
 import cn.edu.hlju.tour.core.UserService;
 import cn.edu.hlju.tour.core.utils.MailConfig;
 import cn.edu.hlju.tour.dao.*;
-import cn.edu.hlju.tour.entity.TravelComment;
 import cn.edu.hlju.tour.entity.User;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
@@ -202,9 +201,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public JSONObject selectUserByPage(int pageNum, int size, User user) {
-        PageHelper.startPage(pageNum, size);                              //分页
-        List<User> list = userMapper.selectByUser(user);                  //得到分页之后的用户
-        PageInfo<TravelComment> pageInfo = new PageInfo(list);            //分页参数
+        PageHelper.startPage(pageNum, size);                     //分页
+        List<User> list = userMapper.selectByUser(user);         //得到分页之后的用户
+        PageInfo<User> pageInfo = new PageInfo(list);            //分页参数
         JSONObject json = new JSONObject();
         json.put("pageinfo", pageInfo);
         json.put("list", list);

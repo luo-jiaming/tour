@@ -21,4 +21,7 @@ public interface SpotMapper {
 
     List<Spot> selectAll();
 
+    List<Spot> selectBySpot(Spot spot);
+
+    void delBySpotId(Long[] ids);
 }
