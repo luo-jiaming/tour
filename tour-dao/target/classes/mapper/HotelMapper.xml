@@ -24,6 +24,27 @@
         wifi, bath, park, restaurant, price, spot_id
     </sql>
 
+    <select id="selectByHotel" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from hotel
+        <where>
+            <if test="hotelName != null">
+                hotel_name like concat('%', concat(#{hotelName, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="spotId != null">
+                and spot_id = #{spotId, jdbcType=BIGINT}
+            </if>
+        </where>
+    </select>
+
+    <delete id="delByHotelId" parameterType="long[]">
+        delete from hotel_comment
+        where id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
 
     <select id="query" resultMap="BaseResultMap" parameterType="cn.edu.hlju.tour.entity.Hotel">
         select
@@ -76,6 +97,11 @@
         </where>
     </select>
 
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from hotel
+    </select>
 
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select

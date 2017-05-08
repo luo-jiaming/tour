@@ -3,6 +3,7 @@ package cn.edu.hlju.tour.dao;
 import cn.edu.hlju.tour.entity.RoomType;
 
 import java.util.List;
+import java.util.Map;
 
 public interface RoomTypeMapper {
     int deleteByPrimaryKey(Long id);
@@ -18,4 +19,6 @@ public interface RoomTypeMapper {
     int updateByPrimaryKey(RoomType record);
 
     List<RoomType> selectByHotelId(Long id);
+
+    List<Map> selectByMap(Map<String, String> map);
 }

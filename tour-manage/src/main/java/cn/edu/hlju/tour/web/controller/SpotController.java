@@ -2,7 +2,6 @@ package cn.edu.hlju.tour.web.controller;
 
 import cn.edu.hlju.tour.core.SpotService;
 import cn.edu.hlju.tour.entity.Spot;
-import cn.edu.hlju.tour.entity.User;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
@@ -28,12 +27,12 @@ public class SpotController {
 
     @RequestMapping(value= "getSpotList")
     @ResponseBody
-    public String getList(int page, int rows, Spot spot) {
+    public String getSpotList(int page, int rows, Spot spot) {
 
         //{"total":10, "row":[{},{}]}
         JSONObject json = spotService.selectSpotByPage(page, rows, spot);
         PageInfo pageInfo = (PageInfo)json.get("pageinfo");
-        List<User> list = (List)json.get("list");
+        List<Spot> list = (List)json.get("list");
         long total = pageInfo.getTotal();
         String str = JSON.toJSONString(list);
         String jsonStr = "{\"total\":" + total + ", \"rows\":" + str + "}";

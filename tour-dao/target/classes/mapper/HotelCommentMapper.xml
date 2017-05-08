@@ -14,9 +14,40 @@
       id, hotel_id, content, user_id, time
     </sql>
 
+    <select id="selectByMap" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+        select
+        hc.id id, hc.content content, h.hotel_name hotelName, hc.time time, u.nick nick
+        from hotel_comment hc, hotel h, user u
+        <where>
+            hc.hotel_id = h.id and hc.user_id = u.id
+            <if test="hotelName != null">
+                and h.hotel_name like concat('%', concat(#{hotelName, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="nick != null">
+                and u.nick like concat('%', concat(#{nick, jdbcType=VARCHAR}, '%'))
+            </if>
+        </where>
+    </select>
+
     <delete id="delByUserId" parameterType="long[]">
         delete from hotel_comment
         where user_id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
+
+    <delete id="delByHotelCommentId" parameterType="long[]">
+        delete from hotel_comment
+        where id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
+
+    <delete id="delByHotelId" parameterType="long[]">
+        delete from hotel_comment
+        where hotel_id in
         <foreach collection="array" open="(" item="id" separator=", " close=")">
             #{id, jdbcType=BIGINT}
         </foreach>

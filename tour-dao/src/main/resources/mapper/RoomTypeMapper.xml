@@ -15,6 +15,21 @@
         id, type_name, remark, index_img, price, hotel_id
     </sql>
 
+    <select id="selectByMap" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+        select
+          rt.id id, rt.type_name typeName, rt.remark remark, rt.index_img indexImg, rt.price price, rt.hotel_id hotelId, h.hotel_name hotelName
+        from room_type rt, hotel h
+        <where>
+            rt.hotel_id = h.id
+            <if test="hotelName != null">
+                and h.hotel_name like concat('%', concat(#{hotelName, jdbcType=VARCHAR}, '%'))
+            </if>
+            <if test="typeName != null">
+                and rt.type_name like concat('%', concat(#{typeName, jdbcType=VARCHAR}, '%'))
+            </if>
+        </where>
+    </select>
+
     <select id="selectByHotelId" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select
         <include refid="Base_Column_List"/>

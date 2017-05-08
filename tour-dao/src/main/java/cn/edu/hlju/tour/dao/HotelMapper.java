@@ -19,4 +19,9 @@ public interface HotelMapper {
 
     List<Hotel> query(Hotel hotel);
 
+    List<Hotel> selectByHotel(Hotel hotel);
+
+    void delByHotelId(Long[] ids);
+
+    List<Hotel> selectAll();
 }

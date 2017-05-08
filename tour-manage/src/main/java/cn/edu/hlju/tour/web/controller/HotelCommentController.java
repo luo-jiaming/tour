@@ -1,7 +1,6 @@
 package cn.edu.hlju.tour.web.controller;
 
-import cn.edu.hlju.tour.core.UserService;
-import cn.edu.hlju.tour.entity.User;
+import cn.edu.hlju.tour.core.HotelCommentService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
@@ -11,25 +10,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * Created by Sole on 2017/3/2.
+ * Created by lft on 2017/5/7.
  */
 @Controller
-public class UserController {
+public class HotelCommentController {
 
     @Autowired
-    private UserService userService;
+    private HotelCommentService hotelCommentService;
 
-    @RequestMapping(value= "getUserList")
+    @RequestMapping(value= "getHotelCommentList")
     @ResponseBody
-    public String getUserList(int page, int rows, User user) {
+    public String getHotelCommentList(int page, int rows, String hotelName, String nick) {
 
         //{"total":10, "row":[{},{}]}
-        JSONObject json = userService.selectUserByPage(page, rows, user);
+        Map<String, String> map = new HashMap();
+        map.put("hotelName", hotelName);
+        map.put("nick", nick);
+        JSONObject json = hotelCommentService.selectHotelCommentByPage(page, rows, map);
         PageInfo pageInfo = (PageInfo)json.get("pageinfo");
-        List<User> list = (List)json.get("list");
+        List<Map> list = (List)json.get("list");
         long total = pageInfo.getTotal();
         String str = JSON.toJSONString(list);
         String jsonStr = "{\"total\":" + total + ", \"rows\":" + str + "}";
@@ -37,21 +41,16 @@ public class UserController {
 
     }
 
-    @RequestMapping(value= "delUser")
+    @RequestMapping(value= "delHotelComment")
     @ResponseBody
-    public void delUser(@RequestParam("ids") String idsTemp) {
+    public void delHotelComment(@RequestParam("ids") String idsTemp) {
         String[] tempArray = idsTemp.split(",");
         Long[] ids = new Long[tempArray.length];
         for (int i = 0; i<tempArray.length; i++) {
             ids[i] = Long.parseLong(tempArray[i]);
         }
-        userService.delUser(ids);
+        hotelCommentService.delHotelComment(ids);
     }
 
-    @RequestMapping(value= "editUser")
-    @ResponseBody
-    public void editUser(User user) {
-        userService.update(user);
-    }
 
 }

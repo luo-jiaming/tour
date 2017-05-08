@@ -1,5 +1,6 @@
 package cn.edu.hlju.tour.core.impl;
 
+import cn.edu.hlju.tour.common.utils.UploadUtils;
 import cn.edu.hlju.tour.core.HotelService;
 import cn.edu.hlju.tour.dao.*;
 import cn.edu.hlju.tour.entity.*;
@@ -8,12 +9,15 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.*;
 
 /**
- * Created by Sole on 2017/4/10.
+ * Created by lft on 2017/4/10.
  */
 @Service
 public class HotelServiceImpl implements HotelService {
@@ -110,5 +114,46 @@ public class HotelServiceImpl implements HotelService {
         hotelCommentMapper.insertSelective(comment);
     }
 
+    @Override
+    public JSONObject selectHotelByPage(int pageNum, int size, Hotel hotel) {
+        PageHelper.startPage(pageNum, size);                        //分页
+        List<Hotel> list = hotelMapper.selectByHotel(hotel);        //得到分页之后的用户
+        PageInfo<Hotel> pageInfo = new PageInfo(list);              //分页参数
+        JSONObject json = new JSONObject();
+        json.put("pageinfo", pageInfo);
+        json.put("list", list);
+        return json;
+    }
+
+    @Override
+    public String uploadIndexImg(MultipartFile file, HttpServletRequest request) throws IOException {
+        String contextPath = UploadUtils.uploadFile(file, request, "hotel/indeximg/");
+        return contextPath;
+    }
+
+    @Override
+    public void update(Hotel hotel) {
+        hotelMapper.updateByPrimaryKeySelective(hotel);
+    }
+
+    @Override
+    @Transactional
+    public void delHotel(Long[] ids) {
+        //删除酒店评论
+        hotelCommentMapper.delByHotelId(ids);
+
+        //删除酒店
+        hotelMapper.delByHotelId(ids);
+    }
+
+    @Override
+    public void addHotel(Hotel hotel) {
+        hotelMapper.insertSelective(hotel);
+    }
+
+    @Override
+    public List<Hotel> getAllHotel() {
+        return hotelMapper.selectAll();
+    }
 
 }

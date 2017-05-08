@@ -2,7 +2,6 @@ package cn.edu.hlju.tour.web.controller;
 
 import cn.edu.hlju.tour.core.FlightService;
 import cn.edu.hlju.tour.entity.Flight;
-import cn.edu.hlju.tour.entity.User;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
@@ -25,12 +24,12 @@ public class FlightController {
 
     @RequestMapping(value= "getFlightList")
     @ResponseBody
-    public String getList(int page, int rows, Flight flight) {
+    public String getFlightList(int page, int rows, Flight flight) {
 
         //{"total":10, "row":[{},{}]}
         JSONObject json = flightService.selectFlightByPage(page, rows, flight);
         PageInfo pageInfo = (PageInfo)json.get("pageinfo");
-        List<User> list = (List)json.get("list");
+        List<Flight> list = (List)json.get("list");
         long total = pageInfo.getTotal();
         String str = JSON.toJSONString(list);
         String jsonStr = "{\"total\":" + total + ", \"rows\":" + str + "}";

@@ -92,9 +92,9 @@
                 </ul>
             </div>
 
-            <div title="房间管理" style="overflow:auto">
+            <div title="房间类型管理" style="overflow:auto">
                 <ul>
-                    <li><a title="jsp/roomType.jsp" class="easyui-linkbutton">房间列表</a></li>
+                    <li><a title="jsp/roomType.jsp" class="easyui-linkbutton">房间类型列表</a></li>
                 </ul>
             </div>
 

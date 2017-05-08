@@ -5,7 +5,7 @@
 <html>
 <head>
 
-    <title>景点评论管理</title>
+    <title>酒店评论管理</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
@@ -44,8 +44,8 @@
         function initDataGrid() {
             $('#t_comment').datagrid({
 
-                //	title : '景点评论列表',
-                url: '/manage/getSpotCommentList',
+                //	title : '酒店评论列表',
+                url: '/manage/getHotelCommentList',
                 idField: 'id',
 
                 height: 500,
@@ -66,8 +66,8 @@
                         width: 100,
                         sortable: true
                     }, {
-                        field: 'spotName',
-                        title: '景点名称',
+                        field: 'hotelName',
+                        title: '酒店名称',
                         width: 100,
                         sortable: true
                     }, {
@@ -113,7 +113,7 @@
                         $.ajax({
                             type: 'post',
                             cache: false,
-                            url: '/manage/delSpotComment',
+                            url: '/manage/delHotelComment',
                             data: {'ids': ids},
                             success: function (data) {
                                 //刷新数据表格
@@ -165,8 +165,8 @@
             <tr>
                 <td align="right">用户昵称:</td>
                 <td><input type="text" name="nick" value=""/></td>
-                <td align="right">景点:</td>
-                <td><input type="text" name="spotName" value=""/></td>
+                <td align="right">酒店:</td>
+                <td><input type="text" name="hotelName" value=""/></td>
                 <td align="right"><a id="searchbtn" class="easyui-linkbutton" iconCls="icon-search"></a></td>
                 <td align="right"><a id="clearbtn" class="easyui-linkbutton">清空</a></td>
             </tr>
