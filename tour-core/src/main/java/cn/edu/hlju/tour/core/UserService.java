@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * Created by Sole on 2017/3/14.
+ * Created by lft on 2017/3/14.
  */
 public interface UserService {
 

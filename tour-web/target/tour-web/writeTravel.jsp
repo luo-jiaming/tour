@@ -179,7 +179,7 @@
             float: right;
             height: 300px;
             width: 22%;
-            background-color: gray;
+            background-color: white;
             margin-top: 100px;
         }
 
@@ -234,6 +234,8 @@
 
             initHead();
 
+            initAllSpot();
+
             /**
              * 攻略头部图片
              */
@@ -268,6 +270,24 @@
          */
         function initHead() {
             $('.head-nav').find('div').removeClass('head-nav-active');
+        }
+
+        /**
+         * 加载所有景点
+         */
+        function initAllSpot() {
+            $('#spotId').empty();
+            $.ajax({
+                type: "POST",
+                url: "/tour/getAllSpot",
+                success: function(data) {
+                    var inner = "";
+                    for (var i = 0; i<data.length; i++) {
+                        inner += " <option value='" + data[i].id + "'>" + data[i].spotName + "</option>";
+                    }
+                    $('#spotId').append(inner);
+                }
+            });
         }
 
         function getContentDiv(obj, className) {
@@ -500,9 +520,7 @@
         <div class="select-spot">
             <div class="select-label">选择景点:</div>
             <div class="select">
-                <select class="form-control" name="spotId">
-                    <option value="1">中央大街</option>
-                </select>
+                <select class="form-control" name="spotId" id="spotId"></select>
             </div>
         </div>
         <div class="travel-tail">

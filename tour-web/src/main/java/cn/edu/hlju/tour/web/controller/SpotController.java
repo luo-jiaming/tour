@@ -65,4 +65,11 @@ public class SpotController {
         spotService.saveComment(comment, request);
     }
 
+    @RequestMapping(value= "getAllSpot")
+    @ResponseBody
+    public List getAllSpot() {
+        List<Spot> list = spotService.getAllSpot();
+        return list;
+    }
+
 }

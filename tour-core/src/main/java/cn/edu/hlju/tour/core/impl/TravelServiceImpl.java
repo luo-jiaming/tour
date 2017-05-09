@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Created by Sole on 2017/3/24.
+ * Created by lft on 2017/3/24.
  */
 @Service
 public class TravelServiceImpl implements TravelService {
@@ -170,6 +170,7 @@ public class TravelServiceImpl implements TravelService {
                 json.put("status", "spotNotExist");
                 return json;
             }
+            travel.setStatus(1L);
             travel.setSpotId(spot.getId());
         }
         PageHelper.startPage(pageNum, size);
@@ -275,6 +276,33 @@ public class TravelServiceImpl implements TravelService {
     @Override
     public void delComment(Long id) {
         travelCommentMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public JSONObject selectNotAuditTravelByPage(int pageNum, int size, Travel travel) {
+        travel.setStatus(0L);
+        PageHelper.startPage(pageNum, size);                     //分页
+        List<Travel> list = travelMapper.query(travel);          //得到分页之后的游记 0表示未审核
+        PageInfo<Travel> pageInfo = new PageInfo(list);          //分页参数
+        JSONObject json = new JSONObject();
+        json.put("pageinfo", pageInfo);
+        json.put("list", list);
+        return json;
+    }
+
+    @Override
+    public void audit(String type, String opinion, Travel travel) {
+        String content = "";        //消息内容
+        if ("pass".equals(type)) {
+            travel.setStatus(1L);
+            content = "";
+        } else {
+            travel.setStatus(2L);
+            content = "";
+        }
+        travelMapper.updateByPrimaryKeySelective(travel);
+        //发送消息
+
     }
 
 }

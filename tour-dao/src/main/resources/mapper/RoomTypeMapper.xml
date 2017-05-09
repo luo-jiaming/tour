@@ -43,6 +43,14 @@
         from room_type
         where id = #{id,jdbcType=BIGINT}
     </select>
+
+    <delete id="delByRoomTypeId" parameterType="long[]">
+        delete from room_type where id in
+        <foreach collection="array" open="(" item="id" separator=", " close=")">
+            #{id, jdbcType=BIGINT}
+        </foreach>
+    </delete>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         delete from room_type
         where id = #{id,jdbcType=BIGINT}

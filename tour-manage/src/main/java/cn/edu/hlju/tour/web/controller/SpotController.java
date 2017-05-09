@@ -71,7 +71,7 @@ public class SpotController {
 
     @RequestMapping(value= "getAllSpot")
     @ResponseBody
-    public List getAllSpot() throws IOException {
+    public List getAllSpot() {
         List<Spot> list = spotService.getAllSpot();
         return list;
     }

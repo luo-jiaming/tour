@@ -27,7 +27,7 @@
 
             initDataGrid();
 
-            initAllSpot();
+            initAllHotel();
 
             $("#searchbtn").click(function() {
                 $("#t_roomType").datagrid('load', serializeForm($("#search")));
@@ -111,17 +111,34 @@
             });
         }
 
+        //加载所有酒店
+        function initAllHotel() {
+            $('#spotId').empty();
+            $.ajax({
+                type: "POST",
+                url: "/manage/getAllHotel",
+                success: function(data) {
+                    var inner = "";
+                    for (var i = 0; i<data.length; i++) {
+                        inner += " <option value='" + data[i].id + "'>" + data[i].hotelName + "</option>";
+                    }
+                    $('#hotelId').append(inner);
+                }
+            });
+        }
+
         var flag;		//判断新增和修改
 
         function add() {
             flag = 'add';
             $("#mydialog").dialog({
-                title: '新增景点图片',
+                title: '新增房间类型',
                 iconCls: 'icon-add'
             });
             $("#mydialog").dialog('open');
             $("#myform").get(0).reset();
             $("#id").val("");		//设id为空
+            validate();
         }
 
         function edit() {
@@ -134,16 +151,20 @@
                 });
             } else {
                 $("#mydialog").dialog({
-                    title: '修改景点图片',
+                    title: '修改房间类型',
                     iconCls: 'icon-edit'
                 });
                 $('#mydialog').dialog('open'); //打开窗口
                 $('#myform').get(0).reset();   //清空表单数据
                 $('#myform').form('load', {	   //调用load方法把所选中的数据load到表单中
                     id: arr[0].id,
-                    spotId: arr[0].spotId
+                    hotelId: arr[0].hotelId,
+                    typeName: arr[0].typeName,
+                    remark: arr[0].remark,
+                    price: arr[0].price
                 });
             }
+            validate();
         }
 
         function del() {
@@ -164,7 +185,7 @@
                         $.ajax({
                             type: 'post',
                             cache: false,
-                            url: '/manage/delSpotImg',
+                            url: '/manage/delRoomType',
                             data: {'ids': ids},
                             success: function (data) {
                                 //刷新数据表格
@@ -189,6 +210,23 @@
                     }
                 });
             }
+        }
+
+        //验证
+        function validate() {
+            $("#typeName").validatebox({
+                required: true,
+                missingMessage: '房间类型名称必填'
+            });
+            $("#remark").validatebox({
+                required: true,
+                missingMessage: '类型介绍必填'
+            });
+            $("#price").numberbox({
+                required : true,
+                missingMessage : '价格必填',
+                precision : 0
+            });
         }
 
         //表单的序列化
@@ -226,11 +264,11 @@
 
         function ajaxSubmitForm() {
             var option = {
-                url: flag == 'add' ? '/manage/addSpotImg' : '/manage/editSpotImg',
+                url: flag == 'add' ? '/manage/addRoomType' : '/manage/editRoomType',
                 type: 'POST',
                 dataType: 'json',
                 headers: {"ClientCallMode" : "ajax"}, //添加请求头部
-                success : function(data) {
+                success: function(data) {
                     //关闭窗口
                     $("#mydialog").dialog('close');
                     //刷新datagrid
@@ -260,8 +298,10 @@
     <form id="search">
         <table style="width:70%">
             <tr>
-                <td align="right">景点:</td>
-                <td><input type="text" name="spotName" value=""/></td>
+                <td align="right">房间类型:</td>
+                <td><input type="text" name="typeName" value=""/></td>
+                <td align="right">酒店名字:</td>
+                <td><input type="text" name="hotelName" value=""/></td>
                 <td align="right"><a id="searchbtn" class="easyui-linkbutton" iconCls="icon-search"></a></td>
                 <td align="right"><a id="clearbtn" class="easyui-linkbutton">清空</a></td>
             </tr>
@@ -272,20 +312,41 @@
 
 <table id="t_roomType"></table>
 
-<div id="mydialog" class="easyui-dialog" closed="true" modal="true" draggable="true" style="width:370px; margin: 20px 40px">
+<div id="mydialog" class="easyui-dialog" closed="true" modal="true" draggable="true" style="width:450px; margin: 20px 40px">
 
     <form id="myform" method="post" enctype="multipart/form-data">
         <input id="id" type="hidden" name="id" value="" />
         <table>
             <tr>
-                <td>景点名称:</td>
+                <td>酒店名称:</td>
                 <td>
-                    <select id="spotId" name="spotId" style="width:200px"></select>
+                    <select id="hotelId" name="hotelId" style="width:200px"></select>
                 </td>
             </tr>
 
             <tr>
-                <td>图片:</td>
+                <td>房间类型名称:</td>
+                <td>
+                    <input id="typeName" type="text" name="typeName" style="width:200px" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>价格:</td>
+                <td>
+                    <input id="price" type="text" name="price" style="width:200px" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>类型介绍:</td>
+                <td>
+                    <textarea id="remark" rows="4" cols="35" name="remark"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>照片:</td>
                 <td>
                     <input id="file" type="file" name="file" accept="image/*" />
                 </td>
@@ -294,6 +355,7 @@
             <tr align="center">
                 <td colspan="2"><a id="saveBtn" class="easyui-linkbutton" iconCls="icon-save">保存</a></td>
             </tr>
+
         </table>
     </form>
 </div>

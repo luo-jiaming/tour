@@ -93,12 +93,11 @@
         <include refid="Blob_Column_List"/>
         from travel
         <where>
-            status = 1
             <if test="id != null" >
                 and id = #{id,jdbcType=BIGINT}
             </if>
             <if test="title != null">
-                and title = #{title,jdbcType=VARCHAR}
+                and title like concat('%', concat(#{title, jdbcType=VARCHAR}, '%'))
             </if>
             <if test="spotId != null">
                 and spot_id = #{spotId,jdbcType=BIGINT}

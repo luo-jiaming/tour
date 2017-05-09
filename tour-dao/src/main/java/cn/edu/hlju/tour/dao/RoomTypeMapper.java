@@ -21,4 +21,6 @@ public interface RoomTypeMapper {
     List<RoomType> selectByHotelId(Long id);
 
     List<Map> selectByMap(Map<String, String> map);
+
+    void delByRoomTypeId(Long[] ids);
 }

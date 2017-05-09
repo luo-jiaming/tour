@@ -104,6 +104,12 @@
                 </ul>
             </div>
 
+            <div title="游记审核" style="overflow:auto">
+                <ul>
+                    <li><a title="jsp/travel.jsp" class="easyui-linkbutton">待审核游记列表</a></li>
+                </ul>
+            </div>
+
         </div>
 
     </div>

@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public interface RoomTypeService {
 
     void update(RoomType roomType);
 
-    String uploadImg(MultipartFile file, HttpServletRequest request);
+    String uploadImg(MultipartFile file, HttpServletRequest request) throws IOException;
 
     void delRoomType(Long[] ids);
 

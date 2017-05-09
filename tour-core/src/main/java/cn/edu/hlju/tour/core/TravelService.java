@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Sole on 2017/3/24.
+ * Created by lft on 2017/3/24.
  */
 public interface TravelService {
 
@@ -36,4 +36,11 @@ public interface TravelService {
     void saveComment(TravelComment comment, HttpServletRequest request);
 
     void delComment(Long id);
+
+    //管理员查看未审核的游记
+    //title 查询条件
+    JSONObject selectNotAuditTravelByPage(int pageNum, int size, Travel travel);
+
+    //审核
+    void audit(String type, String opinion, Travel travel);
 }
