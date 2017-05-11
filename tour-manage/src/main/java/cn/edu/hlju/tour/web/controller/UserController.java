@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -22,11 +25,51 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+    /**
+     * 生成验证码
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "verifyCode")
+    @ResponseBody
+    public void verifyCode(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            userService.verifyCode(request, response);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 登录
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "login")
+    @ResponseBody
+    public String login(HttpServletRequest request) {
+        String serverVerifyCode = (String)request.getSession().getAttribute("verifyCode");
+        String verifyCode = request.getParameter("verifyCode");
+        if (!userService.isVerifyCode(verifyCode, serverVerifyCode)) {
+            return "verifyCodeError";
+        }
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        User user = userService.login(email, password, 1L);
+        if (user == null) {
+            return "userNotExist";
+        }
+        request.getSession().setAttribute("user", user);
+        return "success";
+    }
+
     @RequestMapping(value= "getUserList")
     @ResponseBody
     public String getUserList(int page, int rows, User user) {
 
         //{"total":10, "row":[{},{}]}
+        user.setPermission(0L);
         JSONObject json = userService.selectUserByPage(page, rows, user);
         PageInfo pageInfo = (PageInfo)json.get("pageinfo");
         List<User> list = (List)json.get("list");

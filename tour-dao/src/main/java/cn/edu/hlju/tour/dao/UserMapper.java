@@ -19,7 +19,7 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    User selectByEmailAndPassword(@Param("email") String email, @Param("password")String password);
+    User selectByEmailAndPassword(@Param("email") String email, @Param("password")String password, @Param("permission")Long permission);
 
     User selectByEmail(String email);
 

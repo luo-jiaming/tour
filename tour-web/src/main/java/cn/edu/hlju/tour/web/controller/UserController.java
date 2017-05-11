@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * Created by Sole on 2017/3/2.
+ * Created by lft on 2017/3/2.
  */
 @Controller
 public class UserController {
@@ -33,7 +33,7 @@ public class UserController {
     @RequestMapping(value = "login")
     @ResponseBody
     public boolean login(@RequestParam("email")String email, @RequestParam("password") String password, HttpServletRequest request) {
-        User user = userService.login(email, password);
+        User user = userService.login(email, password, 0L);
         if (user == null) {
             return false;
         }

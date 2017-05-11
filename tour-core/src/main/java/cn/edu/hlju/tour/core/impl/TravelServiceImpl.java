@@ -290,6 +290,12 @@ public class TravelServiceImpl implements TravelService {
         return json;
     }
 
+    /**
+     * 审核
+     * @param type
+     * @param opinion
+     * @param travel
+     */
     @Override
     public void audit(String type, String opinion, Travel travel) {
         String content = "";        //消息内容

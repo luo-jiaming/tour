@@ -34,6 +34,9 @@
             <if test="email != null">
                 and email like concat('%', concat(#{email, jdbcType=VARCHAR}, '%'))
             </if>
+            <if test="permission != null">
+                and permission = #{permission, jdbcType=BIGINT}
+            </if>
         </where>
     </select>
 
@@ -42,6 +45,7 @@
         <include refid="Base_Column_List"/>
         from user
         where email = #{email,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
+        and  permission = #{permission,jdbcType=BIGINT}
     </select>
 
     <select id="selectByEmail" resultMap="BaseResultMap" parameterType="java.lang.String">

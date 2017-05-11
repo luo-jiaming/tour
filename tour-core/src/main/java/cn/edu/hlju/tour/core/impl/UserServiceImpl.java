@@ -58,9 +58,9 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public User login(String email, String password) {
+    public User login(String email, String password, Long permission) {
         String sign = MD5Utils.sign(password, "utf-8");
-        return userMapper.selectByEmailAndPassword(email, sign);
+        return userMapper.selectByEmailAndPassword(email, sign, permission);
     }
 
     /**
@@ -158,7 +158,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean isVerifyCode(String verifyCode, String serverVerifyCode) {
-        return verifyCode.equals(serverVerifyCode);
+        return serverVerifyCode.equals(verifyCode);
     }
 
     /**

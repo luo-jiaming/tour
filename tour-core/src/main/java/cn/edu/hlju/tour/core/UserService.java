@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public interface UserService {
 
-    User login(String email, String password);
+    User login(String email, String password, Long permission);
 
     void regist(User user);
 

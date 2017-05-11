@@ -21,6 +21,46 @@
     <script type="text/javascript" src="resources/js/jquery-easyui-1.2.6/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="resources/js/jquery-easyui-1.2.6/locale/easyui-lang-zh_CN.js"></script>
 
+    <style>
+        #loginModal {
+            padding: 20px 60px 20px 60px;
+        }
+
+        #tipDiv {
+            height: 20px;
+            color: red;
+            text-align: center
+        }
+
+        #email {
+            width: 100%;
+            height: 30px;
+            padding: 8px
+        }
+
+        #password {
+            width: 100%;
+            height: 30px;
+            padding: 8px
+        }
+
+        #verifyCode {
+            width: 50%;
+            height: 30px;
+            padding: 8px
+        }
+
+        #verifyCodeImg {
+            margin: 0 0 0 3px;
+            vertical-align: middle;
+            height: 26px;
+        }
+
+        #verifyCodeImg:hover {
+            cursor: pointer;
+        }
+    </style>
+
     <script type="text/javascript">
         $(function() {
 
@@ -40,7 +80,87 @@
 
             });
 
+            initLoginModal();
+
+            verifyCodeImgClick();
+
+            signInClick();
+
         });
+
+        /**
+         * 初始化登录窗口
+         */
+        function initLoginModal() {
+            $('#loginModal').window({
+                modal: true,
+                title: "请先登录",
+                closed: false,
+                maximizable: false,
+                minimizable: false,
+                collapsible: false,
+                resizable: false,
+                draggable: false,
+                closable: false
+            });
+        }
+
+        function verifyCodeImgClick() {
+            $('#verifyCodeImg').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/manage/verifyCode",
+                    async: false,
+                    success: function () {
+                        $('#verifyCodeImg').attr('src', '/manage/verifyCode?' + new Date());
+                    }
+                });
+            });
+        }
+
+        function signInClick() {
+            $('#signIn').click(function () {
+                if (validate()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/manage/login",
+                        data: $('#form').serialize(),
+                        async: false,
+                        success: function (data) {
+                            if (data == "success") {
+                                $('#loginModal').window('close');
+                            } else if (data == "verifyCodeError") {
+                                $('#tip-content').html('验证码错误');
+                                $('#verifyCodeImg').click();
+                            } else {
+                                $('#tip-content').html('用户名或密码错误');
+                                $('#verifyCodeImg').click();
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        function validate() {
+            if ($.trim($('#email').val()) == '') {
+                $('#tip-content').html('请输入邮箱');
+                $('#email').val('');
+                return false;
+            }
+            if ($.trim($('#password').val()) == '') {
+                $('#tip-content').html('请输入密码');
+                $('#password').val('');
+                return false;
+            }
+            if ($.trim($('#verifyCode').val()) == '') {
+                $('#tip-content').html('请输入验证码');
+                $('#verifyCode').val('');
+                return false;
+            }
+            return true;
+        }
+
     </script>
 
 </head>
@@ -53,10 +173,10 @@
 
     </div>
 
-    <div region="west" iconCls="icon-ok" split="false" title="菜单" style="width:200px">
+    <div region="west" iconCls="icon-ok" split="false" title="导航菜单" style="width:200px">
 
         <div class="easyui-accordion" >
-            <div title="用户管理" style="overflow:auto" collapsed="true" selected="true">
+            <div title="用户管理" style="overflow:auto;" collapsed="true" selected="true" >
                 <ul>
                     <li><a title="jsp/user.jsp" class="easyui-linkbutton">用户列表</a></li>
                 </ul>
@@ -120,6 +240,37 @@
                 <img src="resources/img/welcome.gif" style="width:100%; height:100%" />
             </div>
         </div>
+    </div>
+
+</div>
+
+<div id="loginModal" class="easyui-window">
+
+    <form id="form">
+
+    <div id="tipDiv">
+        <span id="tip-content"></span>
+    </div>
+
+    <div style="margin-bottom:10px">
+        <input id="email" name="email" type="text" placeholder="登录邮箱">
+    </div>
+
+    <div style="margin-bottom:10px">
+        <input id="password" name="password" type="password" placeholder="密码">
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <input type="text" id="verifyCode" placeholder="验证码" name="verifyCode" />
+        <img id="verifyCodeImg" src="verifyCode">
+    </div>
+
+    </form>
+
+    <div style="float: right">
+        <a href="javascript:void(0);" class="easyui-linkbutton" id="signIn">
+            <span>登录</span>
+        </a>
     </div>
 
 </div>
