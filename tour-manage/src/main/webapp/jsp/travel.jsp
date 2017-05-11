@@ -100,7 +100,8 @@
                 $('#myform').get(0).reset();   //清空表单数据
                 $('#myform').form('load', {    //调用load方法把所选中的数据load到表单中
                     id: arr[0].id,
-                    userId: arr[0].userId
+                    userId: arr[0].userId,
+                    title: arr[0].title
                 });
                 $("#opinion").validatebox({
                     required: true,
@@ -194,6 +195,12 @@
         <input id="id" type="hidden" name="id" value="" />
         <input id="userId" type="hidden" name="userId" value="" />
         <table>
+
+            <tr>
+                <td>游记标题:</td>
+                <td><input id="title" type="text" name="title" value="" style="width:200px" readonly /></td>
+            </tr>
+
             <tr>
                 <td>审核意见:</td>
                 <td><input id="opinion" type="text" name="opinion" value="" style="width:200px" /></td>

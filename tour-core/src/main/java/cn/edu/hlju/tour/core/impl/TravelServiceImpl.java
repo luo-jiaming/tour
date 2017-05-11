@@ -297,18 +297,27 @@ public class TravelServiceImpl implements TravelService {
      * @param travel
      */
     @Override
-    public void audit(String type, String opinion, Travel travel) {
-        String content = "";        //消息内容
+    public void audit(String type, String opinion, Travel travel, HttpServletRequest request) {
+        StringBuilder content = new StringBuilder();        //消息内容
         if ("pass".equals(type)) {
             travel.setStatus(1L);
-            content = "";
+            content.append("恭喜，您的游记  <a href='/tour/travel?id=").append(travel.getId()).append("'>").append(travel.getTitle()).append("</a> 通过了审核<br/>");
         } else {
             travel.setStatus(2L);
-            content = "";
+            content.append("抱歉，您的游记  <a href='/tour/travel?id=").append(travel.getId()).append("'>").append(travel.getTitle()).append("</a> 没有通过审核<br/>");
         }
+        content.append("审核意见：" + opinion);
         travelMapper.updateByPrimaryKeySelective(travel);
         //发送消息
-
+        User user = (User)request.getSession().getAttribute("user");
+        Message message = new Message();
+        message.setFromUid(user.getId());
+        message.setToUid(travel.getUserId());
+        message.setStatus(0L);
+        message.setTime(new Date());
+        message.setType(1L);
+        message.setContent(content.toString());
+        messageMapper.insertSelective(message);
     }
 
 }

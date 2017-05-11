@@ -42,5 +42,5 @@ public interface TravelService {
     JSONObject selectNotAuditTravelByPage(int pageNum, int size, Travel travel);
 
     //审核
-    void audit(String type, String opinion, Travel travel);
+    void audit(String type, String opinion, Travel travel, HttpServletRequest request);
 }

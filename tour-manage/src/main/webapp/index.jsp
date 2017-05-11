@@ -253,16 +253,16 @@
     </div>
 
     <div style="margin-bottom:10px">
-        <input id="email" name="email" type="text" placeholder="登录邮箱">
+        <input id="email" name="email" type="text" placeholder="登录邮箱" />
     </div>
 
     <div style="margin-bottom:10px">
-        <input id="password" name="password" type="password" placeholder="密码">
+        <input id="password" name="password" type="password" placeholder="密码" />
     </div>
 
     <div style="margin-bottom:10px;">
         <input type="text" id="verifyCode" placeholder="验证码" name="verifyCode" />
-        <img id="verifyCodeImg" src="verifyCode">
+        <img id="verifyCodeImg" src="verifyCode" />
     </div>
 
     </form>

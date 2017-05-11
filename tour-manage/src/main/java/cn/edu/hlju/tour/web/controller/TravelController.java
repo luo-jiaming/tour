@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -37,14 +38,15 @@ public class TravelController {
 
     /**
      * 审核
-     * @param opinion
-     * @param type   pass refuse
+     * type: pass refuse
      * @param travel
      */
     @RequestMapping(value= "audit")
     @ResponseBody
-    public void audit(String type, String opinion, Travel travel) {
-        travelService.audit(type, opinion, travel);
+    public void audit(Travel travel, HttpServletRequest request) {
+        String type = request.getParameter("type");
+        String opinion = request.getParameter("opinion");
+        travelService.audit(type, opinion, travel, request);
     }
 
 
