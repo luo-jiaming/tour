@@ -142,6 +142,9 @@ public class HotelServiceImpl implements HotelService {
         //删除酒店评论
         hotelCommentMapper.delByHotelId(ids);
 
+        //删除酒店房间类型信息
+        roomTypeMapper.delByHotelId(ids);
+
         //删除酒店
         hotelMapper.delByHotelId(ids);
     }

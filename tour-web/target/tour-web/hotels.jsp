@@ -192,7 +192,7 @@
                     intro = intro.substring(0, 200) + "...";
                 }
                 comment += "<div class='hotel-content-div'>" +
-                                "<div class='hotel-img'><a href='/tour/hotel?id=' target='_blank'> <img class='img-rounded' src='" + maplist[i].hotel.indexImg + "'/></a></div>" +
+                                "<div class='hotel-img'><a href='/tour/hotel?id=" + maplist[i].hotel.id + "' target='_blank'> <img class='img-rounded' src='" + maplist[i].hotel.indexImg + "'/></a></div>" +
                                 "<div class='hotel-abstract'>" +
                                     "<div class='hotel-name'>" +
                                         "<a href='/tour/hotel?id=" + maplist[i].hotel.id + "' target='_blank'>" + maplist[i].hotel.hotelName + "</a>" +
