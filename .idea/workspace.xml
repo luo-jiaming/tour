@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aae1958-1b51-4aaa-a420-4b045a1c4d00" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/generator/XsrfTokenGenerator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/generator/impl/SimpleXsrfTokenGenerator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/AddrUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/CookieUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/FreeMarkerUtils$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/FreeMarkerUtils$SingletonHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/FreeMarkerUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/JWTUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/MD5Utils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/MailUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/RandomUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/UploadUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/VerifyCodeUtils.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tour.iws" />
@@ -1089,7 +1076,7 @@
       <workItem from="1494548328361" duration="710000" />
       <workItem from="1494577479765" duration="8000" />
       <workItem from="1494577497325" duration="5634000" />
-      <workItem from="1494583369435" duration="64000" />
+      <workItem from="1494583369435" duration="72000" />
     </task>
     <task id="LOCAL-00001" summary="trash按钮的颜色变化以及travel评论div位置">
       <created>1492175586767</created>
@@ -1280,7 +1267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494583263116</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="更新">
+      <created>1494583439827</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1494583439827</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1316,7 +1310,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="742564000" />
+    <option name="totallyTimeSpent" value="742572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="23" width="1399" height="877" extended-state="6" />
