@@ -122,11 +122,11 @@
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-test</artifactId>-->
+                <!--<version>${spring.version}</version>-->
+            <!--</dependency>-->
 
             <!-- jdbc驱动 -->
             <dependency>
@@ -206,19 +206,19 @@
                 <version>${spring.version}</version>
             </dependency>
 
-            <!-- aspectj -->
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjweaver</artifactId>
-                <version>${aspectjweaver.version}</version>
-            </dependency>
+            <!--&lt;!&ndash; aspectj &ndash;&gt;-->
+            <!--<dependency>-->
+                <!--<groupId>org.aspectj</groupId>-->
+                <!--<artifactId>aspectjweaver</artifactId>-->
+                <!--<version>${aspectjweaver.version}</version>-->
+            <!--</dependency>-->
 
-            <!-- cglib -->
-            <dependency>
-                <groupId>cglib</groupId>
-                <artifactId>cglib</artifactId>
-                <version>${cglib.version}</version>
-            </dependency>
+            <!--&lt;!&ndash; cglib &ndash;&gt;-->
+            <!--<dependency>-->
+                <!--<groupId>cglib</groupId>-->
+                <!--<artifactId>cglib</artifactId>-->
+                <!--<version>${cglib.version}</version>-->
+            <!--</dependency>-->
 
             <!-- common jar -->
             <dependency>
@@ -241,11 +241,11 @@
                 <artifactId>commons-codec</artifactId>
                 <version>${common.codec.version}</version>
             </dependency>
-            <dependency>
-                <groupId>commons-beanutils</groupId>
-                <artifactId>commons-beanutils</artifactId>
-                <version>${common.beanutils.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>commons-beanutils</groupId>-->
+                <!--<artifactId>commons-beanutils</artifactId>-->
+                <!--<version>${common.beanutils.version}</version>-->
+            <!--</dependency>-->
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
@@ -261,26 +261,26 @@
                 <artifactId>commons-cli</artifactId>
                 <version>${common.cli.version}</version>
             </dependency>
-            <dependency>
-                <groupId>commons-discovery</groupId>
-                <artifactId>commons-discovery</artifactId>
-                <version>${common.discovery.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-net</groupId>
-                <artifactId>commons-net</artifactId>
-                <version>${common.net.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>commons-discovery</groupId>-->
+                <!--<artifactId>commons-discovery</artifactId>-->
+                <!--<version>${common.discovery.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>commons-net</groupId>-->
+                <!--<artifactId>commons-net</artifactId>-->
+                <!--<version>${common.net.version}</version>-->
+            <!--</dependency>-->
             <dependency>
                 <groupId>commons-pool</groupId>
                 <artifactId>commons-pool</artifactId>
                 <version>${common.pool.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-email</artifactId>
-                <version>${common.email.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.apache.commons</groupId>-->
+                <!--<artifactId>commons-email</artifactId>-->
+                <!--<version>${common.email.version}</version>-->
+            <!--</dependency>-->
             <!-- common end -->
 
             <!-- mybatis -->

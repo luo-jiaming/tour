@@ -16,12 +16,12 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="tour" target="1.7" />
-      <module name="tour-common" target="1.5" />
-      <module name="tour-core" target="1.5" />
-      <module name="tour-dao" target="1.5" />
+      <module name="tour-common" target="1.7" />
+      <module name="tour-core" target="1.7" />
+      <module name="tour-dao" target="1.7" />
       <module name="tour-manage" target="1.7" />
       <module name="tour-service" target="1.7" />
-      <module name="tour-web" target="1.5" />
+      <module name="tour-web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
