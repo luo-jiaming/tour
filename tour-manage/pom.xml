@@ -141,7 +141,7 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <finalName>tour-web</finalName>
+        <finalName>tour-manage</finalName>
     </build>
 
 </project>
