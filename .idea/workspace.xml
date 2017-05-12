@@ -91,8 +91,8 @@
       <file leaf-file-name="fileinput.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/resources/fileinput/js/fileinput.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="39" column="49" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+            <state relative-caret-position="502">
+              <caret line="42" column="60" lean-forward="true" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1490408068000" expanded="true" signature="15906:15913" ph="×" />
@@ -1076,7 +1076,7 @@
       <workItem from="1494548328361" duration="710000" />
       <workItem from="1494577479765" duration="8000" />
       <workItem from="1494577497325" duration="5634000" />
-      <workItem from="1494583369435" duration="99000" />
+      <workItem from="1494583369435" duration="455000" />
     </task>
     <task id="LOCAL-00001" summary="trash按钮的颜色变化以及travel评论div位置">
       <created>1492175586767</created>
@@ -1281,7 +1281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494583445350</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="更新">
+      <created>1494583473371</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1494583473371</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1317,7 +1324,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="742599000" />
+    <option name="totallyTimeSpent" value="742955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="23" width="1399" height="877" extended-state="6" />
@@ -1743,8 +1750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/resources/fileinput/js/fileinput.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="39" column="49" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+        <state relative-caret-position="502">
+          <caret line="42" column="60" lean-forward="true" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1490408068000" expanded="true" signature="15906:15913" ph="×" />
