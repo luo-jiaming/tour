@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aae1958-1b51-4aaa-a420-4b045a1c4d00" name="Default" comment="更新">
+    <list default="true" id="0aae1958-1b51-4aaa-a420-4b045a1c4d00" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/generator/XsrfTokenGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/generator/impl/SimpleXsrfTokenGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/AddrUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/CookieUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/FreeMarkerUtils$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/FreeMarkerUtils$SingletonHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/FreeMarkerUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/JWTUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/MD5Utils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/MailUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/RandomUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/UploadUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/VerifyCodeUtils.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tour.iws" />
@@ -51,7 +64,7 @@
       <file leaf-file-name="travel.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/travel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
+            <state relative-caret-position="105">
               <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="19" />
               <folding />
             </state>
@@ -61,7 +74,7 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
+            <state relative-caret-position="4155">
               <caret line="277" column="43" lean-forward="false" selection-start-line="277" selection-start-column="43" selection-end-line="277" selection-end-column="43" />
               <folding />
             </state>
@@ -71,19 +84,36 @@
       <file leaf-file-name="TravelController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/TravelController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
+            <state relative-caret-position="585">
               <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hotel.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hotel.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/hotel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="375">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fileinput.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/resources/fileinput/js/fileinput.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1490408068000" expanded="true" signature="15906:15913" ph="×" />
+                <marker date="1490408068000" expanded="true" signature="17857:17874" ph="..." />
+                <marker date="1490408068000" expanded="true" signature="21504:21516" ph="..." />
+                <marker date="1490408068000" expanded="true" signature="165686:165692" ph="&amp;nbsp;" />
+                <marker date="1490408068000" expanded="true" signature="167420:167427" ph="×" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,6 +144,17 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>旅行</find>
+      <find>https://github.com/Solefan/tour.git</find>
+      <find>https://github.com/Solefan/tour.gi</find>
+      <find>https://github.com/Solefan/tour.g</find>
+      <find>https://github.com/Solefan/tour.</find>
+      <find>https://github.com/Solefan/tour</find>
+      <find>https://github.com/Solefan/tou</find>
+      <find>https://github.com/Solefan/to</find>
+      <find>https://github.com/Solefan/t</find>
+      <find>https://github.com/Solefan/</find>
+      <find>https://github.com/Solefan</find>
+      <find>https://github.com/</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -254,6 +295,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -323,7 +365,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,119 +401,6 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/artifacts/tour_manage_war.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/artifacts/tour_manage_war_exploded.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/tour-manage/pom.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/tour-manage/tour-manage.iml</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1160,7 +1088,8 @@
       <workItem from="1494527186371" duration="190000" />
       <workItem from="1494548328361" duration="710000" />
       <workItem from="1494577479765" duration="8000" />
-      <workItem from="1494577497325" duration="5529000" />
+      <workItem from="1494577497325" duration="5634000" />
+      <workItem from="1494583369435" duration="64000" />
     </task>
     <task id="LOCAL-00001" summary="trash按钮的颜色变化以及travel评论div位置">
       <created>1492175586767</created>
@@ -1344,7 +1273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494582967593</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="更新">
+      <created>1494583263116</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1494583263116</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1380,10 +1316,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="742395000" />
+    <option name="totallyTimeSpent" value="742564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="23" width="1399" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1399,16 +1336,15 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30828026" sideWeight="0.49676898" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29044586" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3129771" sideWeight="0.4951535" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33248407" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33248407" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2888725" sideWeight="0.49217004" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29329404" sideWeight="0.49217004" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3029079" sideWeight="0.50782996" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1416,6 +1352,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29044586" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37709925" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1484,13 +1421,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/MessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tour-manage/src/main/webapp/WEB-INF/jsp/main.jsp" />
     <entry file="file://$PROJECT_DIR$/tour-manage/src/main/webapp/WEB-INF/jsp/user.jsp">
       <provider selected="true" editor-type-id="text-editor">
@@ -1699,7 +1629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1707,9 +1636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-109">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#3951#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1743,13 +1669,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
           <caret line="42" column="22" lean-forward="true" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/travel.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
+        <state relative-caret-position="105">
           <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="19" />
           <folding />
         </state>
@@ -1767,7 +1692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1775,7 +1699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="412" column="0" lean-forward="false" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1783,7 +1706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1791,13 +1713,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="4155">
           <caret line="277" column="43" lean-forward="false" selection-start-line="277" selection-start-column="43" selection-end-line="277" selection-end-column="43" />
           <folding />
         </state>
@@ -1805,7 +1726,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/TravelController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
+        <state relative-caret-position="585">
           <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
           <folding />
         </state>
@@ -1813,9 +1734,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/hotel.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/resources/fileinput/js/fileinput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1490408068000" expanded="true" signature="15906:15913" ph="×" />
+            <marker date="1490408068000" expanded="true" signature="17857:17874" ph="..." />
+            <marker date="1490408068000" expanded="true" signature="21504:21516" ph="..." />
+            <marker date="1490408068000" expanded="true" signature="165686:165692" ph="&amp;nbsp;" />
+            <marker date="1490408068000" expanded="true" signature="167420:167427" ph="×" />
+          </folding>
         </state>
       </provider>
     </entry>
