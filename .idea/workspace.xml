@@ -2,442 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aae1958-1b51-4aaa-a420-4b045a1c4d00" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/generator/XsrfTokenGenerator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/generator/impl/SimpleXsrfTokenGenerator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/AddrUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/CookieUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/FreeMarkerUtils$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/FreeMarkerUtils$SingletonHolder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/FreeMarkerUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/JWTUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/MD5Utils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/MailUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/RandomUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/UploadUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/target/classes/cn/edu/hlju/tour/common/utils/VerifyCodeUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/META-INF/MANIFEST.MF" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/src/test/java/cn/edu/hlju/tour/Test.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/src/test/java/cn/edu/hlju/tour/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/test-classes/cn/edu/hlju/tour/Test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-common/target/test-classes/cn/edu/hlju/tour/User.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/cn/edu/hlju/tour/web/controller/FlightController.class" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/cn/edu/hlju/tour/web/controller/FlightController.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/cn/edu/hlju/tour/web/controller/HotelCommentController.class" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/cn/edu/hlju/tour/web/controller/HotelCommentController.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/cn/edu/hlju/tour/web/controller/HotelController.class" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/cn/edu/hlju/tour/web/controller/HotelController.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/cn/edu/hlju/tour/web/controller/RoomTypeController.class" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/cn/edu/hlju/tour/web/controller/RoomTypeController.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/cn/edu/hlju/tour/web/controller/SpotCommentController.class" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/cn/edu/hlju/tour/web/controller/SpotCommentController.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/cn/edu/hlju/tour/web/controller/SpotController.class" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/cn/edu/hlju/tour/web/controller/SpotController.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/cn/edu/hlju/tour/web/controller/SpotImgController.class" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/cn/edu/hlju/tour/web/controller/SpotImgController.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/cn/edu/hlju/tour/web/controller/TravelController.class" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/cn/edu/hlju/tour/web/controller/TravelController.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/cn/edu/hlju/tour/web/controller/UserController.class" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/cn/edu/hlju/tour/web/controller/UserController.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/config/db.properties" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/config/db.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/config/mail.properties" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/config/mail.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/spring/spring-application.xml" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/spring/spring-application.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/spring/spring-datasource.xml" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/spring/spring-datasource.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/spring/spring-mail.xml" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/spring/spring-mail.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/classes/spring/spring-mvc.xml" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/classes/spring/spring-mvc.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/jsp/user.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/jsp/user.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/activation-1.1.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/activation-1.1.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/aopalliance-1.0.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/aopalliance-1.0.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/bcprov-jdk15on-1.55.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/bcprov-jdk15on-1.55.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/commons-codec-1.4.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/commons-codec-1.4.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/commons-dbcp-1.4.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/commons-dbcp-1.4.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/commons-fileupload-1.3.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/commons-fileupload-1.3.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/commons-io-2.2.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/commons-io-2.2.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/commons-lang3-3.1.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/commons-lang3-3.1.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/commons-logging-1.0.4.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/commons-logging-1.0.4.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/commons-pool-1.6.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/commons-pool-1.6.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/fastjson-1.2.6.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/fastjson-1.2.6.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/freemarker-2.3.23.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/freemarker-2.3.23.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/hamcrest-core-1.3.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/hamcrest-core-1.3.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/hessian-4.0.38.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/hessian-4.0.38.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/jackson-annotations-2.8.0.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/jackson-annotations-2.8.0.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/jackson-core-2.8.1.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/jackson-core-2.8.1.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/jackson-databind-2.8.1.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/jackson-databind-2.8.1.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/java-jwt-3.1.0.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/java-jwt-3.1.0.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/javax.mail-1.5.4.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/javax.mail-1.5.4.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/jcl-over-slf4j-1.7.21.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/jcl-over-slf4j-1.7.21.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/jodd-core-3.7.1.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/jodd-core-3.7.1.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/jodd-http-3.7.1.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/jodd-http-3.7.1.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/jodd-upload-3.7.1.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/jodd-upload-3.7.1.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/jsqlparser-0.9.5.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/jsqlparser-0.9.5.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/jstl-1.2.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/jstl-1.2.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/junit-4.12.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/junit-4.12.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/logback-classic-1.1.1.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/logback-classic-1.1.1.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/logback-core-1.1.1.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/logback-core-1.1.1.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/mybatis-3.2.8.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/mybatis-3.2.8.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/mybatis-spring-1.2.2.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/mybatis-spring-1.2.2.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/mysql-connector-java-5.1.21.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/mysql-connector-java-5.1.21.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/pagehelper-4.1.4.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/pagehelper-4.1.4.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/slf4j-api-1.7.21.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/slf4j-api-1.7.21.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-aop-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-aop-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-beans-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-beans-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-context-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-context-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-context-support-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-context-support-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-core-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-core-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-expression-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-expression-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-jdbc-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-jdbc-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-orm-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-orm-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-tx-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-tx-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-web-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-web-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/spring-webmvc-3.2.14.RELEASE.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/spring-webmvc-3.2.14.RELEASE.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/standard-1.1.2.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/standard-1.1.2.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/tour-common-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/tour-common-1.0-SNAPSHOT.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/tour-core-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/tour-core-1.0-SNAPSHOT.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/lib/tour-dao-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/tour-dao-1.0-SNAPSHOT.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/web.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/hotel/indeximg/upload1621973621203958241.jpeg" afterPath="$PROJECT_DIR$/tour-manage/target/tour-web/hotelImg/indeximg/upload1621973621203958241.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/hotel/upload1904581474020101389.jpg" afterPath="$PROJECT_DIR$/tour-manage/target/tour-web/hotelImg/upload1904581474020101389.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/hotel/upload435928247144347767.jpg" afterPath="$PROJECT_DIR$/tour-manage/target/tour-web/hotelImg/upload435928247144347767.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/hotel/upload6126415575769466144.jpg" afterPath="$PROJECT_DIR$/tour-manage/target/tour-web/hotelImg/upload6126415575769466144.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/hotel/upload7392310436102502037.jpg" afterPath="$PROJECT_DIR$/tour-manage/target/tour-web/hotelImg/upload7392310436102502037.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/hotel/upload9032029033813934664.jpg" afterPath="$PROJECT_DIR$/tour-manage/target/tour-web/hotelImg/upload9032029033813934664.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/index.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/index.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/jsp/flight.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/jsp/flight.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/jsp/hotel.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/jsp/hotel.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/jsp/hotelComment.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/jsp/hotelComment.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/jsp/roomType.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/jsp/roomType.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/jsp/spot.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/jsp/spot.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/jsp/spotComment.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/jsp/spotComment.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/jsp/spotImg.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/jsp/spotImg.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/jsp/travel.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/jsp/travel.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/jsp/user.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/jsp/user.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/css/common.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/css/common.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/img/welcome.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/img/welcome.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/changelog.txt" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/changelog.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/accordion.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/accordion.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/calendar.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/calendar.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/combo.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/combo.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/combobox.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/combobox.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/combobox_data.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/combobox_data.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/combogrid.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/combogrid.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/combotree.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/combotree.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/datagrid.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/datagrid.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/datagrid2.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/datagrid2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/datagrid3.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/datagrid3.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/datagrid4.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/datagrid4.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/datagrid5.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/datagrid5.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/datagrid_data.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/datagrid_data.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/datagrid_data2.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/datagrid_data2.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/datagrid_data3.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/datagrid_data3.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/datebox.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/datebox.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/datetimebox.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/datetimebox.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/demo.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/demo.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/dialog.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/dialog.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/draggable.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/draggable.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/droppable.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/droppable.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/droppable1.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/droppable1.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/droppable2.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/droppable2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/easyloader.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/easyloader.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/form.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/form.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/form_data.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/form_data.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/layout.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/layout.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/layout1.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/layout1.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/layout2.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/layout2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/linkbutton.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/linkbutton.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/menu.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/menu.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/menubutton.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/menubutton.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/messager.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/messager.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/numberbox.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/numberbox.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/numberbox2.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/numberbox2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/numberspinner.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/numberspinner.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/pagination.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/pagination.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/panel.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/panel.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/panel2.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/panel2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/progressbar.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/progressbar.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/propertygrid.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/propertygrid.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/propertygrid_data.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/propertygrid_data.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/resizable.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/resizable.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/searchbox.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/searchbox.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/slider.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/slider.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/splitbutton.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/splitbutton.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/tabs.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/tabs.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/tabs_href_test.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/tabs_href_test.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/timespinner.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/timespinner.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/tree.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/tree.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/tree2.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/tree2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/tree_data.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/tree_data.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/treegrid.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/treegrid.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/treegrid2.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/treegrid2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/treegrid3.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/treegrid3.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/treegrid_data.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/treegrid_data.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/treegrid_data2.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/treegrid_data2.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/treegrid_data3.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/treegrid_data3.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/treegrid_subdata.json" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/treegrid_subdata.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/validatebox.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/validatebox.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/demo/window.html" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/demo/window.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/easyloader.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/easyloader.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/jquery-1.7.2.min.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/jquery-1.7.2.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/jquery.easyui.min.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/jquery.easyui.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/jquery.form.min.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/jquery.form.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/licence_gpl.txt" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/licence_gpl.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/license_commercial.txt" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/license_commercial.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-af.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-af.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-bg.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-bg.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-ca.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-ca.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-cs.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-cs.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-cz.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-cz.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-da.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-da.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-de.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-de.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-en.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-en.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-es.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-es.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-fr.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-fr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-nl.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-nl.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-tr.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-tr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-zh_CN.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-zh_CN.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-zh_TW.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/locale/easyui-lang-zh_TW.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.accordion.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.accordion.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.calendar.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.calendar.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.combo.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.combo.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.combobox.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.combobox.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.combogrid.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.combogrid.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.combotree.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.combotree.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.datagrid.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.datagrid.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.datebox.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.datebox.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.datetimebox.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.datetimebox.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.dialog.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.dialog.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.draggable.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.draggable.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.droppable.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.droppable.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.form.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.form.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.layout.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.layout.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.linkbutton.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.linkbutton.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.menu.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.menu.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.menubutton.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.menubutton.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.messager.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.messager.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.numberbox.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.numberbox.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.numberspinner.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.numberspinner.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.pagination.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.pagination.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.panel.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.panel.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.parser.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.parser.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.progressbar.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.progressbar.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.propertygrid.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.propertygrid.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.resizable.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.resizable.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.searchbox.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.searchbox.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.slider.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.slider.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.spinner.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.spinner.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.splitbutton.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.splitbutton.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.tabs.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.tabs.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.timespinner.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.timespinner.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.tree.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.tree.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.treegrid.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.treegrid.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.validatebox.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.validatebox.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/plugins/jquery.window.js" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/plugins/jquery.window.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/readme.txt" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/readme.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/accordion.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/accordion.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/calendar.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/calendar.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/combo.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/combo.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/combobox.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/combobox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/datagrid.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/datagrid.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/datebox.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/datebox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/dialog.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/dialog.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/easyui.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/easyui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/Thumbs.db" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/Thumbs.db" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/accordion_collapse.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/accordion_collapse.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/accordion_expand.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/accordion_expand.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/blank.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/blank.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/button_a_bg.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/button_a_bg.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/button_plain_hover.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/button_plain_hover.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/button_span_bg.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/button_span_bg.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/calendar_nextmonth.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/calendar_nextmonth.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/calendar_nextyear.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/calendar_nextyear.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/calendar_prevmonth.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/calendar_prevmonth.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/calendar_prevyear.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/calendar_prevyear.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/combo_arrow.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/combo_arrow.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_header_bg.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_header_bg.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_row_collapse.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_row_collapse.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_row_expand.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_row_expand.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_sort_asc.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_sort_asc.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_sort_desc.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_sort_desc.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_title_bg.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/datagrid_title_bg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/datebox_arrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/datebox_arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/layout_button_down.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/layout_button_down.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/layout_button_left.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/layout_button_left.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/layout_button_right.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/layout_button_right.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/layout_button_up.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/layout_button_up.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/menu.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/menu.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/menu_downarrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/menu_downarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/menu_rightarrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/menu_rightarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/menu_sep.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/menu_sep.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/menu_split_downarrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/menu_split_downarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/messager_error.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/messager_error.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/messager_info.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/messager_info.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/messager_question.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/messager_question.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/messager_warning.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/messager_warning.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_first.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_first.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_last.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_last.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_load.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_load.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_loading.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_next.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_next.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_prev.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/pagination_prev.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/panel_loading.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/panel_loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/panel_title.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/panel_title.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/panel_tool_collapse.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/panel_tool_collapse.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/panel_tool_expand.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/panel_tool_expand.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/panel_tools.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/panel_tools.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/searchbox_button.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/searchbox_button.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/slider_handle.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/slider_handle.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/spinner_arrow_down.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/spinner_arrow_down.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/spinner_arrow_up.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/spinner_arrow_up.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tabs_active.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tabs_active.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tabs_close.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tabs_close.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tabs_enabled.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tabs_enabled.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tabs_leftarrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tabs_leftarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tabs_rightarrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tabs_rightarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_arrows.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_arrows.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_checkbox_0.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_checkbox_0.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_checkbox_1.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_checkbox_1.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_checkbox_2.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_checkbox_2.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_dnd_no.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_dnd_no.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_dnd_yes.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_dnd_yes.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_elbow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_elbow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_file.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_file.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_folder.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_folder.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_folder_open.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_folder_open.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_loading.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/tree_loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/validatebox_pointer.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/validatebox_pointer.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/images/validatebox_warning.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/images/validatebox_warning.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/layout.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/layout.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/linkbutton.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/linkbutton.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/menu.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/menu.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/menubutton.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/menubutton.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/messager.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/messager.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/pagination.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/pagination.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/panel.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/panel.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/progressbar.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/progressbar.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/propertygrid.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/propertygrid.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/searchbox.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/searchbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/slider.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/slider.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/spinner.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/spinner.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/splitbutton.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/splitbutton.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/tabs.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/tabs.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/tree.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/tree.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/validatebox.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/validatebox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/default/window.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/default/window.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/accordion.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/accordion.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/calendar.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/calendar.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/combo.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/combo.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/combobox.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/combobox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/datagrid.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/datagrid.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/datebox.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/datebox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/dialog.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/dialog.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/easyui.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/easyui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/Thumbs.db" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/Thumbs.db" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/accordion_collapse.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/accordion_collapse.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/accordion_expand.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/accordion_expand.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/blank.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/blank.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/button_a_bg.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/button_a_bg.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/button_plain_hover.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/button_plain_hover.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/button_span_bg.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/button_span_bg.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/calendar_nextmonth.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/calendar_nextmonth.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/calendar_nextyear.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/calendar_nextyear.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/calendar_prevmonth.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/calendar_prevmonth.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/calendar_prevyear.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/calendar_prevyear.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/combo_arrow.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/combo_arrow.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_header_bg.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_header_bg.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_row_collapse.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_row_collapse.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_row_expand.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_row_expand.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_sort_asc.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_sort_asc.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_sort_desc.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_sort_desc.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_title_bg.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/datagrid_title_bg.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/datebox_arrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/datebox_arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/layout_button_down.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/layout_button_down.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/layout_button_left.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/layout_button_left.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/layout_button_right.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/layout_button_right.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/layout_button_up.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/layout_button_up.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/menu.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/menu.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/menu_downarrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/menu_downarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/menu_rightarrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/menu_rightarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/menu_sep.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/menu_sep.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/menu_split_downarrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/menu_split_downarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/messager_error.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/messager_error.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/messager_info.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/messager_info.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/messager_question.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/messager_question.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/messager_warning.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/messager_warning.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_first.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_first.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_last.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_last.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_load.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_load.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_loading.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_next.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_next.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_prev.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/pagination_prev.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/panel_loading.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/panel_loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/panel_title.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/panel_title.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/panel_tool_collapse.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/panel_tool_collapse.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/panel_tool_expand.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/panel_tool_expand.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/panel_tools.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/panel_tools.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/searchbox_button.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/searchbox_button.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/slider_handle.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/slider_handle.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/spinner_arrow_down.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/spinner_arrow_down.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/spinner_arrow_up.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/spinner_arrow_up.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tabs_close.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tabs_close.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tabs_enabled.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tabs_enabled.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tabs_leftarrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tabs_leftarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tabs_rightarrow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tabs_rightarrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_arrows.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_arrows.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_checkbox_0.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_checkbox_0.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_checkbox_1.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_checkbox_1.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_checkbox_2.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_checkbox_2.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_dnd_no.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_dnd_no.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_dnd_yes.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_dnd_yes.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_elbow.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_elbow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_file.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_file.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_folder.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_folder.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_folder_open.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_folder_open.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_loading.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/tree_loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/validatebox_pointer.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/validatebox_pointer.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/images/validatebox_warning.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/images/validatebox_warning.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/layout.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/layout.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/linkbutton.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/linkbutton.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/menu.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/menu.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/menubutton.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/menubutton.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/messager.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/messager.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/pagination.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/pagination.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/panel.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/panel.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/progressbar.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/progressbar.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/propertygrid.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/propertygrid.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/searchbox.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/searchbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/slider.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/slider.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/spinner.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/spinner.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/splitbutton.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/splitbutton.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/tabs.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/tabs.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/tree.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/tree.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/validatebox.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/validatebox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/gray/window.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/gray/window.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icon.css" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icon.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/back.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/back.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/blank.gif" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/blank.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/cancel.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/cancel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/cut.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/cut.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/edit_add.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/edit_add.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/edit_remove.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/edit_remove.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/filesave.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/filesave.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/help.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/help.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/mini_add.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/mini_add.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/mini_edit.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/mini_edit.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/mini_refresh.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/mini_refresh.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/no.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/no.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/ok.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/ok.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/pencil.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/pencil.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/print.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/print.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/redo.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/redo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/reload.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/reload.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/search.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/search.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/sum.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/sum.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/tip.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/tip.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/resources/js/jquery-easyui-1.2.6/themes/icons/undo.png" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/resources/js/jquery-easyui-1.2.6/themes/icons/undo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/spot/indeximg/upload1068660574783385156.jpeg" afterPath="$PROJECT_DIR$/tour-manage/target/tour-web/spotImg/indeximg/upload1068660574783385156.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/spot/upload3858191230907062881.jpeg" afterPath="$PROJECT_DIR$/tour-manage/target/tour-web/spotImg/upload3858191230907062881.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/spot/upload4921678493577660617.jpeg" afterPath="$PROJECT_DIR$/tour-manage/target/tour-web/spotImg/upload4921678493577660617.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/spot/upload7068081485317920063.jpeg" afterPath="$PROJECT_DIR$/tour-manage/target/tour-web/spotImg/upload7068081485317920063.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tour-manage/target/tour-web/test.jsp" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/test.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils/PaymentUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/PayController.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tour-web/target/tour-web.war" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-core/target/classes/cn/edu/hlju/tour/core/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/tour-core/target/classes/cn/edu/hlju/tour/core/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/tour-common-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/tour-common-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/tour-core-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/tour-manage/target/tour-manage/WEB-INF/lib/tour-core-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/lib/tour-common-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/lib/tour-common-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/lib/tour-core-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/lib/tour-core-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/lib/tour-dao-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/lib/tour-dao-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-common/tour-common.iml" afterPath="$PROJECT_DIR$/tour-common/tour-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-core/tour-core.iml" afterPath="$PROJECT_DIR$/tour-core/tour-core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-dao/tour-dao.iml" afterPath="$PROJECT_DIR$/tour-dao/tour-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/tour-web.iml" afterPath="$PROJECT_DIR$/tour-web/tour-web.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-core/src/main/resources/ftl/mail.ftl" afterPath="$PROJECT_DIR$/tour-core/src/main/resources/ftl/mail.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-core/target/classes/ftl/mail.ftl" afterPath="$PROJECT_DIR$/tour-core/target/classes/ftl/mail.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/src/main/webapp/forgetpass.html" afterPath="$PROJECT_DIR$/tour-web/src/main/webapp/forgetpass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/src/main/webapp/hotel.jsp" afterPath="$PROJECT_DIR$/tour-web/src/main/webapp/hotel.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/tour-web/src/main/webapp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/tour-web/src/main/webapp/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/src/main/webapp/nav.jsp" afterPath="$PROJECT_DIR$/tour-web/src/main/webapp/nav.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/src/main/webapp/newpass.jsp" afterPath="$PROJECT_DIR$/tour-web/src/main/webapp/newpass.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/src/main/webapp/personal.jsp" afterPath="$PROJECT_DIR$/tour-web/src/main/webapp/personal.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/src/main/webapp/registerSignin.jsp" afterPath="$PROJECT_DIR$/tour-web/src/main/webapp/registerSignin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/src/main/webapp/signin.jsp" afterPath="$PROJECT_DIR$/tour-web/src/main/webapp/signin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/src/main/webapp/travel.jsp" afterPath="$PROJECT_DIR$/tour-web/src/main/webapp/travel.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/forgetpass.html" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/forgetpass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/hotel.jsp" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/hotel.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/index.jsp" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/login.jsp" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/nav.jsp" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/nav.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/newpass.jsp" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/newpass.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/personal.jsp" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/personal.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/registerSignin.jsp" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/registerSignin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/signin.jsp" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/signin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour-web/target/tour-web/travel.jsp" afterPath="$PROJECT_DIR$/tour-web/target/tour-web/travel.jsp" />
     </list>
     <ignored path="tour.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -472,68 +70,7 @@
     <favorites_list name="tour" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tour-common/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-284">
-              <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TravelController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/TravelController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpotController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/SpotController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/MessageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -541,26 +78,43 @@
         <option value="jsf" />
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>旅行</find>
-      <find>https://github.com/Solefan/tour.git</find>
-      <find>https://github.com/Solefan/tour.gi</find>
-      <find>https://github.com/Solefan/tour.g</find>
-      <find>https://github.com/Solefan/tour.</find>
-      <find>https://github.com/Solefan/tour</find>
-      <find>https://github.com/Solefan/tou</find>
-      <find>https://github.com/Solefan/to</find>
       <find>https://github.com/Solefan/t</find>
       <find>https://github.com/Solefan/</find>
       <find>https://github.com/Solefan</find>
       <find>https://github.com/</find>
       <find>java</find>
+      <find>confirmEmailCode</find>
+      <find>途悠游</find>
+      <find>f</find>
+      <find>fa</find>
+      <find>fang'jia</find>
+      <find>fang'jia'le</find>
+      <find>fang'jia'lei'x</find>
+      <find>fang'jia'lei'xi</find>
+      <find>fang'jia'lei'xin</find>
+      <find>fang'jia'lei'xing</find>
+      <find>房价类型</find>
+      <find>房类型</find>
+      <find>房jia类型</find>
+      <find>房jian类型</find>
+      <find>房间类型</find>
+      <find>d</find>
+      <find>预订</find>
+      <find>登录</find>
+      <find>l</find>
+      <find>lo</find>
+      <find>log</find>
+      <find>logg</find>
+      <find>payReal</find>
+      <find>random</find>
+      <find>机票</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -593,25 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/SpotCommentService.java" />
-        <option value="$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/SpotCommentController.java" />
-        <option value="$PROJECT_DIR$/tour-manage/src/main/webapp/jsp/spotComment.jsp" />
-        <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/SpotCommentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/tour-dao/src/main/java/cn/edu/hlju/tour/dao/SpotCommentMapper.java" />
-        <option value="$PROJECT_DIR$/tour-dao/src/main/resources/mapper/SpotCommentMapper.xml" />
-        <option value="$PROJECT_DIR$/tour-manage/src/main/webapp/jsp/hotelComment.jsp" />
-        <option value="$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/HotelCommentController.java" />
-        <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/HotelCommentService.java" />
-        <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/HotelCommentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/FlightController.java" />
-        <option value="$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/HotelController.java" />
-        <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/HotelService.java" />
-        <option value="$PROJECT_DIR$/tour-dao/src/main/java/cn/edu/hlju/tour/dao/HotelCommentMapper.java" />
-        <option value="$PROJECT_DIR$/tour-dao/src/main/resources/mapper/HotelCommentMapper.xml" />
-        <option value="$PROJECT_DIR$/tour-dao/src/main/java/cn/edu/hlju/tour/dao/HotelMapper.java" />
-        <option value="$PROJECT_DIR$/tour-manage/src/main/webapp/jsp/hotel.jsp" />
-        <option value="$PROJECT_DIR$/tour-dao/src/main/resources/mapper/HotelMapper.xml" />
-        <option value="$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/RoomTypeController.java" />
         <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/RoomTypeService.java" />
         <option value="$PROJECT_DIR$/tour-manage/src/main/webapp/jsp/roomType.jsp" />
         <option value="$PROJECT_DIR$/tour-dao/src/main/java/cn/edu/hlju/tour/dao/TravelMapper.java" />
@@ -631,19 +166,38 @@
         <option value="$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/UserController.java" />
         <option value="$PROJECT_DIR$/tour-manage/src/main/webapp/login.jsp" />
         <option value="$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/TravelController.java" />
         <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/TravelService.java" />
         <option value="$PROJECT_DIR$/tour-manage/src/main/webapp/jsp/travel.jsp" />
         <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/TravelServiceImpl.java" />
         <option value="$PROJECT_DIR$/tour-manage/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/tour-web/src/main/resources/config/db.properties" />
-        <option value="$PROJECT_DIR$/tour-manage/src/main/resources/config/db.properties" />
-        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/travel.jsp" />
-        <option value="$PROJECT_DIR$/tour-web/src/main/resources/spring/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/HotelController.java" />
         <option value="$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/TravelController.java" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/MessageController.java" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/resources/config/mail.properties" />
+        <option value="$PROJECT_DIR$/tour-core/src/main/resources/ftl/mail.ftl" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/personal.jsp" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/forgetpass.html" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/signin.jsp" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/newpass.jsp" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/travel.jsp" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/nav.jsp" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/registerSignin.jsp" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/login.jsp" />
+        <option value="$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils/VerifyCodeUtils.java" />
+        <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/Main.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/utils/PaymentUtil.java" />
+        <option value="$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils/PaymentUtil.java" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/resources/spring/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/webapp/hotel.jsp" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/PayController.java" />
+        <option value="$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/classes/config/db.properties" />
+        <option value="$PROJECT_DIR$/tour-web/src/main/resources/config/db.properties" />
+        <option value="$PROJECT_DIR$/tour-manage/src/main/resources/config/db.properties" />
       </list>
     </option>
   </component>
@@ -671,40 +225,15 @@
     </option>
   </component>
   <component name="MavenProjectNavigator">
-    <treeState>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="tour" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="tour" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-    </treeState>
+    <treeState />
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="42" />
+    <option name="x" value="38" />
     <option name="y" value="23" />
-    <option name="width" value="1399" />
+    <option name="width" value="1402" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -768,24 +297,6 @@
               <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tour-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -808,44 +319,6 @@
               <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotelImg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotelImg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="indeximg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -862,100 +335,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -971,15 +358,16 @@
     <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tour-web/src/main/webapp/WEB-INF/jsp" />
+      <recent name="$PROJECT_DIR$/tour-service/src/main/resources/ftl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tour-manage/target/tour-web" />
-      <recent name="$PROJECT_DIR$/tour-web/target/tour-web" />
-      <recent name="$PROJECT_DIR$/tour-web/target/tour-web/hotelImg/indeximg" />
-      <recent name="$PROJECT_DIR$/tour-manage/src/main/webapp/resources" />
-      <recent name="$PROJECT_DIR$/tour-web/src/main/webapp/resources/img" />
+      <recent name="$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils" />
+      <recent name="$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/utils" />
+      <recent name="$PROJECT_DIR$/tour-web/target/tour-web/hotelImg" />
+      <recent name="$PROJECT_DIR$/tour-web/target/tour-web/spotImg/indeximg" />
+      <recent name="$PROJECT_DIR$/tour-web/target/tour-web/spotImg" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.edu.hlju.tour.web.controller" />
@@ -988,9 +376,8 @@
       <recent name="cn.edu.hlju.tour.entity" />
       <recent name="cn.edu.hlju.tour.common.utils" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tour-web/src/main/webapp/WEB-INF/jsp" />
-      <recent name="$PROJECT_DIR$/tour-service/src/main/resources/ftl" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1005,7 +392,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.tomcat-manage">
+  <component name="RunManager" selected="Tomcat Server.tomcat">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings />
@@ -1681,7 +1068,13 @@
       <workItem from="1494577479765" duration="8000" />
       <workItem from="1494577497325" duration="5634000" />
       <workItem from="1494583369435" duration="619000" />
-      <workItem from="1494584354491" duration="1491000" />
+      <workItem from="1494584354491" duration="13190000" />
+      <workItem from="1495288450940" duration="1479000" />
+      <workItem from="1496461523822" duration="263000" />
+      <workItem from="1496469665835" duration="10136000" />
+      <workItem from="1496830191428" duration="5525000" />
+      <workItem from="1496838688254" duration="8621000" />
+      <workItem from="1497005244501" duration="312000" />
     </task>
     <task id="LOCAL-00001" summary="trash按钮的颜色变化以及travel评论div位置">
       <created>1492175586767</created>
@@ -1929,21 +1322,21 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="744610000" />
+    <option name="totallyTimeSpent" value="782645000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="42" y="23" width="1399" height="877" extended-state="6" />
+    <frame x="38" y="23" width="1402" height="877" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1908397" sideWeight="0.5048465" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27634487" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27560797" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24981578" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30828026" sideWeight="0.49676898" order="10" side_tool="false" content_ui="tabs" />
@@ -1953,14 +1346,14 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3121019" sideWeight="0.4951535" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33248407" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31082803" sideWeight="0.4951535" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29771554" sideWeight="0.49217004" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.48802948" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3029079" sideWeight="0.50782996" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29771554" sideWeight="0.5119705" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2024,7 +1417,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="121" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/UserController.java</url>
+          <line>151</line>
+          <properties />
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/PayController.java</url>
+          <line>77</line>
+          <properties />
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="125" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2033,373 +1440,373 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/registerSignin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-dao/src/main/java/cn/edu/hlju/tour/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="117" lean-forward="false" selection-start-line="21" selection-start-column="117" selection-end-line="21" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/java/lang/String.java" />
-    <entry file="file://$PROJECT_DIR$/tour-dao/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="47" column="38" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/newpass.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/nav.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="142" column="27" lean-forward="false" selection-start-line="142" selection-start-column="27" selection-end-line="142" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="45" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-manage/src/main/webapp/test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-manage/src/main/webapp/login.jsp" />
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="143" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="98" column="36" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/SpotCommentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/TravelService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="44" column="85" lean-forward="false" selection-start-line="44" selection-start-column="85" selection-end-line="44" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/TravelController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-manage/src/main/webapp/jsp/travel.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1238">
-          <caret line="102" column="42" lean-forward="false" selection-start-line="102" selection-start-column="42" selection-end-line="102" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/TravelServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4455">
-          <caret line="316" column="36" lean-forward="false" selection-start-line="316" selection-start-column="36" selection-end-line="316" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/resources/config/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/target/classes/cn/edu/hlju/tour/web/controller/TravelController.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-109">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="263">
+          <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-manage/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="250" column="21" lean-forward="false" selection-start-line="250" selection-start-column="21" selection-end-line="250" selection-end-column="21" />
-          <folding>
-            <marker date="1494526678000" expanded="true" signature="2353:2375" ph="..." />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="214" column="24" lean-forward="false" selection-start-line="214" selection-start-column="24" selection-end-line="214" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/HotelController.java">
+    <entry file="file://$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="42" column="22" lean-forward="true" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+        <state relative-caret-position="172">
+          <caret line="44" column="7" lean-forward="false" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.14.RELEASE/spring-webmvc-3.2.14.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/signin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="460" column="0" lean-forward="false" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
+        <state relative-caret-position="261">
+          <caret line="134" column="87" lean-forward="false" selection-start-line="134" selection-start-column="39" selection-end-line="134" selection-end-column="87" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.14.RELEASE/spring-webmvc-3.2.14.RELEASE.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.class">
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="2142">
+          <caret line="179" column="21" lean-forward="false" selection-start-line="179" selection-start-column="21" selection-end-line="179" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.14.RELEASE/spring-webmvc-3.2.14.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/FlightServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="412" column="0" lean-forward="false" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
+        <state relative-caret-position="120">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/HotelCommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/HotelServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/RoomTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/SpotCommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/SpotImgServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/SpotServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1830">
+          <caret line="143" column="19" lean-forward="false" selection-start-line="143" selection-start-column="19" selection-end-line="143" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/impl/TravelServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-manage/src/main/java/cn/edu/hlju/tour/web/controller/FlightController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/3.0-alpha-1/servlet-api-3.0-alpha-1.jar!/javax/servlet/ServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-core/src/main/java/cn/edu/hlju/tour/core/utils/PaymentUtil.java" />
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="170" column="34" lean-forward="false" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.14.RELEASE/spring-web-3.2.14.RELEASE.jar!/org/springframework/web/method/HandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="158" column="22" lean-forward="true" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.14.RELEASE/spring-webmvc-3.2.14.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.14.RELEASE/spring-web-3.2.14.RELEASE.jar!/org/springframework/web/method/support/ModelAndViewContainer.class">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#1353#1354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/3.2.14.RELEASE/spring-core-3.2.14.RELEASE.jar!/org/springframework/util/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#1004#1005#0" expanded="true" />
+            <element signature="e#1058#1059#0" expanded="true" />
+            <element signature="e#1641#1642#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils/FreeMarkerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils/PaymentUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2701">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-169">
+          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.14.RELEASE/spring-web-3.2.14.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/resources/fileinput/js/fileinput.js">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.21/jcl-over-slf4j-1.7.21.jar!/org/apache/commons/logging/impl/SLF4JLocationAwareLog.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        <state relative-caret-position="270">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/resources/spring/spring-datasource.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/resources/spring/spring-mail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.14.RELEASE/spring-web-3.2.14.RELEASE.jar!/org/springframework/web/multipart/commons/CommonsMultipartResolver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5250">
+          <caret line="350" column="24" lean-forward="true" selection-start-line="350" selection-start-column="24" selection-end-line="350" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/HotelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="40" column="34" lean-forward="false" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/SpotController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/resources/spring/spring-application.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/target/root@118.89.234.61" />
+    <entry file="file://$PROJECT_DIR$/tour-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/PayController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1490408068000" expanded="true" signature="15906:15913" ph="×" />
-            <marker date="1490408068000" expanded="true" signature="17857:17874" ph="..." />
-            <marker date="1490408068000" expanded="true" signature="21504:21516" ph="..." />
-            <marker date="1490408068000" expanded="true" signature="165686:165692" ph="&amp;nbsp;" />
-            <marker date="1490408068000" expanded="true" signature="167420:167427" ph="×" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/hotel.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="259">
+          <caret line="364" column="43" lean-forward="false" selection-start-line="364" selection-start-column="43" selection-end-line="364" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-manage/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="772" column="49" lean-forward="false" selection-start-line="772" selection-start-column="43" selection-end-line="772" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/TravelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-996">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/resources/spring/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/target/classes/config/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/target/tour-web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6242">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="277" column="43" lean-forward="false" selection-start-line="277" selection-start-column="43" selection-end-line="277" selection-end-column="43" />
+        <state relative-caret-position="378">
+          <caret line="308" column="29" lean-forward="true" selection-start-line="308" selection-start-column="29" selection-end-line="308" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-698">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="58" column="46" lean-forward="true" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/webapp/travel.jsp">
+    <entry file="file://$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/classes/config/db.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="45">
+          <caret line="3" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tour-web/src/main/resources/config/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="80" lean-forward="false" selection-start-line="3" selection-start-column="80" selection-end-line="3" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-manage/src/main/resources/config/db.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="45">
+          <caret line="3" column="80" lean-forward="false" selection-start-line="3" selection-start-column="80" selection-end-line="3" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/resources/spring/spring-mvc.xml">
+    <entry file="file://$PROJECT_DIR$/tour-web/target/tour-web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils/CookieUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils/UploadUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/generator/impl/SimpleXsrfTokenGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="59" column="21" lean-forward="true" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils/MD5Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="49" column="45" lean-forward="true" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils/JWTUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/utils/AddrUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-common/src/main/java/cn/edu/hlju/tour/common/generator/XsrfTokenGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-common/src/test/java/cn/edu/hlju/tour/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-common/src/test/java/cn/edu/hlju/tour/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-284">
-          <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/target/tour-web/hotelImg/indeximg/upload1621973621203958241.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-manage/target/tour-web/hotelImg/indeximg/upload1621973621203958241.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-manage/target/tour-web/hotelImg/upload1904581474020101389.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/TravelController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/SpotController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tour-web/src/main/java/cn/edu/hlju/tour/web/controller/MessageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="284">
+          <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
         </state>
       </provider>
     </entry>

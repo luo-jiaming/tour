@@ -95,7 +95,7 @@ public class UserServiceImpl implements UserService {
         String senderEmailSMTPHost = mailConfig.getSenderEmailSMTPHost();
         String smtpAuth = mailConfig.getSmtpAuth();
         String transportProtocol = mailConfig.getTransportProtocol();
-        MailUtils.send(transportProtocol, senderEmailSMTPHost, smtpAuth, senderEmail, "途悠游", senderPassword,
+        MailUtils.send(transportProtocol, senderEmailSMTPHost, smtpAuth, senderEmail, "农家乐", senderPassword,
                 request.getParameter("email"), request.getParameter("nick"), subject, content, "utf-8");
     }
 
@@ -170,7 +170,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean isEmailCode(String emailCode, String serverEmailCode) {
-        return emailCode.equals(serverEmailCode);
+        return serverEmailCode.equals(emailCode.toLowerCase());
     }
 
     /**

@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>账号登录 - 途悠游</title>
+    <title>账号登录 - 农家乐</title>
     <link rel="stylesheet" href="resources/css/bootstrap.min.css">
     <script src="resources/js/jquery.min.js"></script>
     <script src="resources/js/bootstrap.min.js"></script>

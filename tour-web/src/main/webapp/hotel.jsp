@@ -251,16 +251,16 @@
             for (var i = 0; i < maplist.length; i++) {
                 var newDate = new Date(maplist[i].comment.time);
                 comment += "<div class='media'>" +
-                                "<div class='media-left '>" +
-                                    "<img src='" + maplist[i].user.avatar + "' class='img-circle'>" +
-                                "</div>" +
-                                "<div class='media-body'>" +
-                                    "<h5 class='media-heading'>" + maplist[i].user.nick + "</h5>" + maplist[i].comment.content +
-                                    "<div class='comment-time-div'>" +
-                                        "<div class='comment-time'>" + newDate.toLocaleString() + "</div>" +
-                                    "</div>" +
-                                "</div>" +
-                            "</div>";
+                    "<div class='media-left '>" +
+                    "<img src='" + maplist[i].user.avatar + "' class='img-circle'>" +
+                    "</div>" +
+                    "<div class='media-body'>" +
+                    "<h5 class='media-heading'>" + maplist[i].user.nick + "</h5>" + maplist[i].comment.content +
+                    "<div class='comment-time-div'>" +
+                    "<div class='comment-time'>" + newDate.toLocaleString() + "</div>" +
+                    "</div>" +
+                    "</div>" +
+                    "</div>";
             }
             $('.comment-body').empty();
             $('.comment-body').append(comment);
@@ -356,6 +356,16 @@
             });
         }
 
+        function payReal() {
+            $.ajax({
+                type: "POST",
+                url: "/tour/pay/pay",
+                async: true,
+                success: function (data) {
+                    window.location = data;
+                }
+            })
+        }
     </script>
 
 </head>
@@ -371,9 +381,9 @@
         <h1>${json.hotel.hotelName}</h1>
     </div>
     <div class="hotel-level">
-    <c:forEach begin="1" end="${json.hotel.hotelLevel}">
-        <span class='glyphicon glyphicon-star'></span>
-    </c:forEach>
+        <c:forEach begin="1" end="${json.hotel.hotelLevel}">
+            <span class='glyphicon glyphicon-star'></span>
+        </c:forEach>
     </div>
     <div class="split"></div>
     <div class="hotel-nav">
@@ -389,7 +399,7 @@
     </div>
 
     <div class="hotel-intro">
-       ${json.hotel.hotelIntroduce}
+        ${json.hotel.hotelIntroduce}
     </div>
 
     <div class="basic-infor">
@@ -398,9 +408,9 @@
             <div class="row">
 
                 <c:if test="${json.hotel.wifi == 0}">
-                <div class="col-lg-3 not-have">
-                    <s><span class="glyphicon glyphicon-ok"></span> 免费WiFi</s>
-                </div>
+                    <div class="col-lg-3 not-have">
+                        <s><span class="glyphicon glyphicon-ok"></span> 免费WiFi</s>
+                    </div>
                 </c:if>
 
                 <c:if test="${json.hotel.wifi == 1}">
@@ -483,12 +493,13 @@
             <c:forEach items="${json.roomlist}" var="room" varStatus="status">
                 <div class="type-item">
                     <div class="item-img">
-                        <img class="img-rounded" src="${room.indexImg}" />
+                        <img class="img-rounded" src="${room.indexImg}"/>
                     </div>
                     <div class="item-content">
                         <div class="type-remark">${room.remark}</div>
                         <div class="type-name">${room.typeName}</div>
                         <div class="type-price">¥${room.price}</div>
+                        <div class="btn btn-warning submit-btn" onclick="payReal()">预订</div>
                     </div>
                 </div>
             </c:forEach>
